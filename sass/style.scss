@@ -1,0 +1,564 @@
+/*
+Theme Name: Beacon Intermodal
+Author: GoingClear Interactive
+Author URI: https://www.goingclear.com/
+Version: 1.0.0
+Text Domain: beacon
+*/
+
+/***********************************
+BASE STYLES
+***********************************/
+
+// COLORS
+$white:#FFF;
+$black:#000;
+
+// FONTS
+$mont: "montserrat",sans-serif;
+
+// MIXIN
+@import 'mixin';
+
+// ICON FONTS
+@import 'icon';
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body, div, span, img, 
+ol, ul, li, a, p, h1, h2, h3, 
+h4, h5, h6, option, legend, label, 
+table, th, td, tr, article, aside, 
+caption, figure, footer, header, hgroup, 
+mark, nav, section, time, audio, video {
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll; 
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	color: $black;
+	background: $white;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	//font: 400 16px/26px $open_sans;
+}
+
+h1 {
+	font-size: 72px;
+	font-weight: 400;
+}
+
+h2 {
+	font-size: 60px;
+	font-weight: 400;
+}
+
+h3 {
+	font-size: 48px;
+	font-weight: 400;
+	line-height: 61px;
+}
+
+h4 {
+	font-size: 30px;
+	font-weight: 400;
+}
+
+h5 {}
+h6 {}
+
+h1, h2, h3, h4, h5, h6 {
+	//font-family: $garamond;
+}
+
+a, button {
+
+	&:hover, &:focus {
+		outline: 0;
+		text-decoration: none;
+	}
+}
+
+p {
+	margin: 0 0 30px;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	padding: 50px 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, 
+a, section, span, li, div {
+	@include transition(0.3s ease all);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+select,
+textarea {
+	font-size: 12px;
+	font-weight: 400;
+	border-radius: 12px;
+	width: 100% !important;
+	border: 1px solid transparent;
+	background: #EDEFF2 !important;
+	padding: 11px 10px !important;
+	@include transition(all 0.5s ease);
+
+	&:hover, &:focus {
+		outline: 0;
+		//border: 1px solid $primary;
+	}
+}
+
+label {
+
+}
+
+.container {
+	
+}
+
+.coverbg {
+    @include coverbg;
+}
+
+.mx-auto {
+	margin: 0 auto;
+}
+
+.btn {
+	border: 0;
+	z-index: 1;
+	width: 100%;
+	color: $white;
+	max-width: 220px;
+	overflow: hidden;
+	background: $black;
+	padding: 16px 20px;
+	position: relative;
+	border-radius: 45px;
+	//font: 400 18px/23px $garamond;
+	@include transition(all 0.3s);
+
+	&:hover, &:focus, &:active {
+		color: $white;
+		outline: 0 !important;
+		//background: $primary;
+	}
+}
+
+.align-center {
+	@include align-center;
+}
+
+.align-center-h {
+	@include align-center('horizontal');
+}
+
+.align-center-v {
+	height: 100%;
+	@include align-center('vertical');
+}
+
+.justify-content-center {
+	-webkit-box-pack: center!important;
+	-webkit-justify-content: center!important;
+	-ms-flex-pack: center!important;
+	justify-content: center!important;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+/***********************************
+HEADER STYLES
+***********************************/
+
+
+/***********************************
+BANNER STYLES
+***********************************/
+
+
+/***********************************
+BREADCRUMB STYLES
+***********************************/
+
+
+/***********************************
+CONTACT STYLES
+***********************************/
+.gform_confirmation_message {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 15px;
+
+    &:before {
+    	content: '✔';
+	    font-size: 23px;
+	    padding-right: 10px;
+	    color: green;
+    }
+}
+
+.gform_wrapper {
+	margin: 0 !important;
+
+	form {
+
+		.gform_body {
+
+			.gform_fields {
+
+				.gfield {
+					margin-top: 23px;
+
+					&.google_recpatcha {
+						margin-top: 18px;
+						float: right;
+    					padding-right: 175px;
+						-webkit-transform: scale(0.77);
+						-moz-transform: scale(0.77);
+						-ms-transform: scale(0.77);
+						-o-transform: scale(0.77);
+						transform: scale(0.77);
+						-webkit-transform-origin: 0 0;
+						-moz-transform-origin: 0 0;
+						-ms-transform-origin: 0 0;
+						-o-transform-origin: 0 0;
+						transform-origin: 0 0;
+
+						.ginput_container {
+							margin-top: 0;
+						}
+					}
+
+					&:first-child {
+						margin-top: 0;
+					}
+
+					label.gfield_label, .gfield_required {
+					    display: none !important;
+					}
+
+					label, .gfield_description {
+						margin: 0 0 8px;
+						font-size: 10px !important;
+						line-height: 14px !important;
+						font-weight: 400 !important;
+						color: #23275E !important;
+						text-transform: uppercase !important;
+						@include letter-spacing(125, 10);
+					}
+
+					textarea.medium {
+						height: 100px;
+					}
+
+					.gfield_description {
+						padding: 0 !important;
+					}
+
+					&.gfield_contains_required, &.gfield_error {
+						
+						.validation_message {
+							margin: 0 !important;
+						    color: #790000 !important;
+						    font-weight: 700 !important;
+						    letter-spacing: normal !important;
+						    text-transform: none !important;
+						}
+					}
+				}
+			}
+		}
+
+		.gform_footer {
+			float: right;
+		    margin: 0 !important;
+			width: inherit !important;
+		    padding: 0 16px 0 0 !important;
+		    margin-top: -78px !important;
+
+			.btn {
+				width: 208px;
+				max-width: 208px;
+				padding: 18.5px 15px;
+				background: #23275E;
+
+				&:hover, &:focus {
+					
+				}
+			}
+		}
+	}
+}
+
+/***********************************
+FOOTER STYLES
+***********************************/
+.footer {
+	
+
+	.footer-logo {
+		
+	}
+
+	.copyright {
+
+		p {
+			margin: 0;
+		}
+	}
+}
+
+/***********************************
+404 STYLES
+***********************************/
+.error404 {
+	background: $white;
+
+	.error-404 {
+		padding: 40px 0;
+		
+		.page-header {
+		    margin-top: 0;
+			border-color: #ddd;
+
+			.hero {
+				margin: 0;
+				color: $black;
+				font-size: 125px;
+				font-weight: bold;
+				line-height: normal !important
+			}
+		}
+
+		.page-content {
+
+			.searchform {
+				margin: 0 auto;
+				padding: 10px 0 50px;
+
+				.screen-reader-text {
+				    display: none;
+				}
+
+				input[type="text"], input[type="search"] {
+					max-width: 500px;
+					border-radius: 36px;
+					width: 100% !important;
+					margin: 0 0 20px !important;
+				}
+
+				input[type="submit"] {
+					border: 0;
+					color: $white;
+					width: 100%;
+					font-size: 18px;
+					max-width: 208px;
+				    padding: 12px 15px;
+					border-radius: 36px;
+				    background: #23275E;
+					display: inline-block;
+					@include transition(all 0.3s ease);
+
+					&:hover, &:focus {
+						outline: 0;
+						box-shadow: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+/***********************************
+BASIC WORDPRESS STYLES
+***********************************/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/***********************************
+BASIC TEMPLATE STYLES
+***********************************/
+.basic_container { 
+	padding: 40px 0 48px 0;
+
+	.btn {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		flex-direction: column;	
+		text-align: center;
+		text-decoration: none !important;
+		//padding:20px 0;
+	}
+}
+
+.basic { 
+	max-width: 1008px; 
+	margin: 0 auto; 
+	padding: 35px 0;
+
+	h2 { 
+		margin-bottom: 35px; 
+	}
+
+	ul { 
+		margin-left: 30px; 
+		list-style-type: disc;
+
+		li { 
+			margin-bottom: 15px; 
+		}
+	}
+
+	p {
+
+		&:last-child { 
+			margin-bottom: 25px; 
+		}
+	}
+}
+
+/* left */
+.basic_left {
+
+	img { 
+		max-width: 100%; 
+		display: block; 
+		float: left; 
+	}
+
+	p { 
+		display: block; 
+		padding: 0;
+	}
+} 
+
+/* middle */
+.middle_box { 
+	padding: 0 15px; 
+}
+
+.basic_middle {
+
+	img {
+		max-width: 100%;  
+		display: block; 
+		float: none; 
+		margin: 0 auto 50px auto; 
+		max-width: 1008px; 
+		max-width: 100%;
+	}
+
+	h2 { 
+		text-align: center; 
+	}
+
+	p { 
+		margin-bottom: 0 !important; 
+		margin: 10px 0; 
+		-webkit-columns: 2; 
+		-moz-columns: 2; 
+		columns: 2; 
+		-webkit-column-gap: 50px; 
+		-moz-column-gap: 50px; 
+		column-gap: 50px;
+	}
+
+	.btn { 
+		//max-width: 490px; 
+		float: none; 
+		margin: 25px auto 0 auto; 
+	}
+}
+
+.basic_single {
+
+	.btn { 
+		//max-width: 490px; 
+		float: none; 
+		margin: 25px auto 0 auto; 
+	}
+}
+
+/* right */
+.basic_right {
+
+	img {
+		max-width: 100%; 
+		display: block; 
+		float: right; 
+		margin: 0 auto; 
+	}
+
+	p { 
+		display: block;
+		padding: 0; 
+	}
+}
+
+.gcbase-home{
+	width:100%;
+	background: #008cc6;
+	background: -moz-linear-gradient(45deg, #008cc6 0%, #8ec652 100%);
+	background: -webkit-linear-gradient(45deg, #008cc6 0%,#8ec652 100%);
+	background: linear-gradient(45deg, #008cc6 0%,#8ec652 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008cc6', endColorstr='#8ec652',GradientType=1 );
+}
+
+@import 'responsive';
