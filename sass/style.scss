@@ -13,8 +13,12 @@ BASE STYLES
 // COLORS
 $white:#FFF;
 $black:#000;
+$ass: #A5A6A7;
+$base: #F5E221;
+$primary: #23275E;
 
 // FONTS
+$tinos: 'Tinos', serif;
 $mont: "montserrat",sans-serif;
 
 // MIXIN
@@ -59,38 +63,40 @@ body {
 	height: 100%;
 	color: $black;
 	background: $white;
+	font: 300 16px/26px $mont;
+	@include letter-spacing(15, 16);
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-	//font: 400 16px/26px $open_sans;
 }
 
 h1 {
 	font-size: 72px;
-	font-weight: 400;
 }
 
 h2 {
 	font-size: 60px;
-	font-weight: 400;
 }
 
 h3 {
 	font-size: 48px;
-	font-weight: 400;
-	line-height: 61px;
 }
 
 h4 {
-	font-size: 30px;
-	font-weight: 400;
+	font-size: 36px;
 }
 
-h5 {}
-h6 {}
+h5 {
+	font-size: 24px;
+}
+
+h6 {
+	font-size: 18px;
+}
 
 h1, h2, h3, h4, h5, h6 {
-	//font-family: $garamond;
+	font-weight: 700;
+	font-family: $tinos;
 }
 
 a, button {
@@ -145,8 +151,8 @@ label {
 
 }
 
-.container {
-	
+.container-fluid {
+	padding: 0 40px;
 }
 
 .coverbg {
@@ -162,19 +168,49 @@ label {
 	z-index: 1;
 	width: 100%;
 	color: $white;
-	max-width: 220px;
+	max-width: 240px;
 	overflow: hidden;
-	background: $black;
-	padding: 16px 20px;
+	background: $primary;
+	padding: 27px 15px;
 	position: relative;
-	border-radius: 45px;
-	//font: 400 18px/23px $garamond;
+	border-radius: 4px;
+	font: 700 14px/18px $mont;
+	@include letter-spacing(125, 14);
 	@include transition(all 0.3s);
+
+	&:before {
+		top: 0;
+    	right: 0;
+		width: 0;
+		z-index: -1;
+		content: "";
+		height: 100%;
+		background: $base;
+		position: absolute;
+		@include transition(all 0.3s);
+	}
 
 	&:hover, &:focus, &:active {
 		color: $white;
 		outline: 0 !important;
-		//background: $primary;
+
+		&:before {
+			left: 0;
+			right: auto;
+			width: 100%;
+		}
+	}
+}
+
+.section-title {
+
+	.sub-title {
+		color: $ass;
+		font-family: $mont;
+	}
+
+	.title {
+		color: $primary;
 	}
 }
 
@@ -209,17 +245,304 @@ label {
 /***********************************
 HEADER STYLES
 ***********************************/
+.top-bar {
+	margin: 0 0 12px;
 
+	ul {
+
+		li {
+
+			a {
+				width: 180px;
+				color: #1C1F48;
+				font-size: 12px;
+				background: $base;
+				padding: 15px 15px;
+				@include align-center('vertical');
+				@include letter-spacing(50, 12);
+
+				i {
+					width: 20px;
+					height: 20px;
+					color: $white;
+					font-size: 10px;
+					margin-right: 7px;
+					border-radius: 500px;
+					background: $primary;
+					display: inline-block;
+				}
+
+				&:hover, &:focus {
+					
+					&:before {
+						background: $black;
+					}
+				}
+			}
+		}
+	}
+}
+
+.navbar {
+	top: 0;
+	left: 0;
+	border: 0;
+	width: 100%;
+	z-index: 1030;
+	position: fixed;
+	padding: 25px 0 10px;
+	border-radius: 0;
+	min-height: auto !important;
+	margin-bottom: 0 !important;
+	background-color: $primary;
+	border-bottom: 2px solid $base;
+	@include transition(all 0.3s ease);
+
+	.container-fluid {
+		width: 100%;
+		padding: 0 15px;
+		max-width: 1280px;
+	}
+
+	.navbar-header {
+		-webkit-box-flex: 1;
+		-moz-box-flex: 1;
+		-o-box-flex: 1;
+		-ms-flex: 1;
+		flex: 1;
+		margin: 0;
+		@include transition(all 0.3s ease);
+
+		.logo {
+
+			.navbar-brand {
+				margin: 0;
+				padding: 0;
+				height: initial;
+				@include transition(all 0.3s ease);
+
+				span {
+					font-size: 10px;
+					font-family: "Proxima Nova";
+				}
+
+				img {
+					max-width: 100%;
+					@include transition(all 0.3s ease);
+				}
+			}
+		}
+	}
+
+	.navbar-collapse {
+		padding-left: 0 !important; 
+		padding-right: 0 !important;
+
+		.navbar-nav {
+
+			> li {
+				padding: 0 12px;
+
+				>	a {
+					color: $white;
+					position: relative;
+					padding: 0 !important;
+					font: 700 16px/32px $mont;
+					text-transform: uppercase;
+					@include letter-spacing(180, 16);
+
+					&:before {
+						left: 0;
+						width: 0;
+						height: 6px;
+						content: '';
+						bottom: -20px;
+						position: absolute;
+						background: transparent;
+						@include transition(all 0.3s ease);
+					}
+				}
+
+				&.active, &:hover, &:focus {
+
+					a {
+						color: $base;
+						background-color: transparent;
+
+						span {
+							color: $white;
+						}
+
+						&:before {
+							width: 100%;
+							background-color: $base;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.stop {
+		padding: 10px 0;
+		-webkit-box-shadow: 0 0px 12px rgba($black, 0.4);
+		-moz-box-shadow: 0 0px 12px rgba($black, 0.4);
+		-ms-box-shadow: 0 0px 12px rgba($black, 0.4);
+		-o-box-shadow: 0 0px 12px rgba($black, 0.4);
+		box-shadow: 0 0px 12px rgba($black, 0.4);
+
+		.navbar-header {
+
+			.logo {
+
+				.navbar-brand {
+					padding: 9px 0;
+
+					img {
+						max-width: 170px;
+					}
+				}
+			}
+		}
+
+		.navbar-collapse {
+
+			.top-bar {
+			    margin: 0 0 4px;
+			}
+		}
+	}
+}
+
+
+.header_gutter {
+	height: 140px;
+	background: $primary;
+}
 
 /***********************************
 BANNER STYLES
 ***********************************/
+.banner {
+	padding: 0;
+	height: 628px;
+	overflow: hidden;
+	@include overlay($black, 0.3);
 
+	.myVideo {
+		position: absolute;
+	}
+
+	.content {
+		z-index: 1;
+		position: relative;
+
+		h1, p {
+			color: $white;
+		}
+
+		h1 {
+			max-width: 770px;
+		}
+
+		p {
+			font-size: 18px;
+			font-weight: 700;
+			line-height: 32px;
+			text-transform: uppercase;
+			@include letter-spacing(125, 18);
+		}
+	}
+}
 
 /***********************************
 BREADCRUMB STYLES
 ***********************************/
+.breadcrumb-wrapper {
+	padding: 0;
+	border-radius: 0;
+	background: #F1F3F3;
 
+	.breadcrumb {
+		margin: 0;
+		border: 0;
+		padding: 16px 0;
+		border-radius: 0;
+		background: transparent;
+
+		color: $primary;
+		font-size: 12px;
+		font-weight: 500;
+		text-transform: uppercase;
+		@include letter-spacing(125, 12);
+		@include transition(all 0.3s ease);
+
+		a, span {
+			color: $primary;
+			font-size: 12px;
+			font-weight: 500;
+			text-transform: uppercase;
+			@include letter-spacing(125, 12);
+			@include transition(all 0.3s ease);
+		}
+
+		a {
+
+			&:hover, &:focus {
+				color: $base;
+			}
+		}
+
+		.angle-right {
+			padding: 0 6px;
+		}
+
+		.current-page {
+			color: $ass;
+		}
+	}
+}
+
+/***********************************
+ENTRY-HEADER STYLES
+***********************************/
+.entry-header {
+	height: 260px;
+	@include overlay($black, 0.4);
+
+	&.paragraph {
+		height: 340px;
+		@include overlay($black, 0.5);
+	}
+
+	.content {
+		z-index: 1;
+		position: relative;
+
+		h2, h6, p {
+			color: $white;
+		}
+
+		.title {
+			margin: 0 0 12px;
+			font-style: italic;
+			@include letter-spacing(25, 60);
+		}
+
+		.sub-title {
+			font-family: $mont;
+			@include letter-spacing(125, 18);
+		}
+
+		p {
+			margin: 0;
+			font-size: 18px;
+			font-weight: 500;
+			max-width: 747px;
+			@include letter-spacing(25, 18);
+		}
+	}
+}
 
 /***********************************
 CONTACT STYLES
@@ -334,16 +657,77 @@ CONTACT STYLES
 FOOTER STYLES
 ***********************************/
 .footer {
-	
 
-	.footer-logo {
-		
+	.footer-top {
+		padding: 60px 0;
+		background: $primary;
+
+		.footer-logo {
+			margin: 0 0 50px;
+		}
+
+		.footer-menu {
+			margin: 0 0 23px;
+
+			li {
+				padding: 0 15px;
+
+				a {
+					color: $white;
+					font-weight: 700;
+					text-transform: uppercase;
+
+					&:hover, &:focus {
+						color: $base;
+					}
+				}
+			}
+		}
+
+		.copyright {
+
+			p {
+				margin: 0;
+				color: $white;
+				font-size: 12px;
+				font-weight: 300;
+				line-height: 18px;
+				@include letter-spacing(25, 12);
+
+				a {
+					color: $base;
+				}
+			}
+		}
 	}
 
-	.copyright {
+	.careers-bar {
+		padding: 16px 0;
+		background: $base;
 
 		p {
 			margin: 0;
+			color: $primary;
+			font-weight: 400;
+
+			a {
+				color: $primary;
+				font-weight: 700;
+				text-decoration: underline;
+
+				&.icon-arrow-right {
+					font-size: 20px;
+					padding-left: 15px;
+					text-decoration: none;
+				}
+
+				&:hover, &:focus {
+					color: $black;
+				}
+			}
+
+			i {
+			}
 		}
 	}
 }

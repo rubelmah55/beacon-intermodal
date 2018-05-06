@@ -10,6 +10,10 @@
 		}
 	});
 
+	$(".navbar-toggle").click(function() {
+		$(this).toggleClass('in');
+	});
+
 	$('.scrollDown').click(function() {
 		  var target = $('#primary');
 		  if (target.length) {
@@ -29,5 +33,6 @@
 	}
 	window.onload = setGutterHeight;
 	window.onresize = setGutterHeight;
+
 
 }(jQuery));
