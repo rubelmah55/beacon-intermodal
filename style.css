@@ -360,6 +360,19 @@ textarea:focus {
   align-items: center;
 }
 
+.eq-height {
+  display: -webkit-box;
+  display: -moz-flexbox;
+  display: -ms-flexbox;
+  display: -o-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 .justify-content-center {
   -webkit-box-pack: center !important;
   -webkit-justify-content: center !important;
@@ -764,6 +777,156 @@ ABOUT STYLES
   margin-left: auto;
   margin-right: auto;
   max-width: 819px;
+}
+
+.about-us {
+  padding: 80px 0 30px;
+}
+
+.about-us .content p {
+  max-width: 530px;
+}
+
+.about-us .media img {
+  width: 100%;
+}
+
+/***********************************
+TEAM NAV STYLES
+***********************************/
+.team-nav {
+  padding: 0;
+  overflow: hidden;
+}
+
+.team-nav .container-fluid {
+  padding: 0;
+}
+
+.team-nav .team-nav-item {
+  text-align: center;
+  padding: 33px 15px;
+  background: #1C204D;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.team-nav .team-nav-item + .team-nav-item {
+  border-left: 1px solid #000;
+}
+
+.team-nav .team-nav-item h5 {
+  color: #FFF;
+  font-style: italic;
+  margin-right: 60px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.team-nav .team-nav-item .icon {
+  width: 34px;
+  height: 34px;
+  color: #23275E;
+  font-size: 15px;
+  background: #F5E221;
+  border-radius: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.team-nav .team-nav-item .icon i:before {
+  display: block;
+  margin-right: 1px;
+}
+
+.team-nav .team-nav-item:hover, .team-nav .team-nav-item:focus {
+  background: #23275E;
+}
+
+.team-nav .team-nav-item:hover h5, .team-nav .team-nav-item:focus h5 {
+  color: #F5E221;
+}
+
+.team-nav .team-nav-item:hover .icon, .team-nav .team-nav-item:focus .icon {
+  margin-left: 10px;
+}
+
+/***********************************
+TEAM STYLES
+***********************************/
+.leadership-head {
+  background: #BFBFBF;
+}
+
+.leadership:nth-child(odd) {
+  background: #FAFAFA;
+}
+
+.join-team {
+  overflow: hidden;
+  background: #FAFAFA;
+}
+
+/***********************************
+COUNTERS STYLES
+***********************************/
+.counters {
+  background: #23275E;
+}
+
+.counter-item {
+  margin: 0 0 85px;
+}
+
+.counter-item .lrg-num {
+  color: #FFF;
+  margin: 0 0 5px;
+  font-size: 72px;
+  font-weight: 500;
+  line-height: 88px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.counter-item h6 {
+  color: #F5E221;
+  margin: 0 0 5px;
+  font-weight: 400;
+  font-family: "Tinos", serif;
+  letter-spacing: 0.45px;
+}
+
+.counter-item h4 {
+  color: #FFF;
+  font-style: italic;
+  letter-spacing: 0.9px;
+}
+
+.counter-item .separator {
+  margin: 0;
+  padding: 35px 0 0;
 }
 
 /***********************************
@@ -1352,6 +1515,9 @@ MEDIA QUERIES
   .about {
     padding: 80px 0;
   }
+  .about-us {
+    padding: 60px 0 30px;
+  }
   /***********************************
 	FEATURES STYLES
 	***********************************/
@@ -1654,6 +1820,12 @@ MEDIA QUERIES
   .about {
     padding: 60px 0;
   }
+  .about-us {
+    padding: 50px 0 40px;
+  }
+  .about-us .content p {
+    max-width: 100%;
+  }
   /***********************************
 	FEATURES STYLES
 	***********************************/
@@ -1785,6 +1957,9 @@ MEDIA QUERIES
   .about {
     padding: 50px 0;
   }
+  .about-us {
+    padding: 40px 0;
+  }
   /***********************************
 	STRONG-SECURE STYLES
 	***********************************/
@@ -1895,8 +2070,14 @@ MEDIA QUERIES
   /***********************************
 	ABOUT STYLES
 	***********************************/
-  .about {
+  .about, .about-us {
     padding: 30px 0;
+  }
+  /***********************************
+	TEAM NAV STYLES
+	***********************************/
+  .team-nav .team-nav-item h5 {
+    margin-right: 30px;
   }
   /***********************************
 	FEATURES STYLES
@@ -1955,15 +2136,6 @@ MEDIA QUERIES
 }
 
 /* 575 */
-@media only screen and (max-width: 521px) {
-  /***********************************
-	FOOTER STYLES
-	***********************************/
-  .footer .footer-top .footer-menu li {
-    display: block;
-  }
-}
-
 @media only screen and (max-width: 555px) {
   /***********************************
 	FOOTER STYLES
@@ -1974,6 +2146,28 @@ MEDIA QUERIES
 }
 
 /* 555 */
+@media only screen and (max-width: 521px) {
+  /***********************************
+	TEAM NAV STYLES
+	***********************************/
+  .team-nav .team-nav-item {
+    width: 100%;
+    padding: 25px 15px;
+  }
+  .team-nav .team-nav-item:not(:last-child) {
+    border-bottom: 1px solid #000;
+  }
+  .team-nav .team-nav-item .icon i:before {
+    margin-right: 0;
+  }
+  /***********************************
+	FOOTER STYLES
+	***********************************/
+  .footer .footer-top .footer-menu li {
+    display: block;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   /***********************************
 	ENTRY-HEADER STYLES

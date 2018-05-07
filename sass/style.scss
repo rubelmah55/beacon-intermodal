@@ -278,6 +278,19 @@ label {
 	@include align-center('vertical');
 }
 
+.eq-height {
+	display: -webkit-box;
+	display: -moz-flexbox;
+	display: -ms-flexbox;
+	display: -o-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
 .justify-content-center {
 	-webkit-box-pack: center!important;
 	-webkit-justify-content: center!important;
@@ -625,6 +638,144 @@ ABOUT STYLES
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 819px;
+	}
+}
+
+.about-us {
+	padding: 80px 0 30px;
+
+	.content {
+
+		p {
+			max-width: 530px;
+		}
+	}
+
+	.media {
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
+/***********************************
+TEAM NAV STYLES
+***********************************/
+.team-nav {
+	padding: 0;
+	overflow: hidden;
+
+	.container-fluid {
+		padding: 0;
+	}
+
+	.team-nav-item {
+		text-align: center;
+		padding: 33px 15px;
+		background: #1C204D;
+		@include transition(all 0.3s);
+
+		+ .team-nav-item {
+			border-left: 1px solid $black;
+		}
+
+		h5 {
+			color: $white;
+			font-style: italic;
+			margin-right: 60px;
+			text-transform: uppercase;
+			@include letter-spacing(25, 24);
+		}
+
+		.icon {
+			width: 34px;
+			height: 34px;
+			color: $primary;
+			font-size: 15px;
+			background: $base;
+			border-radius: 500px;
+			@include align-center;
+			@include transition(all 0.3s ease);
+
+			i {
+
+				&:before {
+					display: block;
+					margin-right: 1px;
+				}
+			}
+		}
+
+		&:hover, &:focus {
+			background: $primary;
+
+			h5 {
+				color: $base;
+			}
+
+			.icon {
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+/***********************************
+TEAM STYLES
+***********************************/
+.leadership-head {
+	background: #BFBFBF;
+}
+
+.leadership {
+
+	&:nth-child(odd) {
+		background: #FAFAFA;
+	}
+}
+
+.join-team {
+	overflow: hidden;
+	background: #FAFAFA;
+}
+
+/***********************************
+COUNTERS STYLES
+***********************************/
+.counters {
+	background: $primary;
+}
+
+.counter-item {
+	margin: 0 0 85px;
+
+	.lrg-num {
+		color: $white;
+		margin: 0 0 5px;
+		font-size: 72px;
+		font-weight: 500;
+		line-height: 88px;
+		@include align-center;
+	}
+
+	h6 {
+		color: $base;
+		margin: 0 0 5px;
+		font-weight: 400;
+		font-family: $tinos;
+		@include letter-spacing(25, 18);
+	}
+
+	h4 {
+		color: $white;
+		font-style: italic;
+		@include letter-spacing(25, 36);
+	}
+
+	.separator {
+		margin: 0;
+		padding: 35px 0 0;
 	}
 }
 
