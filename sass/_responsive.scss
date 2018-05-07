@@ -14,6 +14,23 @@ MEDIA QUERIES
 }/* 1400 */
 
 
+@media only screen and (max-width : 1255px) {
+	
+	/***********************************
+	STRONG-SECURE STYLES
+	***********************************/
+	.strong-secure {
+		
+		.media {
+
+			img {
+				width: 55vw;
+			}
+		}
+	}
+
+}/* 1255 */
+
 @media only screen and (max-width : 1199px) {
 
 	h1 {font-size: 60px;}
@@ -41,7 +58,6 @@ MEDIA QUERIES
 		}
 	}
 	
-
 	.header_gutter {
 		height: 135px;
 	}
@@ -55,6 +71,80 @@ MEDIA QUERIES
 		&.paragraph {
 			height: 300px;
 		}
+	}
+
+	/***********************************
+	BANNER STYLES
+	***********************************/
+	.banner {
+		height: 550px;
+
+		.content {
+
+			h1 {
+				max-width: 670px;
+			}
+		}
+	}
+
+	/***********************************
+	ABOUT STYLES
+	***********************************/
+	.about {
+		padding: 80px 0;
+	}
+
+	/***********************************
+	FEATURES STYLES
+	***********************************/
+	.feature {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		
+		.icon {
+			font-size: 70px;
+			margin: 0 0 20px;
+		}
+
+		.arrow {
+			width: 55px;
+    		height: 55px;
+			font-size: 20px;
+			margin: 30px auto 0;
+		}
+	}
+
+	/***********************************
+	STRONG-SECURE STYLES
+	***********************************/
+	.strong-secure {
+
+		.media {
+
+			img {
+				width: 55vw;
+			}
+		}
+		
+		.content {
+			padding: 30px 0 30px 20px;
+
+			.separator  {
+				padding: 25px 0 0;
+			}
+
+			p {
+				font-size: 14px;
+				margin: 0 0 20px;
+			}
+		}
+	}
+
+	/***********************************
+	CONTACT STYLES
+	***********************************/
+	.contact {
+		padding: 80px 0;
 	}
 
 	/***********************************
@@ -103,6 +193,21 @@ MEDIA QUERIES
 
 
 }/* iPad Landscape */	
+
+@media only screen and (max-width : 1052px) {
+	/***********************************
+	STRONG-SECURE STYLES
+	***********************************/
+	.strong-secure {
+
+		.media {
+
+			img {
+				width: 60vw;
+			}
+		}
+	}
+}
 
 @media only screen and (max-width : 991px) {
 
@@ -350,6 +455,66 @@ MEDIA QUERIES
 	}
 
 	/***********************************
+	BANNER STYLES
+	***********************************/
+	.banner {
+		height: 500px;
+	}
+
+	/***********************************
+	ABOUT STYLES
+	***********************************/
+	.about {
+		padding: 60px 0;
+	}
+
+	/***********************************
+	FEATURES STYLES
+	***********************************/
+	.feature {
+
+		&:nth-child(4n+1), &:nth-child(4n+2) {
+			border-bottom: 1px solid $black;
+		}
+		
+		.arrow {
+			width: 55px;
+    		height: 55px;
+			font-size: 20px;
+			margin: 30px auto 0;
+		}
+	}
+
+	/***********************************
+	STRONG-SECURE STYLES
+	***********************************/
+	.strong-secure {
+
+		.media {
+
+			img {
+				float: none;
+				width: 100%;
+			}
+		}
+
+		.content {
+			padding: 30px 20px;
+
+			p {
+				max-width: 100%;
+			}
+		}
+	}
+
+	/***********************************
+	CONTACT STYLES
+	***********************************/
+	.contact {
+		padding: 50px 0;
+	}
+
+	/***********************************
 	FOOTER STYLES
 	***********************************/
 	.footer {
@@ -397,8 +562,28 @@ MEDIA QUERIES
 	h5 {font-size: 16px;}
 	h6 {font-size: 12px;}
 
+	p {
+		margin: 0 0 20px;
+	}
+
+	.btn {
+		max-width: 200px;
+		padding: 21px 15px;
+	}
+
 	.container-fluid {
 		padding: 0 15px;
+	}
+
+	.section-title {
+
+		.sub-title {
+			margin: 0;
+		}
+	}
+
+	.separator {
+		padding: 20px 0 0;
 	}
 
 	/***********************************
@@ -430,6 +615,67 @@ MEDIA QUERIES
 			p {
 				font-size: 16px;
 				@include letter-spacing(25, 16);
+			}
+		}
+	}
+
+	/***********************************
+	BANNER STYLES
+	***********************************/
+	.banner {
+		height: 430px;
+
+		.content {
+
+			.separator {
+				padding: 20px 0 0;
+				margin: 0 0 15px;
+			}
+
+			.scrollDown {
+				margin: 20px 0 0;
+			}
+		}
+	}
+
+	/***********************************
+	ABOUT STYLES
+	***********************************/
+	.about {
+		padding: 50px 0;
+	}
+
+	/***********************************
+	STRONG-SECURE STYLES
+	***********************************/
+	.strong-secure {
+
+		.media {
+
+			img {
+				float: none;
+				width: 100%;
+			}
+		}
+
+		.content {
+			padding: 20px 15px 30px;
+		}
+	}
+
+	/***********************************
+	CONTACT STYLES
+	***********************************/
+	.contact {
+		padding: 40px 0;
+
+		.content {
+
+			ul {
+
+				&.serving {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}
@@ -556,6 +802,93 @@ MEDIA QUERIES
 	}
 
 	/***********************************
+	BANNER STYLES
+	***********************************/
+	.banner {
+		height: 400px;
+
+		.content {
+
+			h1 {
+				font-size: 40px;
+				max-width: 500px;
+			}
+
+			p {
+				font-size: 16px;
+				line-height: 26px;
+				@include letter-spacing(125, 16);
+			}
+
+			.scrollDown {
+				width: 50px;
+				height: 50px;
+				font-size: 18px;
+				margin: 15px 0 0;
+			}
+		}
+	}
+
+	/***********************************
+	ABOUT STYLES
+	***********************************/
+	.about {
+		padding: 30px 0;
+	}
+
+	/***********************************
+	FEATURES STYLES
+	***********************************/
+	.feature {
+		padding: 30px;
+		@include align-center('vertical');
+
+		
+		&:not(:last-child) {
+			border-bottom: 1px solid $black;
+		}
+		
+		.icon {
+			font-size: 60px;
+			margin: 0 20px 0 0;
+		}
+
+		.content {
+			text-align: left;
+			-webkit-box-flex: 1;
+			-moz-flex-positive: 1;
+			-ms-flex-positive: 1;
+			-o-flex-positive: 1;
+			flex-grow: 1;
+		}
+
+		.arrow {
+			margin: 0;
+		}
+	}
+
+	/***********************************
+	CONTACT STYLES
+	***********************************/
+	.contact {
+		padding: 30px 0;
+
+		.content {
+
+			ul {
+
+				&.serving {
+					margin-bottom: 15px;
+				}
+			}
+
+			.btn {
+				margin: 10px 0 0;
+			}
+		}
+	}
+
+	/***********************************
 	FOOTER STYLES
 	***********************************/
 	.footer {
@@ -630,9 +963,57 @@ MEDIA QUERIES
 		}
 	}
 
+	/***********************************
+	BANNER STYLES
+	***********************************/
+	.banner {
+		height: 350px;
+
+		.content {
+
+			h1 {
+				font-size: 28px;
+				@include letter-spacing(25, 28);
+			}
+
+			p {
+				font-size: 14px;
+				line-height: 24px;
+				@include letter-spacing(125, 14);
+			}
+		}
+	}
+
 }/* 480 */
 
 @media only screen and (max-width : 346px) {
+
+	/***********************************
+	FEATURES STYLES
+	***********************************/
+	.feature {
+		padding: 30px 25px;
+		
+		.icon {
+			font-size: 55px;
+			margin: 0 15px 0 0;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		h3 {
+			font-size: 24px;
+		}
+
+		.arrow {
+			width: 50px;
+		    height: 50px;
+		    font-size: 18px;
+		}
+	}
+
 	/***********************************
 	FOOTER STYLES
 	***********************************/
@@ -665,6 +1046,27 @@ MEDIA QUERIES
 
 			p {
 				font-size: 13px;
+			}
+		}
+	}
+
+	/***********************************
+	BANNER STYLES
+	***********************************/
+	.banner {
+		height: 300px;
+
+		.content {
+
+			h1 {
+				font-size: 26px;
+				@include letter-spacing(25, 26);
+			}
+
+			p {
+				font-size: 12px;
+				line-height: 22px;
+				@include letter-spacing(125, 12);
 			}
 		}
 	}
