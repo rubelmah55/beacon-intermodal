@@ -1063,7 +1063,7 @@ SERVICES STYLES
 	}
 }
 
-.services {
+.services, .equipments {
 	padding-top: 0;
 
 	.eq-height {
@@ -1117,17 +1117,22 @@ SERVICES STYLES
 			margin: 0 auto 20px;
 		}
 
-		button {
-			width: 60px;
-			height: 60px;
-			color: $primary;
-			font-size: 24px;
-			display: block;
-			margin: 0 auto 40px;
-			border-radius: 500px;
-			border: 2px solid $base;
-			background: transparent;
-			@include align-center;
+		.arrow {
+			@include transition(all 0.5s);
+
+			button {
+				width: 60px;
+				height: 60px;
+				color: $primary;
+				font-size: 24px;
+				display: block;
+				margin: 0 auto 40px;
+				border-radius: 500px;
+				border: 2px solid $base;
+				background: transparent;
+				@include align-center;
+				@include transition(all 0.3s);
+			}
 		}
 	}
 
@@ -1135,14 +1140,171 @@ SERVICES STYLES
 
 		.content {
 
-			button {
-				color: $white;
-				background: $base;
+			.arrow {
 
-				&:hover, &:focus {
+				button {
 					color: $white;
-					background: $primary;
-					border-color: $primary;
+					background: $base;
+
+					&:hover, &:focus {
+						color: $white;
+						background: $primary;
+						border-color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+
+.service-details {
+
+	.section-title {
+
+		.title {
+			max-width: 100%;
+		}
+	}
+
+	.media {
+		margin: 0 0 30px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	ul {
+		margin: 10px 0 0;
+
+		li {
+			color: $primary;
+			margin: 0 0 25px;
+			font-weight: 700;
+			line-height: 27px;
+			padding-left: 15px;
+			font-style: italic;
+			position: relative;
+			@include letter-spacing(25, 16);
+
+			span {
+				display: block;
+				font-size: 14px;
+				font-weight: 300;
+				line-height: 20px;
+			}
+
+			&:before {
+				top: 0;
+				left: 0;
+				content: '•';
+				font-size: 16px;
+				font-weight: 700;
+				position: absolute;
+			}
+		}
+	}
+}
+
+.leasing {
+
+	.service-details {
+
+		ul {
+
+			li {
+				width: 50%;
+				float: left;
+				margin: 0 0 10px;
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+		}
+	}
+}
+
+/***********************************
+EQUIPMENTS STYLES
+***********************************/
+.equipments-main {
+
+	.content {
+
+		p {
+			max-width: 506px;
+		}
+	}
+}
+
+.equipment-item {
+	
+	.content {
+
+		h4 {
+			padding: 0 15px;
+		}
+
+		p {
+			padding-left: 15px;
+			padding-right: 15px;
+			max-width: 500px;
+		}
+	}
+}
+
+.specifications {
+	padding-top: 0;
+
+	.section-title {
+		margin: 40px 0;
+	}
+
+	.note {
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 18px;
+		margin: 15px 0 0;
+		@include letter-spacing(5, 14);
+	}
+}
+
+.table-specifications {
+
+	.table {
+
+		thead {
+
+			tr {
+				color: $base;
+				font-size: 18px;
+				font-weight: 700;
+				line-height: 22px;
+				background: $primary;
+				@include letter-spacing(125, 18);
+
+				th {
+					border: 0;
+					padding: 13px 20px;
+				}
+			}
+		}
+
+		tbody {
+
+			tr {
+
+				&:nth-of-type(even) {
+				    background-color: #F5F5F5;
+				}
+
+				td {
+					border: 0;
+					color: $primary;
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 18px;
+					padding: 16px 20px;
+					@include letter-spacing(5, 14);
 				}
 			}
 		}

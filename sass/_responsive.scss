@@ -647,6 +647,16 @@ MEDIA QUERIES
 	/***********************************
 	SERVICES STYLES
 	***********************************/
+	.our-services {
+
+		.content {
+
+			p {
+				max-width: 100%;
+			}
+		}
+	}
+
 	.box-item {
 
 		.content {
@@ -654,6 +664,35 @@ MEDIA QUERIES
 			h4 {
 				font-size: 30px;
 			}
+		}
+	}
+
+	.service-details {
+		padding-bottom: 0;
+
+		.content {
+
+			p {
+				max-width: 100%;
+			}
+		}
+
+		.media {
+			margin: 0;
+		}
+	}
+
+	/***********************************
+	EQIPMENTS STYLES
+	***********************************/
+	.equipments-main {
+		padding-bottom: 0;
+	}
+
+	.specifications {
+
+		.section-title {
+			margin: 20px 0 30px;
 		}
 	}
 
@@ -892,6 +931,27 @@ MEDIA QUERIES
 		}
 	}
 
+	.service-details {
+
+		ul {
+
+			li {
+				margin: 0 0 15px;
+			}
+		}
+	}
+
+	/***********************************
+	EQIPMENTS STYLES
+	***********************************/
+
+	.specifications {
+
+		.section-title {
+			margin: 10px 0 20px;
+		}
+	}
+
 	/***********************************
 	CONTACT STYLES
 	***********************************/
@@ -1115,7 +1175,7 @@ MEDIA QUERIES
 	}
 
 	/***********************************
-	TEAM NAV STYLES
+	TEAM STYLES
 	***********************************/
 	.team-nav {
 
@@ -1123,6 +1183,34 @@ MEDIA QUERIES
 
 			h5 {
 				margin-right: 30px;
+			}
+		}
+	}
+
+	.service-details {
+		padding-bottom: 10px;
+
+		.media {
+			margin: 0 0 30px;
+		}
+
+		ul {
+
+			li {
+				margin: 0 0 10px;
+			}
+		}
+	}
+
+	.leasing {
+
+		.service-details {
+
+			ul {
+
+				li {
+					width: 100%;
+				}
 			}
 		}
 	}

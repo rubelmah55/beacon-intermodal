@@ -1185,11 +1185,11 @@ SERVICES STYLES
   width: 100%;
 }
 
-.services {
+.services, .equipments {
   padding-top: 0;
 }
 
-.services .eq-height a {
+.services .eq-height a, .equipments .eq-height a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1241,7 +1241,15 @@ SERVICES STYLES
   margin: 0 auto 20px;
 }
 
-.box-item .content button {
+.box-item .content .arrow {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.box-item .content .arrow button {
   width: 60px;
   height: 60px;
   color: #23275E;
@@ -1260,17 +1268,134 @@ SERVICES STYLES
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-.box-item:hover .content button, .box-item:focus .content button {
+.box-item:hover .content .arrow button, .box-item:focus .content .arrow button {
   color: #FFF;
   background: #F5E221;
 }
 
-.box-item:hover .content button:hover, .box-item:hover .content button:focus, .box-item:focus .content button:hover, .box-item:focus .content button:focus {
+.box-item:hover .content .arrow button:hover, .box-item:hover .content .arrow button:focus, .box-item:focus .content .arrow button:hover, .box-item:focus .content .arrow button:focus {
   color: #FFF;
   background: #23275E;
   border-color: #23275E;
+}
+
+.service-details .section-title .title {
+  max-width: 100%;
+}
+
+.service-details .media {
+  margin: 0 0 30px;
+}
+
+.service-details .media img {
+  width: 100%;
+}
+
+.service-details ul {
+  margin: 10px 0 0;
+}
+
+.service-details ul li {
+  color: #23275E;
+  margin: 0 0 25px;
+  font-weight: 700;
+  line-height: 27px;
+  padding-left: 15px;
+  font-style: italic;
+  position: relative;
+  letter-spacing: 0.4px;
+}
+
+.service-details ul li span {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.service-details ul li:before {
+  top: 0;
+  left: 0;
+  content: '•';
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute;
+}
+
+.leasing .service-details ul li {
+  width: 50%;
+  float: left;
+  margin: 0 0 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/***********************************
+EQUIPMENTS STYLES
+***********************************/
+.equipments-main .content p {
+  max-width: 506px;
+}
+
+.equipment-item .content h4 {
+  padding: 0 15px;
+}
+
+.equipment-item .content p {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 500px;
+}
+
+.specifications {
+  padding-top: 0;
+}
+
+.specifications .section-title {
+  margin: 40px 0;
+}
+
+.specifications .note {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  margin: 15px 0 0;
+  letter-spacing: 0.07px;
+}
+
+.table-specifications .table thead tr {
+  color: #F5E221;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  background: #23275E;
+  letter-spacing: 2.25px;
+}
+
+.table-specifications .table thead tr th {
+  border: 0;
+  padding: 13px 20px;
+}
+
+.table-specifications .table tbody tr:nth-of-type(even) {
+  background-color: #F5F5F5;
+}
+
+.table-specifications .table tbody tr td {
+  border: 0;
+  color: #23275E;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  padding: 16px 20px;
+  letter-spacing: 0.07px;
 }
 
 /***********************************
@@ -2187,8 +2312,29 @@ MEDIA QUERIES
   /***********************************
 	SERVICES STYLES
 	***********************************/
+  .our-services .content p {
+    max-width: 100%;
+  }
   .box-item .content h4 {
     font-size: 30px;
+  }
+  .service-details {
+    padding-bottom: 0;
+  }
+  .service-details .content p {
+    max-width: 100%;
+  }
+  .service-details .media {
+    margin: 0;
+  }
+  /***********************************
+	EQIPMENTS STYLES
+	***********************************/
+  .equipments-main {
+    padding-bottom: 0;
+  }
+  .specifications .section-title {
+    margin: 20px 0 30px;
   }
   /***********************************
 	FOOTER STYLES
@@ -2366,6 +2512,15 @@ MEDIA QUERIES
   .box-item .content button {
     margin-bottom: 30px;
   }
+  .service-details ul li {
+    margin: 0 0 15px;
+  }
+  /***********************************
+	EQIPMENTS STYLES
+	***********************************/
+  .specifications .section-title {
+    margin: 10px 0 20px;
+  }
   /***********************************
 	CONTACT STYLES
 	***********************************/
@@ -2505,10 +2660,22 @@ MEDIA QUERIES
     margin: 0 0 10px;
   }
   /***********************************
-	TEAM NAV STYLES
+	TEAM STYLES
 	***********************************/
   .team-nav .team-nav-item h5 {
     margin-right: 30px;
+  }
+  .service-details {
+    padding-bottom: 10px;
+  }
+  .service-details .media {
+    margin: 0 0 30px;
+  }
+  .service-details ul li {
+    margin: 0 0 10px;
+  }
+  .leasing .service-details ul li {
+    width: 100%;
   }
   /***********************************
 	FEATURES STYLES
