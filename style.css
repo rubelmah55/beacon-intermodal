@@ -112,7 +112,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  color: #000;
+  color: #1F1F22;
   background: #FFF;
   font: 300 16px/26px "montserrat", sans-serif;
   letter-spacing: 0.24px;
@@ -147,7 +147,7 @@ h6 {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  font-family: "Tinos", serif;
+  font-family: "tinos", serif;
 }
 
 a:hover, a:focus, button:hover, button:focus {
@@ -792,7 +792,95 @@ ABOUT STYLES
 }
 
 /***********************************
-TEAM NAV STYLES
+COUNTERS STYLES
+***********************************/
+.counters {
+  padding: 110px 0 38px;
+  background: #23275E;
+}
+
+.counter-item {
+  margin: 0 0 85px;
+}
+
+.counter-item .lrg-num {
+  color: #FFF;
+  margin: 0 0 5px;
+  font-size: 72px;
+  font-weight: 500;
+  line-height: 88px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.counter-item h6 {
+  color: #F5E221;
+  margin: 0 0 5px;
+  font-weight: 400;
+  font-family: "tinos", serif;
+  letter-spacing: 0.45px;
+}
+
+.counter-item h4 {
+  color: #FFF;
+  font-style: italic;
+  letter-spacing: 0.9px;
+}
+
+.counter-item .separator {
+  margin: 0;
+  padding: 35px 0 0;
+}
+
+/***********************************
+FINANCIAL-STRENGTH STYLES
+***********************************/
+.financial-strength {
+  background: #F7F7F7;
+  padding: 100px 0 60px;
+}
+
+.financial-strength .section-title {
+  margin: 0 0 25px;
+}
+
+.financial-strength .section-title .title {
+  letter-spacing: 0;
+}
+
+.financial-strength .content p {
+  max-width: 525px;
+}
+
+.financial-strength .content p span, .financial-strength .content p a {
+  color: #23275E;
+  text-decoration: underline;
+}
+
+.financial-strength .financial-list li .separator {
+  width: 40px;
+  padding: 15px 0 0;
+  margin: 0 10px 0 0;
+}
+
+.financial-strength .financial-list li .content {
+  overflow: hidden;
+}
+
+.financial-strength .financial-list li .content p span, .financial-strength .financial-list li .content p a {
+  color: #23275E;
+  text-decoration: underline;
+}
+
+/***********************************
+TEAM STYLES
 ***********************************/
 .team-nav {
   padding: 0;
@@ -866,67 +954,111 @@ TEAM NAV STYLES
   margin-left: 10px;
 }
 
-/***********************************
-TEAM STYLES
-***********************************/
+#team {
+  padding: 0;
+}
+
 .leadership-head {
+  padding: 66px 0 20px;
   background: #BFBFBF;
 }
 
-.leadership:nth-child(odd) {
+.leadership-member {
+  padding: 70px 0 90px;
+}
+
+.leadership-member .media img {
+  width: 100%;
+}
+
+.leadership-member .content .title {
+  color: #23275E;
+  font-style: italic;
+  line-height: 54px;
+}
+
+.leadership-member .content .position {
+  color: #7B848E;
+  font-weight: 400;
+  margin: 0 0 15px;
+  letter-spacing: 0.6px;
+}
+
+.leadership-member .content p {
+  margin: 0;
+  max-width: 783px;
+}
+
+.leadership-member:nth-child(even) .content {
+  margin-left: 30px;
+}
+
+.leadership-member:nth-child(odd) {
   background: #FAFAFA;
 }
 
-.join-team {
+.leadership-member:nth-child(odd) .content p {
+  max-width: 865px;
+}
+
+#marketing-team {
+  padding: 110px 0;
+}
+
+#marketing-team .section-title {
+  margin: 0 0 40px;
+}
+
+.mk-team {
+  margin: 40px 0 0;
+  padding-left: 12.5px;
+  padding-right: 12.5px;
+  text-align: center;
+}
+
+.mk-team .media img {
+  width: 100%;
+}
+
+.mk-team .content {
+  margin: 20px 0 0;
+}
+
+.mk-team .content .name {
+  color: #23275E;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.mk-team .content .position {
+  color: #7B848E;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.35px;
+}
+
+#join-team {
+  padding: 60px 0;
   overflow: hidden;
   background: #FAFAFA;
 }
 
-/***********************************
-COUNTERS STYLES
-***********************************/
-.counters {
-  background: #23275E;
+#join-team .section-title {
+  margin: 0 0 60px;
 }
 
-.counter-item {
-  margin: 0 0 85px;
+#join-team .content p {
+  max-width: 420px;
 }
 
-.counter-item .lrg-num {
-  color: #FFF;
-  margin: 0 0 5px;
-  font-size: 72px;
-  font-weight: 500;
-  line-height: 88px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+#join-team .content p a, #join-team .content p span {
+  color: #1F1F22;
+  font-weight: 700;
 }
 
-.counter-item h6 {
+#join-team .content p a:hover, #join-team .content p a:focus, #join-team .content p span:hover, #join-team .content p span:focus {
   color: #F5E221;
-  margin: 0 0 5px;
-  font-weight: 400;
-  font-family: "Tinos", serif;
-  letter-spacing: 0.45px;
-}
-
-.counter-item h4 {
-  color: #FFF;
-  font-style: italic;
-  letter-spacing: 0.9px;
-}
-
-.counter-item .separator {
-  margin: 0;
-  padding: 35px 0 0;
 }
 
 /***********************************
@@ -960,7 +1092,7 @@ FEATURES STYLES
 .feature p {
   color: #F5E221;
   margin: 0 0 6px;
-  font-family: "Tinos", serif;
+  font-family: "tinos", serif;
   text-transform: uppercase;
   letter-spacing: 1.6px;
 }
@@ -1552,6 +1684,33 @@ MEDIA QUERIES
     margin: 0 0 20px;
   }
   /***********************************
+	COUNTERS STYLES
+	***********************************/
+  .counters {
+    padding: 80px 0 20px;
+  }
+  /***********************************
+	TEAM STYLES
+	***********************************/
+  .leadership-member {
+    padding: 60px 0;
+  }
+  .leadership-member:nth-child(even) .content {
+    margin-left: 10px;
+  }
+  #marketing-team {
+    padding: 90px 0;
+  }
+  #marketing-team .section-title {
+    margin: 0 0 40px;
+  }
+  /***********************************
+	FINANCIAL-STRENGTH STYLES
+	***********************************/
+  .financial-strength {
+    padding: 80px 0 40px;
+  }
+  /***********************************
 	CONTACT STYLES
 	***********************************/
   .contact {
@@ -1852,6 +2011,61 @@ MEDIA QUERIES
     max-width: 100%;
   }
   /***********************************
+	COUNTERS STYLES
+	***********************************/
+  .counters {
+    padding: 60px 0 20px;
+  }
+  .counter-item {
+    margin: 0 0 50px;
+  }
+  /***********************************
+	FINANCIAL-STRENGTH STYLES
+	***********************************/
+  .financial-strength {
+    padding: 60px 0 20px;
+  }
+  .financial-strength .content p {
+    max-width: 100%;
+  }
+  /***********************************
+	TEAM STYLES
+	***********************************/
+  .leadership-head {
+    padding: 50px 0 20px;
+  }
+  .leadership-member {
+    padding: 50px 0;
+  }
+  .leadership-member .content .title {
+    line-height: inherit;
+    margin: 0 0 10px;
+  }
+  .leadership-member:nth-child(even) .content {
+    margin-left: 0;
+  }
+  #marketing-team {
+    padding: 60px 0;
+  }
+  #marketing-team .section-title {
+    margin: 0 0 20px;
+  }
+  #join-team {
+    padding: 50px 0;
+  }
+  #join-team .section-title {
+    margin: 0 0 30px;
+  }
+  #join-team .content {
+    margin: 0 0 40px;
+  }
+  #join-team .content p {
+    max-width: 100%;
+  }
+  #join-team .content h6 {
+    font-size: 16px;
+  }
+  /***********************************
 	CONTACT STYLES
 	***********************************/
   .contact {
@@ -1971,6 +2185,53 @@ MEDIA QUERIES
     padding: 20px 15px 30px;
   }
   /***********************************
+	COUNTERS STYLES
+	***********************************/
+  .counters {
+    padding: 50px 0 10px;
+  }
+  .counter-item {
+    margin: 0 0 40px;
+  }
+  .counter-item .lrg-num {
+    margin: 0;
+    font-size: 48px;
+    line-height: 60px;
+  }
+  /***********************************
+	TEAM STYLES
+	***********************************/
+  .leadership-head {
+    padding: 40px 0 10px;
+  }
+  .leadership-member {
+    padding: 40px 0;
+  }
+  .leadership-member .content {
+    margin: 30px 0 0;
+  }
+  .leadership-member .content .title {
+    font-size: 30px;
+  }
+  #marketing-team {
+    padding: 40px 0;
+  }
+  #marketing-team .section-title {
+    margin: 0;
+  }
+  .mk-team {
+    margin: 30px 0 0;
+  }
+  #join-team {
+    padding: 40px 0;
+  }
+  /***********************************
+	FINANCIAL-STRENGTH STYLES
+	***********************************/
+  .financial-strength {
+    padding: 40px 0 10px;
+  }
+  /***********************************
 	CONTACT STYLES
 	***********************************/
   .contact {
@@ -2074,6 +2335,41 @@ MEDIA QUERIES
     padding: 30px 0;
   }
   /***********************************
+	COUNTERS STYLES
+	***********************************/
+  .counters {
+    padding: 40px 0 0;
+  }
+  .counter-item .lrg-num {
+    font-size: 36px;
+    line-height: 50px;
+  }
+  /***********************************
+	TEAM STYLES
+	***********************************/
+  .leadership-head {
+    padding: 30px 0 0;
+  }
+  .leadership-member {
+    padding: 30px 0;
+  }
+  .leadership-member .content .position {
+    margin: 0 0 10px;
+  }
+  .mk-team {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  /***********************************
+	FINANCIAL-STRENGTH STYLES
+	***********************************/
+  .financial-strength {
+    padding: 30px 0 10px;
+  }
+  .financial-strength .section-title {
+    margin: 0 0 10px;
+  }
+  /***********************************
 	TEAM NAV STYLES
 	***********************************/
   .team-nav .team-nav-item h5 {
@@ -2169,6 +2465,9 @@ MEDIA QUERIES
 }
 
 @media only screen and (max-width: 480px) {
+  .col-xs {
+    width: 100%;
+  }
   /***********************************
 	ENTRY-HEADER STYLES
 	***********************************/

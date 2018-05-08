@@ -18,8 +18,9 @@ $base: #F5E221;
 $primary: #23275E;
 
 // FONTS
-$tinos: 'Tinos', serif;
+$tinos: "tinos",serif;
 $mont: "montserrat",sans-serif;
+$proxima: "proxima-nova-condensed",sans-serif; 
 
 // MIXIN
 @import 'mixin';
@@ -61,7 +62,7 @@ body {
 	margin: 0;
 	width: 100%;
 	height: 100%;
-	color: $black;
+	color: #1F1F22;
 	background: $white;
 	font: 300 16px/26px $mont;
 	@include letter-spacing(15, 16);
@@ -659,8 +660,101 @@ ABOUT STYLES
 	}
 }
 
+
 /***********************************
-TEAM NAV STYLES
+COUNTERS STYLES
+***********************************/
+.counters {
+	padding: 110px 0 38px;
+	background: $primary;
+}
+
+.counter-item {
+	margin: 0 0 85px;
+
+	.lrg-num {
+		color: $white;
+		margin: 0 0 5px;
+		font-size: 72px;
+		font-weight: 500;
+		line-height: 88px;
+		@include align-center;
+	}
+
+	h6 {
+		color: $base;
+		margin: 0 0 5px;
+		font-weight: 400;
+		font-family: $tinos;
+		@include letter-spacing(25, 18);
+	}
+
+	h4 {
+		color: $white;
+		font-style: italic;
+		@include letter-spacing(25, 36);
+	}
+
+	.separator {
+		margin: 0;
+		padding: 35px 0 0;
+	}
+}
+
+/***********************************
+FINANCIAL-STRENGTH STYLES
+***********************************/
+.financial-strength {
+	background: #F7F7F7;
+	padding: 100px 0 60px;
+
+	.section-title {
+		margin: 0 0 25px;
+		
+		.title {
+			letter-spacing: 0;
+		}
+	}
+
+	.content {
+		
+		p {
+			max-width: 525px;
+
+			span, a {
+				color: $primary;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.financial-list {
+
+		li {
+
+			.separator {
+				width: 40px;
+				padding: 15px 0 0;
+				margin: 0 10px 0 0;
+			}
+
+			.content {
+				overflow: hidden;
+
+				p {
+
+					span, a {
+						color: $primary;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
+/***********************************
+TEAM STYLES
 ***********************************/
 .team-nav {
 	padding: 0;
@@ -721,61 +815,129 @@ TEAM NAV STYLES
 	}
 }
 
-/***********************************
-TEAM STYLES
-***********************************/
+#team {
+	padding: 0;
+}
+
 .leadership-head {
+	padding: 66px 0 20px;
 	background: #BFBFBF;
 }
 
-.leadership {
+.leadership-member {
+	padding: 70px 0 90px;
+
+	.media {
+
+		img {
+
+			width: 100%;
+		}
+	}
+
+	.content {
+
+		.title {
+			color: $primary;
+			font-style: italic;
+			line-height: 54px;
+		}
+
+		.position {
+			color: #7B848E;
+			font-weight: 400;
+			margin: 0 0 15px;
+			@include letter-spacing(25, 24);	
+		}
+
+		p {
+			margin: 0;
+			max-width: 783px;
+		}
+	}
+
+	&:nth-child(even) {
+
+		.content {
+			margin-left: 30px;
+		}
+	}
 
 	&:nth-child(odd) {
 		background: #FAFAFA;
+
+		.content {
+
+			p {
+				max-width: 865px;
+			}
+		}
 	}
 }
 
-.join-team {
+#marketing-team {
+	padding: 110px 0;
+
+	.section-title {
+		margin: 0 0 40px;
+	}
+}
+
+.mk-team {
+	margin: 40px 0 0;
+	padding-left: 12.5px;
+	padding-right: 12.5px;
+	text-align: center;
+
+	.media {
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.content {
+		margin: 20px 0 0;
+
+		.name {
+			color: $primary;
+			font-size: 18px;
+			font-style: italic;
+		}
+
+		.position {
+			color: #7B848E;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 18px;
+			@include letter-spacing(25, 14);
+		}
+	}
+}
+
+#join-team {
+	padding: 60px 0;
 	overflow: hidden;
 	background: #FAFAFA;
-}
 
-/***********************************
-COUNTERS STYLES
-***********************************/
-.counters {
-	background: $primary;
-}
-
-.counter-item {
-	margin: 0 0 85px;
-
-	.lrg-num {
-		color: $white;
-		margin: 0 0 5px;
-		font-size: 72px;
-		font-weight: 500;
-		line-height: 88px;
-		@include align-center;
+	.section-title {
+		margin: 0 0 60px;
 	}
 
-	h6 {
-		color: $base;
-		margin: 0 0 5px;
-		font-weight: 400;
-		font-family: $tinos;
-		@include letter-spacing(25, 18);
-	}
+	.content {
 
-	h4 {
-		color: $white;
-		font-style: italic;
-		@include letter-spacing(25, 36);
-	}
+		p {
+			max-width: 420px;
 
-	.separator {
-		margin: 0;
-		padding: 35px 0 0;
+			a, span {
+				color: #1F1F22;
+				font-weight: 700;
+
+				&:hover, &:focus {
+					color: $base;
+				}
+			}
+		}
 	}
 }
 
