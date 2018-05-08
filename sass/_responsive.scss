@@ -111,10 +111,13 @@ MEDIA QUERIES
 		}
 
 		.arrow {
-			width: 55px;
-    		height: 55px;
-			font-size: 20px;
-			margin: 30px auto 0;
+			
+			button {
+				width: 55px;
+	    		height: 55px;
+				font-size: 20px;
+				margin: 30px auto 0;
+			}
 		}
 	}
 
@@ -185,6 +188,10 @@ MEDIA QUERIES
 	***********************************/
 	.contact {
 		padding: 80px 0;
+	}
+
+	#locations {
+		padding: 70px 0;
 	}
 
 	/***********************************
@@ -529,10 +536,13 @@ MEDIA QUERIES
 		}
 		
 		.arrow {
-			width: 55px;
-    		height: 55px;
-			font-size: 20px;
-			margin: 30px auto 0;
+			
+			button {
+				width: 55px;
+    			height: 55px;
+				font-size: 20px;
+				margin: 30px auto 0;
+			}
 		}
 	}
 
@@ -640,9 +650,42 @@ MEDIA QUERIES
 	/***********************************
 	CONTACT STYLES
 	***********************************/
-	.contact {
+	.contact, .contact-us {
 		padding: 50px 0;
 	}
+
+	.contact-us {
+
+		.section-title {
+			padding: 0 0 10px;
+		}
+	}
+
+	.single-location {
+
+		&:nth-child(3n+3) {
+			border-bottom: 1px solid $black;
+		}
+
+		&:nth-child(5), &:nth-child(6) {
+			border-bottom: 0;
+		}
+	}
+
+	#locations {
+		padding: 50px 0;
+
+		.separator {
+		    padding: 40px 0 0;
+		}
+	}
+
+	.back-top {
+
+		.content {
+			padding: 0 0 5px;
+		}
+	} 
 
 	/***********************************
 	SERVICES STYLES
@@ -944,7 +987,6 @@ MEDIA QUERIES
 	/***********************************
 	EQIPMENTS STYLES
 	***********************************/
-
 	.specifications {
 
 		.section-title {
@@ -968,6 +1010,58 @@ MEDIA QUERIES
 			}
 		}
 	}
+
+	.contact-us {
+		padding: 40px 0;
+
+		.content {
+			margin: 0 0 30px;
+		}
+	}
+
+	.single-location {
+
+		&:nth-child(2n+2) {
+			border-bottom: 1px solid $black;
+		}
+
+		.icon {
+			margin: 0 0 40px;
+		}
+	}
+
+	#locations {
+		padding: 40px 0;
+
+		.section-title {
+
+			.separator {
+				padding: 15px 0 0;
+			}
+		}
+
+		.location-item {
+
+			&:last-child {
+				margin-bottom: 30px;
+			}
+
+			.location {
+			    margin: 20px 0 0;
+			}
+		}
+	}
+
+	.back-top {
+
+		.content {
+			padding: 2px 0;
+
+			h6 {
+				margin: 15px 0 0;
+			}
+		}
+	} 
 
 	/***********************************
 	FOOTER STYLES
@@ -1177,9 +1271,9 @@ MEDIA QUERIES
 	/***********************************
 	TEAM STYLES
 	***********************************/
-	.team-nav {
+	.section-nav {
 
-		.team-nav-item {
+		.nav-item {
 
 			h5 {
 				margin-right: 30px;
@@ -1242,7 +1336,10 @@ MEDIA QUERIES
 		}
 
 		.arrow {
-			margin: 0;
+			
+			button {
+				margin: 0;
+			}
 		}
 	}
 
@@ -1263,6 +1360,75 @@ MEDIA QUERIES
 
 			.btn {
 				margin: 10px 0 0;
+			}
+		}
+	}
+
+	.contact-us {
+		padding: 30px 0;
+
+		.section-title {
+			padding: 0;
+		}
+
+		.content {
+
+			ul {
+
+				li {
+					margin: 0 0 15px;
+
+					h5 {
+						margin: 10px 0 0;
+					}
+
+					h6 {
+						margin: 0;
+						line-height: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	.single-location {
+
+		.icon {
+			
+			i {
+				width: 60px;
+				height: 60px;
+
+				&.icon-samerica {
+
+					&:before {
+						display: block;
+						margin-top: -15px;
+					}
+				}
+			}
+		}
+	}
+
+	#locations {
+		padding: 30px 0;
+
+		.section-title {
+
+			.separator {
+				padding: 10px 0 0;
+				margin-bottom: 15px;
+			}
+		}
+
+		.separator {
+		    padding: 25px 0 0;
+		}
+
+		.location-item {
+
+			.location {
+			   
 			}
 		}
 	}
@@ -1315,9 +1481,9 @@ MEDIA QUERIES
 	/***********************************
 	TEAM NAV STYLES
 	***********************************/
-	.team-nav {
+	.section-nav {
 
-		.team-nav-item {
+		.nav-item {
 			width: 100%;
 			padding: 25px 15px;
 
@@ -1414,9 +1580,12 @@ MEDIA QUERIES
 		}
 
 		.arrow {
-			width: 50px;
-		    height: 50px;
-		    font-size: 18px;
+			
+			button {
+				width: 50px;
+			    height: 50px;
+			    font-size: 18px;
+			}
 		}
 	}
 

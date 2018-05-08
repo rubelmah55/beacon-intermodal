@@ -77,6 +77,30 @@ BASE STYLES
   content: "\6a";
 }
 
+.icon-asia:before {
+  content: url(images/icon-asia.svg);
+}
+
+.icon-africa:before {
+  content: url(images/icon-africa.svg);
+}
+
+.icon-europe:before {
+  content: url(images/icon-europe.svg);
+}
+
+.icon-meast:before {
+  content: url(images/icon-meast.svg);
+}
+
+.icon-namerica:before {
+  content: url(images/icon-namerica.svg);
+}
+
+.icon-samerica:before {
+  content: url(images/icon-samerica.svg);
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -886,16 +910,16 @@ FINANCIAL-STRENGTH STYLES
 /***********************************
 TEAM STYLES
 ***********************************/
-.team-nav {
+.section-nav {
   padding: 0;
   overflow: hidden;
 }
 
-.team-nav .container-fluid {
+.section-nav .container-fluid {
   padding: 0;
 }
 
-.team-nav .team-nav-item {
+.section-nav .nav-item {
   text-align: center;
   padding: 33px 15px;
   background: #1C204D;
@@ -906,11 +930,11 @@ TEAM STYLES
   transition: all 0.3s;
 }
 
-.team-nav .team-nav-item + .team-nav-item {
+.section-nav .nav-item + .nav-item {
   border-left: 1px solid #000;
 }
 
-.team-nav .team-nav-item h5 {
+.section-nav .nav-item h5 {
   color: #FFF;
   font-style: italic;
   margin-right: 60px;
@@ -918,7 +942,7 @@ TEAM STYLES
   letter-spacing: 0.6px;
 }
 
-.team-nav .team-nav-item .icon {
+.section-nav .nav-item .icon {
   width: 34px;
   height: 34px;
   color: #23275E;
@@ -941,20 +965,20 @@ TEAM STYLES
   transition: all 0.3s ease;
 }
 
-.team-nav .team-nav-item .icon i:before {
+.section-nav .nav-item .icon i:before {
   display: block;
   margin-right: 1px;
 }
 
-.team-nav .team-nav-item:hover, .team-nav .team-nav-item:focus {
+.section-nav .nav-item:hover, .section-nav .nav-item:focus {
   background: #23275E;
 }
 
-.team-nav .team-nav-item:hover h5, .team-nav .team-nav-item:focus h5 {
+.section-nav .nav-item:hover h5, .section-nav .nav-item:focus h5 {
   color: #F5E221;
 }
 
-.team-nav .team-nav-item:hover .icon, .team-nav .team-nav-item:focus .icon {
+.section-nav .nav-item:hover .icon, .section-nav .nav-item:focus .icon {
   margin-left: 10px;
 }
 
@@ -1107,7 +1131,7 @@ FEATURES STYLES
   text-transform: uppercase;
 }
 
-.feature .arrow {
+.feature .arrow button {
   width: 60px;
   height: 60px;
   color: #FFF;
@@ -1115,6 +1139,7 @@ FEATURES STYLES
   margin: 40px auto 0;
   border-radius: 500px;
   border: 2px solid #F5E221;
+  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1441,6 +1466,230 @@ CONTACT STYLES
 .contact .content ul.serving li a {
   color: #23275E;
   text-decoration: underline;
+}
+
+.contact-us {
+  padding: 68px 0;
+  overflow: hidden;
+}
+
+.contact-us .section-title {
+  padding: 0 0 30px;
+}
+
+.contact-us .content ul li {
+  margin: 0 0 30px;
+}
+
+.contact-us .content ul li h6 {
+  color: #7B848E;
+  margin: 0 0 5px;
+  font-weight: 400;
+  line-height: 30px;
+  font-family: "montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+.contact-us .content ul li h5 {
+  margin: 15px 0 0;
+  font-weight: 300;
+  line-height: 30px;
+  font-family: "montserrat", sans-serif;
+}
+
+.contact-us .content ul li p, .contact-us .content ul li a {
+  margin: 0;
+  color: #1F1F22;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.contact-us .content ul li .adress {
+  color: #1F1F22;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.contact-us .content ul li a:hover, .contact-us .content ul li a:focus {
+  color: #F5E221;
+}
+
+.single-location {
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.single-location .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.single-location .icon i {
+  width: 70px;
+  height: 70px;
+}
+
+.single-location .content h5 {
+  color: #FFF;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 24px;
+  letter-spacing: 0.6px;
+}
+
+.single-location .arrow button {
+  border: 0;
+  color: #23275E;
+  font-size: 15px;
+  background: #F5E221;
+  width: 34px !important;
+  height: 34px !important;
+  -webkit-transform: translatey(0);
+  -moz-transform: translatey(0);
+  -ms-transform: translatey(0);
+  -o-transform: translatey(0);
+  transform: translatey(0);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.single-location .arrow button i:before {
+  margin-right: 1px;
+}
+
+.single-location:hover .arrow button, .single-location:focus .arrow button {
+  -webkit-transform: translatey(5px);
+  -moz-transform: translatey(5px);
+  -ms-transform: translatey(5px);
+  -o-transform: translatey(5px);
+  transform: translatey(5px);
+}
+
+#locations {
+  padding: 90px 0;
+  overflow: hidden;
+}
+
+#locations .separator {
+  padding: 50px 0 0;
+  margin-bottom: 25px;
+}
+
+#locations .separator:before {
+  height: 1px;
+}
+
+#locations .separator:after {
+  content: none;
+}
+
+#locations .section-title .separator {
+  padding: 20px 0 0;
+}
+
+#locations .location-item .title {
+  color: #23275E;
+  font-weight: 700;
+  line-height: 22px;
+  font-family: "montserrat", sans-serif;
+  letter-spacing: 0.45px;
+}
+
+#locations .location-item .location .name, #locations .location-item .location .lc-name, #locations .location-item .location ul li, #locations .location-item .location ul li a {
+  color: #1F1F22;
+}
+
+#locations .location-item .location .name {
+  font-weight: 300;
+  line-height: 30px;
+  font-family: "montserrat", sans-serif;
+}
+
+#locations .location-item .location .lc-name {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+#locations .location-item .location ul li {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+#locations .location-item .location ul li a:hover, #locations .location-item .location ul li a:focus {
+  color: #F5E221;
+}
+
+.back-top {
+  padding: 0;
+  position: relative;
+  background: #F5E221;
+}
+
+.back-top .content {
+  display: block;
+  text-align: center;
+  padding: 0 0 10px;
+}
+
+.back-top .content .icon {
+  left: 0;
+  right: 0;
+  top: -19px;
+  width: 38px;
+  height: 38px;
+  color: #FFF;
+  margin: 0 auto;
+  font-size: 15px;
+  position: absolute;
+  background: #23275E;
+  border-radius: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.back-top .content h6 {
+  display: block;
+  color: #23275E;
+  font-weight: 700;
+  margin: 30px 0 0;
+  line-height: 42px;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.back-top .content:hover .icon, .back-top .content:focus .icon {
+  top: -22px;
 }
 
 .gform_confirmation_message {
@@ -1899,7 +2148,7 @@ MEDIA QUERIES
     font-size: 70px;
     margin: 0 0 20px;
   }
-  .feature .arrow {
+  .feature .arrow button {
     width: 55px;
     height: 55px;
     font-size: 20px;
@@ -1953,6 +2202,9 @@ MEDIA QUERIES
 	***********************************/
   .contact {
     padding: 80px 0;
+  }
+  #locations {
+    padding: 70px 0;
   }
   /***********************************
 	FOOTER STYLES
@@ -2229,7 +2481,7 @@ MEDIA QUERIES
   .feature:nth-child(4n+1), .feature:nth-child(4n+2) {
     border-bottom: 1px solid #000;
   }
-  .feature .arrow {
+  .feature .arrow button {
     width: 55px;
     height: 55px;
     font-size: 20px;
@@ -2306,8 +2558,26 @@ MEDIA QUERIES
   /***********************************
 	CONTACT STYLES
 	***********************************/
-  .contact {
+  .contact, .contact-us {
     padding: 50px 0;
+  }
+  .contact-us .section-title {
+    padding: 0 0 10px;
+  }
+  .single-location:nth-child(3n+3) {
+    border-bottom: 1px solid #000;
+  }
+  .single-location:nth-child(5), .single-location:nth-child(6) {
+    border-bottom: 0;
+  }
+  #locations {
+    padding: 50px 0;
+  }
+  #locations .separator {
+    padding: 40px 0 0;
+  }
+  .back-top .content {
+    padding: 0 0 5px;
   }
   /***********************************
 	SERVICES STYLES
@@ -2530,6 +2800,36 @@ MEDIA QUERIES
   .contact .content ul.serving {
     margin-bottom: 0;
   }
+  .contact-us {
+    padding: 40px 0;
+  }
+  .contact-us .content {
+    margin: 0 0 30px;
+  }
+  .single-location:nth-child(2n+2) {
+    border-bottom: 1px solid #000;
+  }
+  .single-location .icon {
+    margin: 0 0 40px;
+  }
+  #locations {
+    padding: 40px 0;
+  }
+  #locations .section-title .separator {
+    padding: 15px 0 0;
+  }
+  #locations .location-item:last-child {
+    margin-bottom: 30px;
+  }
+  #locations .location-item .location {
+    margin: 20px 0 0;
+  }
+  .back-top .content {
+    padding: 2px 0;
+  }
+  .back-top .content h6 {
+    margin: 15px 0 0;
+  }
   /***********************************
 	FOOTER STYLES
 	***********************************/
@@ -2662,7 +2962,7 @@ MEDIA QUERIES
   /***********************************
 	TEAM STYLES
 	***********************************/
-  .team-nav .team-nav-item h5 {
+  .section-nav .nav-item h5 {
     margin-right: 30px;
   }
   .service-details {
@@ -2704,7 +3004,7 @@ MEDIA QUERIES
     -o-flex-positive: 1;
     flex-grow: 1;
   }
-  .feature .arrow {
+  .feature .arrow button {
     margin: 0;
   }
   /***********************************
@@ -2718,6 +3018,40 @@ MEDIA QUERIES
   }
   .contact .content .btn {
     margin: 10px 0 0;
+  }
+  .contact-us {
+    padding: 30px 0;
+  }
+  .contact-us .section-title {
+    padding: 0;
+  }
+  .contact-us .content ul li {
+    margin: 0 0 15px;
+  }
+  .contact-us .content ul li h5 {
+    margin: 10px 0 0;
+  }
+  .contact-us .content ul li h6 {
+    margin: 0;
+    line-height: 20px;
+  }
+  .single-location .icon i {
+    width: 60px;
+    height: 60px;
+  }
+  .single-location .icon i.icon-samerica:before {
+    display: block;
+    margin-top: -15px;
+  }
+  #locations {
+    padding: 30px 0;
+  }
+  #locations .section-title .separator {
+    padding: 10px 0 0;
+    margin-bottom: 15px;
+  }
+  #locations .separator {
+    padding: 25px 0 0;
   }
   /***********************************
 	FOOTER STYLES
@@ -2748,14 +3082,14 @@ MEDIA QUERIES
   /***********************************
 	TEAM NAV STYLES
 	***********************************/
-  .team-nav .team-nav-item {
+  .section-nav .nav-item {
     width: 100%;
     padding: 25px 15px;
   }
-  .team-nav .team-nav-item:not(:last-child) {
+  .section-nav .nav-item:not(:last-child) {
     border-bottom: 1px solid #000;
   }
-  .team-nav .team-nav-item .icon i:before {
+  .section-nav .nav-item .icon i:before {
     margin-right: 0;
   }
   /***********************************
@@ -2815,7 +3149,7 @@ MEDIA QUERIES
   .feature h3 {
     font-size: 24px;
   }
-  .feature .arrow {
+  .feature .arrow button {
     width: 50px;
     height: 50px;
     font-size: 18px;

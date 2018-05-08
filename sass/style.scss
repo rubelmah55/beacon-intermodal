@@ -760,7 +760,7 @@ FINANCIAL-STRENGTH STYLES
 /***********************************
 TEAM STYLES
 ***********************************/
-.team-nav {
+.section-nav {
 	padding: 0;
 	overflow: hidden;
 
@@ -768,13 +768,13 @@ TEAM STYLES
 		padding: 0;
 	}
 
-	.team-nav-item {
+	.nav-item {
 		text-align: center;
 		padding: 33px 15px;
 		background: #1C204D;
 		@include transition(all 0.3s);
 
-		+ .team-nav-item {
+		+ .nav-item {
 			border-left: 1px solid $black;
 		}
 
@@ -987,15 +987,19 @@ FEATURES STYLES
 	}
 
 	.arrow {
-		width: 60px;
-		height: 60px;
-		color: $white;
-		font-size: 24px;
-		margin: 40px auto 0;
-		border-radius: 500px;
-		border: 2px solid $base;
-		@include align-center;
-		@include transition(all 0.3s ease);
+		
+		button {
+			width: 60px;
+			height: 60px;
+			color: $white;
+			font-size: 24px;
+			margin: 40px auto 0;
+			border-radius: 500px;
+			border: 2px solid $base;
+			background-color: transparent;
+			@include align-center;
+			@include transition(all 0.3s ease);
+		}
 	}
 }
 
@@ -1363,6 +1367,251 @@ CONTACT STYLES
 						text-decoration: underline;
 					}
 				}
+			}
+		}
+	}
+}
+
+.contact-us {
+	padding: 68px 0;
+	overflow: hidden;
+
+	.section-title {
+		padding: 0 0 30px;
+	}
+
+	.content {
+
+		ul {
+
+			li {
+				margin: 0 0 30px;
+
+				h6 {
+					color: #7B848E;
+					margin: 0 0 5px;
+					font-weight: 400;
+					line-height: 30px;
+					font-family: $mont;
+					text-transform: uppercase;
+				}
+
+				h5 {
+					margin: 15px 0 0;
+					font-weight: 300;
+					line-height: 30px;
+					font-family: $mont;
+				}
+
+				p, a {
+					margin: 0;
+					color: #1F1F22;
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 30px;
+				}
+
+				.adress {
+					color: #1F1F22;
+					font-size: 14px;
+					font-weight: 700;
+					line-height: 30px;
+					text-transform: uppercase;
+					@include letter-spacing(50, 14);
+				}
+
+				a {
+
+					&:hover, &:focus {
+						color: $base;
+					}
+				}
+			}
+		}
+	}
+}
+
+.single-location {
+	padding-top: 30px;
+	padding-bottom: 40px;
+
+	.icon {
+		@include align-center;
+
+		i {
+			width: 70px;
+			height: 70px;
+		}
+	}
+
+	.content {
+
+		h5 {
+			color: $white;
+			font-weight: 700;
+			font-style: italic;
+			font-size: 24px;
+			@include letter-spacing(25, 24);
+		}
+	}
+
+	.arrow {
+
+		button {
+			border: 0;
+			color: $primary;
+			font-size: 15px;
+			background: $base;
+			width: 34px !important;
+			height: 34px !important;
+			-webkit-transform: translatey(0);
+			-moz-transform: translatey(0);
+			-ms-transform: translatey(0);
+			-o-transform: translatey(0);
+			transform: translatey(0);
+			@include transition(all 0.3s);
+
+			i {
+				&:before {
+					margin-right: 1px;
+				}
+			}
+		}
+	}
+
+	&:hover, &:focus {
+
+		.arrow {
+
+			button {
+				-webkit-transform: translatey(5px);
+				-moz-transform: translatey(5px);
+				-ms-transform: translatey(5px);
+				-o-transform: translatey(5px);
+				transform: translatey(5px);
+			}
+		}
+	}
+}
+
+#locations {
+	padding: 90px 0;
+	overflow: hidden;
+
+	.separator {
+		padding: 50px 0 0;
+    	margin-bottom: 25px;
+
+		&:before {
+			height: 1px;
+		}
+		&:after {
+			content: none;
+		}
+	}
+
+	.section-title {
+
+		.separator {
+			padding: 20px 0 0;
+		}
+	}
+
+	.location-item {
+
+		.title {
+			color: $primary;
+			font-weight: 700;
+			line-height: 22px;
+			font-family: $mont;
+			@include letter-spacing(25, 18);
+		}
+
+		.location {
+
+			.name, .lc-name, ul li, ul li a {
+				color: #1F1F22;
+			}
+
+			.name {
+				font-weight: 300;
+				line-height: 30px;
+				font-family: $mont;
+			}
+
+			.lc-name {
+				font-size: 14px;
+				font-weight: 700;
+				line-height: 30px;
+				text-transform: uppercase;
+				@include letter-spacing(50, 14);
+			}
+
+			ul {
+
+				li {
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 30px;
+
+					a {
+
+						&:hover, &:focus {
+							color: $base;
+						}
+
+					}
+				}
+			}
+		}
+	}
+}
+
+.contact-information {
+
+}
+
+.back-top {
+	padding: 0;
+	position: relative;
+	background: $base;
+
+	.content {
+		display: block;
+		text-align: center;
+		padding: 0 0 10px;
+
+		.icon {
+			left: 0;
+			right: 0;
+			top: -19px;
+			width: 38px;
+			height: 38px;
+			color: $white;
+			margin: 0 auto;
+			font-size: 15px;
+			position: absolute;
+			background: $primary;
+			border-radius: 500px;
+			@include align-center;
+			@include transition(all 0.3s);
+		}
+
+		h6 {
+			display: block;
+			color: $primary;
+			font-weight: 700;
+			margin: 30px 0 0;
+			line-height: 42px;
+			font-style: italic;
+			text-transform: uppercase;
+			@include letter-spacing(25, 24);
+		}
+
+		&:hover, &:focus {
+			
+			.icon {
+				top: -22px;
 			}
 		}
 	}
