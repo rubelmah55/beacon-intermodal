@@ -4,15 +4,21 @@ Template Name: Home
 */
 get_header(); ?>
 
+	<?php $banner = get_field('home_banner'); if ($banner): $bannerImg = $banner['image'] ? $banner['image'] : get_template_directory_uri().'/images/banner.jpg'; ?>
 	<section class="banner align-center-v videoBg">
-		<video autoplay muted loop class="myVideo coverbg" poster="<?php echo get_template_directory_uri(); ?>/images/banner.jpg"><source src="<?php echo get_template_directory_uri(); ?>/images/Beacon-Intermodal-Video.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+		<video autoplay muted loop class="myVideo coverbg" poster="<?php echo $bannerImg; ?>"><source src="<?php echo $banner['video']; ?>" type="video/mp4">Your browser does not support HTML5 video.</video>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<div class="content">
-						<h1 class="text-uppercase">Discover the  Beacon Advantage</h1>
+						<?php if ($banner['title']): ?>
+						<h1 class="text-uppercase"><?php echo $banner['title']; ?></h1>
 						<span class="separator left lg"><span></span></span>
-						<p>Financial strength. Dependable suppliers. Global network. Commitment to service.</p>
+						<?php endif; ?>
+
+						<?php if ($banner['description']): ?>
+						<?php echo $banner['description']; ?>
+						<?php endif; ?>
 
 						<a class="scrollDown"><i class="icon-arrow-down"></i></a>
 					</div>
@@ -20,18 +26,22 @@ get_header(); ?>
 			</div>
 		</div>
 	</section><!-- /banner -->
+	<?php endif; ?>
 
 	<div id="primary" class="content-area">
 
-		<section class="about coverbg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/about.png);">
+		<?php $about = get_field('home_about'); if ($about): ?>
+		<section class="about coverbg" style="background-image: url(<?php echo $about; ?>);">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12 text-center">
+						<?php if ($about['sub_title'] || $about['title']): ?>
 						<div class="section-title">
 							<h6 class="sub-title text-uppercase">About Us</h6>
 							<h3 class="title text-uppercase">A Global Leader</h3>
 							<span class="separator"><span></span></span>
 						</div>
+						<?php endif; ?>
 
 						<p>Beacon Intermodal Leasing, LLC (“Beacon”) is an industry leading lessor of intermodal cargo containers. We specialize in offering tailored leasing options for both dry and refrigerated containers to the world’s shipping companies.</p>
 
@@ -40,6 +50,7 @@ get_header(); ?>
 				</div>
 			</div>
 		</section><!-- /about -->
+		<?php endif; ?>
 
 		<section class="features">
 			<div class="container-fluid">

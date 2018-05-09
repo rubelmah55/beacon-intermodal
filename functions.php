@@ -165,6 +165,69 @@ function form_submit_button($button, $form){
 }
 add_filter("gform_submit_button", "form_submit_button", 10, 2);
 
+/*** ACF not working use jquery */
+function hide_editor_custom_js() {
+    echo '<script type="text/javascript">
+            jQuery(document).ready(function(){
+                jQuery("#page_template").change( function() {
+                    jQuery("#_home_page_options").hide();
+                    jQuery("#postdivrich").show();
+                    switch( jQuery( this ).val() ) {
+                        case "t_home.php":
+                          jQuery("#_home_page_options").show();
+                          jQuery("#postdivrich").hide();
+                        break;
+                        case "t_services.php":
+                          jQuery("#_home_page_options").show();
+                          jQuery("#postdivrich").hide();
+                        break;
+                    }
+                }).change();
+            });
+        </script>';
+}
+add_action('admin_head', 'hide_editor_custom_js');
+
+/*** get permalink by template */
+function perm_by_temp($t){
+  $args = array(
+      'post_type' => 'page',
+      'posts_per_page' => 1,
+      'meta_query' => array(
+          array(
+              'key' => '_wp_page_template',
+              'value' => $t
+          )
+      )
+  );
+  $contact_page = new WP_Query( $args );
+
+  if( ! empty( $contact_page->posts ) ) {
+      return get_permalink( $contact_page->post->ID );
+  }
+}
+
+/*** Get all page id */ 
+function getPageID() {
+  global $post;
+  $postid = $post->ID;
+  if(is_home() && get_option('page_for_posts')) {
+    $postid = get_option('page_for_posts');
+  }
+
+  return $postid;
+}
+
+/*** Customized header title */
+function customizedtitle($title){
+  if(is_category() || is_author()){
+    return get_the_archive_title();
+  } else if( is_search()){
+    return sprintf( esc_html__( 'Search Results for: %s', 'beacon' ), '<strong>' . get_search_query() . '</strong>' ); 
+  }
+  return $title;
+}
+
 /*** Breadcrumb */
 function beacon_breadcrumb() {
 
@@ -275,63 +338,4 @@ function beacon_breadcrumb() {
     }
     echo '</nav>';
    } 
-}
-
-/*** ACF not working use jquery */
-function hide_editor_custom_js() {
-    echo '<script type="text/javascript">
-            jQuery(document).ready(function(){
-                jQuery("#page_template").change( function() {
-                    jQuery("#_home_page_options").hide();
-                    jQuery("#postdivrich").show();
-                    switch( jQuery( this ).val() ) {
-                        case "t_services.php":
-                          jQuery("#_home_page_options").show();
-                          jQuery("#postdivrich").hide();
-                        break;
-                    }
-                }).change();
-            });
-        </script>';
-}
-add_action('admin_head', 'hide_editor_custom_js');
-
-/*** get permalink by template */
-function perm_by_temp($t){
-  $args = array(
-      'post_type' => 'page',
-      'posts_per_page' => 1,
-      'meta_query' => array(
-          array(
-              'key' => '_wp_page_template',
-              'value' => $t
-          )
-      )
-  );
-  $contact_page = new WP_Query( $args );
-
-  if( ! empty( $contact_page->posts ) ) {
-      return get_permalink( $contact_page->post->ID );
-  }
-}
-
-/*** Get all page id */ 
-function getPageID() {
-  global $post;
-  $postid = $post->ID;
-  if(is_home() && get_option('page_for_posts')) {
-    $postid = get_option('page_for_posts');
-  }
-
-  return $postid;
-}
-
-/*** Customized header title */
-function customizedtitle($title){
-  if(is_category() || is_author()){
-    return get_the_archive_title();
-  } else if( is_search()){
-    return sprintf( esc_html__( 'Search Results for: %s', 'beacon' ), '<strong>' . get_search_query() . '</strong>' ); 
-  }
-  return $title;
 }
