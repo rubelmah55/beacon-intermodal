@@ -14,7 +14,8 @@ if ( ! function_exists( 'beacon_setup' ) ) {
 
         /** This theme uses wp_nav_menu() in one location. */
         register_nav_menus( array(
-          'menu-1' => esc_html__( 'Primary menu', 'beacon' )
+          'menu-1' => esc_html__( 'Primary menu', 'beacon' ),
+          'menu-2' => esc_html__( 'Footer menu', 'beacon' )
         ) );
 
     }
@@ -27,7 +28,7 @@ function beacon_scripts() {
   /*** Enqueue styles. */
   wp_enqueue_style('adobe-typekit', 'https://use.typekit.net/pmr4pqg.css', array(), false, 'all');
   wp_enqueue_style('plugins', get_template_directory_uri() . '/css/plugins.css', array(), date("ymd-Gis", filemtime( get_template_directory() . '/css/plugins.css' )), 'all');
-  wp_enqueue_style( 'genisys-style', get_stylesheet_uri(), array(), date("ymd-Gis", filemtime( get_stylesheet_directory())));
+  wp_enqueue_style( 'beacon-style', get_stylesheet_uri(), array(), date("ymd-Gis", filemtime( get_stylesheet_directory())));
 
   /*** Enqueue scripts. */
   wp_enqueue_script('jquery');
@@ -35,6 +36,21 @@ function beacon_scripts() {
   wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js', array(), date("ymd-Gis", filemtime( get_template_directory() . '/js/scripts.js' )), true);
 }
 add_action( 'wp_enqueue_scripts', 'beacon_scripts' );
+
+/*** Register and enqueue a custom stylesheet in the WordPress admin. */
+function genisys_scripts_admin() {
+    wp_enqueue_style('icon-fonts', get_template_directory_uri() . '/css/icon_fonts.css', array(), false, 'all');
+}
+add_action( 'admin_enqueue_scripts', 'genisys_scripts_admin' );
+
+/**
+ * Custom css
+ *
+ */ 
+function valley_insurance_admin_custom_css() {
+    echo '<style type="text/css">#acf-group_5a2badeb476ba .hndle {background: #23275E; color: #FFF;}</style>';
+}
+add_action('admin_head', 'valley_insurance_admin_custom_css');
 
 /**
  * Dashboard google map api key support.
@@ -55,9 +71,12 @@ function reorder_admin_menu( $__return_true ) {
          'index.php',                 // Dashboard
          'separator1',                // --Space--
          'acf-options',               // ACF Theme Settings
-         'edit.php?post_type=page',   // Pages 
+         'edit.php?post_type=page',   // Pages
          'edit.php',                  // Posts
          'separator2',                // --Space--
+         'edit.php?post_type=team',   // Team
+         'edit.php?post_type=service',// Service
+         'edit.php?post_type=equipment',// Equipment
          'gf_edit_forms',             // Gravity Forms
          'upload.php',                // Media
          'wpseo_dashboard',           // Yoasta
@@ -147,7 +166,7 @@ function form_submit_button($button, $form){
 add_filter("gform_submit_button", "form_submit_button", 10, 2);
 
 /*** Breadcrumb */
-function genisys_breadcrumb() {
+function beacon_breadcrumb() {
 
   $delimiter = '<span class="angle-right">></span>';
   $home = 'Home'; 
@@ -256,4 +275,63 @@ function genisys_breadcrumb() {
     }
     echo '</nav>';
    } 
+}
+
+/*** ACF not working use jquery */
+function hide_editor_custom_js() {
+    echo '<script type="text/javascript">
+            jQuery(document).ready(function(){
+                jQuery("#page_template").change( function() {
+                    jQuery("#_home_page_options").hide();
+                    jQuery("#postdivrich").show();
+                    switch( jQuery( this ).val() ) {
+                        case "t_services.php":
+                          jQuery("#_home_page_options").show();
+                          jQuery("#postdivrich").hide();
+                        break;
+                    }
+                }).change();
+            });
+        </script>';
+}
+add_action('admin_head', 'hide_editor_custom_js');
+
+/*** get permalink by template */
+function perm_by_temp($t){
+  $args = array(
+      'post_type' => 'page',
+      'posts_per_page' => 1,
+      'meta_query' => array(
+          array(
+              'key' => '_wp_page_template',
+              'value' => $t
+          )
+      )
+  );
+  $contact_page = new WP_Query( $args );
+
+  if( ! empty( $contact_page->posts ) ) {
+      return get_permalink( $contact_page->post->ID );
+  }
+}
+
+/*** Get all page id */ 
+function getPageID() {
+  global $post;
+  $postid = $post->ID;
+  if(is_home() && get_option('page_for_posts')) {
+    $postid = get_option('page_for_posts');
+  }
+
+  return $postid;
+}
+
+/*** Customized header title */
+function customizedtitle($title){
+  if(is_category() || is_author()){
+    return get_the_archive_title();
+  } else if( is_search()){
+    return sprintf( esc_html__( 'Search Results for: %s', 'beacon' ), '<strong>' . get_search_query() . '</strong>' ); 
+  }
+  return $title;
 }

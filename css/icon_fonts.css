@@ -27,7 +27,9 @@
 }
 
 [class^="icon-"]:before,
-[class*=" icon-"]:before {
+[class*=" icon-"]:before,
+.dashicons-icon-service:before,
+.dashicons-icon-suppliers:before {
   font-family: "beacon-intermodal" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -52,13 +54,15 @@
 .icon-network:before {
   content: "\66";
 }
-.icon-service:before {
+.icon-service:before,
+.dashicons-icon-service:before {
   content: "\67";
 }
 .icon-strength:before {
   content: "\68";
 }
-.icon-suppliers:before {
+.icon-suppliers:before,
+.dashicons-icon-suppliers:before {
   content: "\69";
 }
 .icon-user:before {

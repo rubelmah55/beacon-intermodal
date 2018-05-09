@@ -17,14 +17,14 @@ get_header();
 						<div class="basic basic_single">
 							<div class="col-md-12">
 									<?php if( get_sub_field('enable_basic_title') ): ?>
-									<h2 style="text-align:<?php echo the_sub_field('basic_center_title'); ?>;"><?php echo the_sub_field('basic_title'); ?></h2>
+									<h3 style="text-align:<?php echo the_sub_field('basic_center_title'); ?>;"><?php echo the_sub_field('basic_title'); ?></h3>
 									<?php endif; ?>
 									<div style="text-align:<?php echo the_sub_field('basic_text_center'); ?>;"><?php echo get_sub_field('basic_text'); ?></div>
 									<?php if( get_sub_field('enable_internal_basic_button') ): ?>
-										<a href="<?php echo the_sub_field('basic_internal_button_link'); ?>" class="btn-block btn btn-pink-border"><span><?php echo the_sub_field('basic_internal_button_title'); ?></span></a>
+										<a href="<?php echo the_sub_field('basic_internal_button_link'); ?>" class="btn-block btn btn-pink-border text-uppercase"><span><?php echo the_sub_field('basic_internal_button_title'); ?></span></a>
 									<?php endif; ?>
 									<?php if( get_sub_field('enable_external_basic_button') ): ?>
-										<a href="<?php echo the_sub_field('basic_external_button_link'); ?>" class="btn-block btn btn-pink-border" target="_blank"><span><?php echo the_sub_field('basic_external_button_title'); ?></span></a>
+										<a href="<?php echo the_sub_field('basic_external_button_link'); ?>" class="btn-block btn btn-pink-border text-uppercase" target="_blank"><span><?php echo the_sub_field('basic_external_button_title'); ?></span></a>
 									<?php endif; ?>
 							</div>
 						</div>
@@ -39,14 +39,14 @@ get_header();
 							</div>
 							<div class="col-md-6">
 									<?php if( get_sub_field('enable_basic_title') ): ?>
-										<h2 style="text-align:<?php echo the_sub_field('basic_center_title'); ?>;"><?php echo the_sub_field('basic_title'); ?></h2>
+										<h3 style="text-align:<?php echo the_sub_field('basic_center_title'); ?>;"><?php echo the_sub_field('basic_title'); ?></h3>
 									<?php endif; ?>
 									<div style="text-align:<?php echo the_sub_field('basic_text_center'); ?>;"><?php echo get_sub_field('basic_text'); ?></div>
 									<?php if( get_sub_field('enable_internal_basic_button') ): ?>
-										<a href="<?php echo the_sub_field('basic_internal_button_link'); ?>" class="btn-block btn btn-pink-border"><span><?php echo the_sub_field('basic_internal_button_title'); ?></span></a>
+										<a href="<?php echo the_sub_field('basic_internal_button_link'); ?>" class="btn-block btn btn-pink-border text-uppercase"><span><?php echo the_sub_field('basic_internal_button_title'); ?></span></a>
 									<?php endif; ?>
 									<?php if( get_sub_field('enable_external_basic_button') ): ?>
-										<a href="<?php echo the_sub_field('basic_external_button_link'); ?>" class="btn-block btn btn-pink-border" target="_blank"><span><?php echo the_sub_field('basic_external_button_title'); ?></span></a>
+										<a href="<?php echo the_sub_field('basic_external_button_link'); ?>" class="btn-block btn btn-pink-border text-uppercase" target="_blank"><span><?php echo the_sub_field('basic_external_button_title'); ?></span></a>
 									<?php endif; ?>
 							</div>
 						</div>
@@ -59,14 +59,14 @@ get_header();
 							<div class="middle_box">
 								<img src="<?php echo get_sub_field('basic_photo'); ?>" />
 								<?php if( get_sub_field('enable_basic_title') ): ?>
-									<h2 style="text-align:<?php echo the_sub_field('basic_center_title'); ?>;"><?php echo the_sub_field('basic_title'); ?></h2>
+									<h3 style="text-align:<?php echo the_sub_field('basic_center_title'); ?>;"><?php echo the_sub_field('basic_title'); ?></h3>
 								<?php endif; ?>
 								<div style="text-align:<?php echo the_sub_field('basic_text_center'); ?>;"><?php echo get_sub_field('basic_text'); ?></div>
 								<?php if( get_sub_field('enable_internal_basic_button') ): ?>
-									<a href="<?php echo the_sub_field('basic_internal_button_link'); ?>" class="btn-block btn btn-pink-border"><span><?php echo the_sub_field('basic_internal_button_title'); ?></span></a>
+									<a href="<?php echo the_sub_field('basic_internal_button_link'); ?>" class="btn-block btn btn-pink-border text-uppercase"><span><?php echo the_sub_field('basic_internal_button_title'); ?></span></a>
 								<?php endif; ?>
 								<?php if( get_sub_field('enable_external_basic_button') ): ?>
-									<a href="<?php echo the_sub_field('basic_external_button_link'); ?>" class="btn-block btn btn-pink-border" target="_blank"><span><?php echo the_sub_field('basic_external_button_title'); ?></span></a>
+									<a href="<?php echo the_sub_field('basic_external_button_link'); ?>" class="btn-block btn btn-pink-border text-uppercase" target="_blank"><span><?php echo the_sub_field('basic_external_button_title'); ?></span></a>
 								<?php endif; ?>
 							</div>
 						</div>
@@ -81,14 +81,14 @@ get_header();
 							</div>
 							<div class="col-md-6 col-md-pull-6">
 									<?php if( get_sub_field('enable_basic_title') ): ?>
-										<h2 style="text-align:<?php echo the_sub_field('basic_center_title'); ?>;"><?php echo the_sub_field('basic_title'); ?></h2>
+										<h3 style="text-align:<?php echo the_sub_field('basic_center_title'); ?>;"><?php echo the_sub_field('basic_title'); ?></h3>
 									<?php endif; ?>
 									<div style="text-align:<?php echo the_sub_field('basic_text_center'); ?>;"><?php echo get_sub_field('basic_text'); ?></div>
 									<?php if( get_sub_field('enable_internal_basic_button') ): ?>
-										<a href="<?php echo the_sub_field('basic_internal_button_link'); ?>" class="btn-block btn btn-pink-border"><span><?php echo the_sub_field('basic_internal_button_title'); ?></span></a>
+										<a href="<?php echo the_sub_field('basic_internal_button_link'); ?>" class="btn-block btn btn-pink-border text-uppercase"><span><?php echo the_sub_field('basic_internal_button_title'); ?></span></a>
 									<?php endif; ?>
 									<?php if( get_sub_field('enable_external_basic_button') ): ?>
-										<a href="<?php echo the_sub_field('basic_external_button_link'); ?>" class="btn-block btn btn-pink-border" target="_blank"><span><?php echo the_sub_field('basic_external_button_title'); ?></span></a>
+										<a href="<?php echo the_sub_field('basic_external_button_link'); ?>" class="btn-block btn btn-pink-border text-uppercase" target="_blank"><span><?php echo the_sub_field('basic_external_button_title'); ?></span></a>
 									<?php endif; ?>
 							</div>
 						</div>

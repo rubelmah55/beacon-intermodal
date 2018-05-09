@@ -564,7 +564,9 @@ ENTRY-HEADER STYLES
 		}
 
 		.sub-title {
+			font-weight: 700;
 			font-family: $mont;
+			text-transform: uppercase;
 			@include letter-spacing(125, 18);
 		}
 
@@ -1766,6 +1768,10 @@ FOOTER STYLES
 
 				a {
 					color: $base;
+
+					&:hover, &:focus {
+						text-decoration: underline;
+					}
 				}
 			}
 		}
@@ -1907,8 +1913,11 @@ BASIC TEMPLATE STYLES
 	margin: 0 auto; 
 	padding: 35px 0;
 
-	h2 { 
+	h3 { 
+		color: #23275E;
+		font-style: italic;
 		margin-bottom: 35px; 
+		letter-spacing: 1.2px;
 	}
 
 	ul { 
@@ -1959,7 +1968,7 @@ BASIC TEMPLATE STYLES
 		max-width: 100%;
 	}
 
-	h2 { 
+	h3 { 
 		text-align: center; 
 	}
 
