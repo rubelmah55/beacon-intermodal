@@ -34,10 +34,18 @@
 	window.onload = setGutterHeight;
 	window.onresize = setGutterHeight;
 
+	/*** Animation Counter */
 	$('.counter').counterUp({
         delay: 10,
         time: 1000
     });
+
+    /*** Custom File Upload */
+	$('.custom_file_upload .screen-reader-text').html('No File Attached');
+	$('.custom_file_upload input[type="file"]').change(function(){
+		var val = $(this).val();
+		$('.custom_file_upload .screen-reader-text').html(val.replace("C:\\fakepath\\", ""));
+	});
 
     /*** Smooth scroll */
 	$(function() {

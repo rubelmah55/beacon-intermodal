@@ -73,8 +73,8 @@ get_header(); ?>
 					<?php endif; ?>
 
 					<div class="col-md-7 col-sm-12 col-xs-12">
-						<div class="contact-form">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/cont.png" class="img-responsive" alt="">
+						<div class="contact-us-form">
+							<?php echo do_shortcode('[gravityform id="2" title="false" description="false" tabindex="20" ajax="true"]'); ?>
 						</div>
 					</div>
 				</div>

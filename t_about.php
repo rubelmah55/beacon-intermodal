@@ -340,7 +340,7 @@ get_header(); ?>
 
 					<div class="col-md-7 col-sm-12 col-xs-12">
 						<div class="contact-form">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/carr.png" class="img-responsive" alt="">
+							<?php echo do_shortcode('[gravityform id="1" title="false" description="false" tabindex="10" ajax="true"]'); ?>
 						</div>
 					</div>
 				</div>

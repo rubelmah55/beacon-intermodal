@@ -208,11 +208,11 @@ input[type="tel"],
 input[type="search"],
 select,
 textarea {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
-  border-radius: 12px;
+  border-radius: 0;
   width: 100% !important;
-  border: 1px solid transparent;
+  border: 1px solid #DFDFDF;
   background: #EDEFF2 !important;
   padding: 11px 10px !important;
   -webkit-transition: all 0.5s ease;
@@ -236,6 +236,7 @@ select:focus,
 textarea:hover,
 textarea:focus {
   outline: 0;
+  border-color: #23275E;
 }
 
 hr {
@@ -1712,30 +1713,16 @@ CONTACT STYLES
 }
 
 .gform_wrapper form .gform_body .gform_fields .gfield {
-  margin-top: 23px;
+  margin-top: 0;
+  margin-bottom: 23px;
 }
 
 .gform_wrapper form .gform_body .gform_fields .gfield.google_recpatcha {
-  margin-top: 18px;
+  margin-top: 0;
   float: right;
-  padding-right: 175px;
-  -webkit-transform: scale(0.77);
-  -moz-transform: scale(0.77);
-  -ms-transform: scale(0.77);
-  -o-transform: scale(0.77);
-  transform: scale(0.77);
-  -webkit-transform-origin: 0 0;
-  -moz-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  -o-transform-origin: 0 0;
-  transform-origin: 0 0;
 }
 
 .gform_wrapper form .gform_body .gform_fields .gfield.google_recpatcha .ginput_container {
-  margin-top: 0;
-}
-
-.gform_wrapper form .gform_body .gform_fields .gfield:first-child {
   margin-top: 0;
 }
 
@@ -1746,7 +1733,7 @@ CONTACT STYLES
 .gform_wrapper form .gform_body .gform_fields .gfield label, .gform_wrapper form .gform_body .gform_fields .gfield .gfield_description {
   margin: 0 0 8px;
   font-size: 10px !important;
-  line-height: 14px !important;
+  line-height: 13px !important;
   font-weight: 400 !important;
   color: #23275E !important;
   text-transform: uppercase !important;
@@ -1754,7 +1741,7 @@ CONTACT STYLES
 }
 
 .gform_wrapper form .gform_body .gform_fields .gfield textarea.medium {
-  height: 100px;
+  height: 150px;
 }
 
 .gform_wrapper form .gform_body .gform_fields .gfield .gfield_description {
@@ -1769,19 +1756,147 @@ CONTACT STYLES
   text-transform: none !important;
 }
 
-.gform_wrapper form .gform_footer {
+.gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload {
   float: right;
+  position: relative;
+}
+
+.gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload {
+  height: 72px;
+  width: 398px;
+  max-width: 398px;
+  position: relative;
+  border-radius: 4px;
+  margin-top: 0 !important;
+  border: 1px solid #23275E;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload .screen-reader-text {
+  left: 35px;
+  color: #23275E;
+  font-size: 10px;
+  font-weight: 400;
+  margin-bottom: 0;
+  line-height: 13px;
+  position: absolute;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+}
+
+.gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload:before {
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 150px;
+  height: 100%;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  content: 'Attach';
+  position: absolute;
+  border-radius: 4px;
+  background: #23275E;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  letter-spacing: 1.75px;
+}
+
+.gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload input[type="file"] {
+  opacity: 0;
+  z-index: 11;
+  height: 72px;
+  width: 100%;
+  cursor: pointer;
+  color: transparent;
+  position: relative;
+}
+
+.gform_wrapper form .gform_footer {
+  text-align: right;
   margin: 0 !important;
-  width: inherit !important;
   padding: 0 16px 0 0 !important;
-  margin-top: -78px !important;
 }
 
 .gform_wrapper form .gform_footer .btn {
-  width: 208px;
-  max-width: 208px;
-  padding: 18.5px 15px;
-  background: #23275E;
+  text-transform: uppercase;
+}
+
+.contact-us-form input[type="text"],
+.contact-us-form input[type="number"],
+.contact-us-form input[type="email"],
+.contact-us-form input[type="tel"],
+.contact-us-form input[type="search"],
+.contact-us-form textarea {
+  background: #E0E0E0 !important;
+}
+
+.contact-us-form select {
+  color: #FFF;
+  font-weight: 400;
+  font-size: 14px !important;
+  background: #7B848E !important;
+  padding: 13.5px 20px !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.contact-us-form select::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  cursor: pointer;
+  display: block;
+  width: 8px;
+  color: #333;
+  text-align: center;
+  position: relative;
+}
+
+.contact-us-form .gform_wrapper form .gform_body .gform_fields .gfield.google_recpatcha {
+  padding-right: 255px;
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  transform: scale(0.95);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.contact-us-form .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container_select {
+  position: relative;
+}
+
+.contact-us-form .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container_select:before {
+  right: 20px;
+  width: 15px;
+  height: 25px;
+  position: absolute;
+  pointer-events: none;
+  top: calc(50% - 12px);
+  content: url(images/angle-down.svg);
+}
+
+.contact-us-form .gform_wrapper form .gform_footer {
+  float: right;
+  margin-top: -102px !important;
 }
 
 /***********************************
@@ -2238,6 +2353,16 @@ MEDIA QUERIES
 /* iPad Portrait and Landscape */
 /* iPad Portrait */
 /* iPad Landscape */
+@media (min-width: 991px) and (max-width: 1199px) {
+  .contact-us-form .gform_wrapper form .gform_body .gform_fields .gfield.google_recpatcha {
+    padding-right: 0;
+  }
+  .contact-us-form .gform_wrapper form .gform_footer {
+    float: none;
+    margin-top: 0 !important;
+  }
+}
+
 @media only screen and (max-width: 1052px) {
   /***********************************
 	STRONG-SECURE STYLES
@@ -2815,6 +2940,10 @@ MEDIA QUERIES
   .contact-us .content {
     margin: 0 0 30px;
   }
+  .contact-us-form .gform_wrapper form .gform_footer .btn {
+    max-width: 240px;
+    padding: 27px 15px;
+  }
   .single-location:nth-child(2n+2) {
     border-bottom: 1px solid #000;
   }
@@ -3044,6 +3173,13 @@ MEDIA QUERIES
     margin: 0;
     line-height: 20px;
   }
+  .contact-us-form .gform_wrapper form .gform_body .gform_fields .gfield.google_recpatcha {
+    padding-right: 0;
+  }
+  .contact-us-form .gform_wrapper form .gform_footer {
+    float: none;
+    margin-top: 0 !important;
+  }
   .single-location .icon i {
     width: 60px;
     height: 60px;
@@ -3138,6 +3274,16 @@ MEDIA QUERIES
     line-height: 24px;
     letter-spacing: 1.75px;
   }
+  .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload {
+    height: 65px;
+    width: 300px;
+  }
+  .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload .screen-reader-text {
+    left: 15px;
+  }
+  .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload input[type="file"] {
+    height: 65px;
+  }
 }
 
 /* 480 */
@@ -3195,5 +3341,11 @@ MEDIA QUERIES
     font-size: 12px;
     line-height: 22px;
     letter-spacing: 1.5px;
+  }
+  .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload {
+    width: 280px;
+  }
+  .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload:before {
+    width: 120px;
   }
 }

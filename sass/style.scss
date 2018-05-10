@@ -133,18 +133,18 @@ input[type="tel"],
 input[type="search"],
 select,
 textarea {
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: 400;
-	border-radius: 12px;
+	border-radius: 0;
 	width: 100% !important;
-	border: 1px solid transparent;
+	border: 1px solid #DFDFDF;
 	background: #EDEFF2 !important;
 	padding: 11px 10px !important;
 	@include transition(all 0.5s ease);
 
 	&:hover, &:focus {
 		outline: 0;
-		//border: 1px solid $primary;
+		border-color: $primary;
 	}
 }
 
@@ -1642,30 +1642,16 @@ CONTACT STYLES
 			.gform_fields {
 
 				.gfield {
-					margin-top: 23px;
+					margin-top: 0;
+					margin-bottom: 23px;
 
 					&.google_recpatcha {
-						margin-top: 18px;
+						margin-top: 0;
 						float: right;
-    					padding-right: 175px;
-						-webkit-transform: scale(0.77);
-						-moz-transform: scale(0.77);
-						-ms-transform: scale(0.77);
-						-o-transform: scale(0.77);
-						transform: scale(0.77);
-						-webkit-transform-origin: 0 0;
-						-moz-transform-origin: 0 0;
-						-ms-transform-origin: 0 0;
-						-o-transform-origin: 0 0;
-						transform-origin: 0 0;
 
 						.ginput_container {
 							margin-top: 0;
 						}
-					}
-
-					&:first-child {
-						margin-top: 0;
 					}
 
 					label.gfield_label, .gfield_required {
@@ -1675,15 +1661,15 @@ CONTACT STYLES
 					label, .gfield_description {
 						margin: 0 0 8px;
 						font-size: 10px !important;
-						line-height: 14px !important;
+						line-height: 13px !important;
 						font-weight: 400 !important;
-						color: #23275E !important;
+						color: $primary !important;
 						text-transform: uppercase !important;
 						@include letter-spacing(125, 10);
 					}
 
 					textarea.medium {
-						height: 100px;
+						height: 150px;
 					}
 
 					.gfield_description {
@@ -1700,26 +1686,143 @@ CONTACT STYLES
 						    text-transform: none !important;
 						}
 					}
+
+					&.custom_file_upload {
+						float: right;
+						position: relative;
+
+						.ginput_container_fileupload {
+							height: 72px;
+							width: 398px;
+							max-width: 398px;
+							position: relative;
+							border-radius: 4px;
+							margin-top: 0 !important;
+							border: 1px solid $primary;
+							@include align-center('vertical');
+
+							.screen-reader-text {
+								left: 35px;
+								color: $primary;
+								font-size: 10px;
+								font-weight: 400;
+								margin-bottom: 0;
+								line-height: 13px;
+								position: absolute;
+								text-transform: uppercase;
+								@include letter-spacing(125, 10);
+							}
+
+							&:before {
+								top: 0;
+								right: 0;
+								z-index: 1;
+								width: 150px;
+								height: 100%;
+								color: $white;
+								font-size: 14px;
+								font-weight: 700;
+								cursor: pointer;
+								content: 'Attach';
+								position: absolute;
+								border-radius: 4px;
+								background: $primary;
+								text-transform: uppercase;
+								@include align-center;
+								@include letter-spacing(125, 14);
+							}
+						}
+
+						input[type="file"] {
+						    opacity: 0;
+						    z-index: 11;
+						    height: 72px;
+						    width: 100%;
+						    cursor: pointer;
+						    color: transparent;
+						    position: relative;
+						}
+					}
 				}
 			}
 		}
 
 		.gform_footer {
-			float: right;
+			text-align: right;
 		    margin: 0 !important;
-			width: inherit !important;
 		    padding: 0 16px 0 0 !important;
-		    margin-top: -78px !important;
 
 			.btn {
-				width: 208px;
-				max-width: 208px;
-				padding: 18.5px 15px;
-				background: #23275E;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
 
-				&:hover, &:focus {
-					
+.contact-us-form {
+
+	input[type="text"],
+	input[type="number"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="search"],
+	textarea {
+		background: #E0E0E0 !important;
+	}
+
+	select {
+		color: $white;
+		font-weight: 400;
+		font-size: 14px !important;
+		background: #7B848E !important;
+		padding: 13.5px 20px !important;
+		@include appearance;
+	}
+
+	.gform_wrapper {
+
+		form {
+
+			.gform_body {
+
+				.gform_fields {
+
+					.gfield {
+
+						&.google_recpatcha {
+							padding-right: 255px;
+							-webkit-transform: scale(0.95);
+							-moz-transform: scale(0.95);
+							-ms-transform: scale(0.95);
+							-o-transform: scale(0.95);
+							transform: scale(0.95);
+							-webkit-transform-origin: 0 0;
+							-moz-transform-origin: 0 0;
+							-ms-transform-origin: 0 0;
+							-o-transform-origin: 0 0;
+							transform-origin: 0 0;
+						}
+
+						.ginput_container_select {
+							position: relative;
+
+							&:before {
+								right: 20px;
+								width: 15px;
+								height: 25px;
+								position: absolute;
+								pointer-events: none;
+								top: calc(50% - 12px);
+								content: url(images/angle-down.svg);
+							}
+						}
+					}
 				}
+			}
+
+			.gform_footer {
+				float: right;
+				margin-top: -102px !important;
 			}
 		}
 	}

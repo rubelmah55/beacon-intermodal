@@ -239,7 +239,39 @@ MEDIA QUERIES
 
 
 
-}/* iPad Landscape */	
+}/* iPad Landscape */
+
+@media (min-width: 991px) and (max-width: 1199px) {
+	
+
+	.contact-us-form {
+
+		.gform_wrapper {
+
+			form {
+
+				.gform_body {
+
+					.gform_fields {
+
+						.gfield {
+
+							&.google_recpatcha {
+								padding-right: 0;
+							}
+						}
+					}
+				}
+
+				.gform_footer {
+					float: none;
+	    			margin-top: 0 !important;
+				}
+			}
+		}
+	}
+}
+
 
 @media only screen and (max-width : 1052px) {
 	/***********************************
@@ -1019,6 +1051,27 @@ MEDIA QUERIES
 		}
 	}
 
+	.contact-us-form {
+
+		.gform_wrapper {
+
+			form {
+
+				.gform_body {
+
+				}
+
+				.gform_footer {
+						
+					.btn {
+					    max-width: 240px;
+					    padding: 27px 15px;
+					}
+				}
+			}
+		}
+	}
+
 	.single-location {
 
 		&:nth-child(2n+2) {
@@ -1391,6 +1444,33 @@ MEDIA QUERIES
 		}
 	}
 
+	.contact-us-form {
+		
+		.gform_wrapper {
+
+			form {
+
+				.gform_body {
+
+					.gform_fields {
+
+						.gfield {
+
+							&.google_recpatcha {
+								padding-right: 0;
+							}
+						}
+					}
+				}
+
+				.gform_footer {
+					float: none;
+	    			margin-top: 0 !important;
+				}
+			}
+		}
+	}
+
 	.single-location {
 
 		.icon {
@@ -1556,6 +1636,37 @@ MEDIA QUERIES
 		}
 	}
 
+	.gform_wrapper {
+
+		form {
+
+			.gform_body {
+
+				.gform_fields {
+
+					.gfield {
+
+						&.custom_file_upload {
+
+							.ginput_container_fileupload {
+								height: 65px;
+								width: 300px;
+
+								.screen-reader-text {
+									left: 15px;
+								}
+
+								input[type="file"] {
+									height: 65px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 }/* 480 */
 
 @media only screen and (max-width : 346px) {
@@ -1642,6 +1753,32 @@ MEDIA QUERIES
 				font-size: 12px;
 				line-height: 22px;
 				@include letter-spacing(125, 12);
+			}
+		}
+	}
+
+	.gform_wrapper {
+
+		form {
+
+			.gform_body {
+
+				.gform_fields {
+
+					.gfield {
+
+						&.custom_file_upload {
+
+							.ginput_container_fileupload {
+								width: 280px;
+
+								&:before {
+									width: 120px;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}

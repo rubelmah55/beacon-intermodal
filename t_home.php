@@ -31,159 +31,153 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 
 		<?php $about = get_field('home_about'); if ($about): ?>
-		<section class="about coverbg" style="background-image: url(<?php echo $about; ?>);">
+		<section class="about coverbg" style="background-image: url(<?php echo $about['bg']; ?>);">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12 text-center">
 						<?php if ($about['sub_title'] || $about['title']): ?>
 						<div class="section-title">
-							<h6 class="sub-title text-uppercase">About Us</h6>
-							<h3 class="title text-uppercase">A Global Leader</h3>
+							<?php if ($about['sub_title']): ?>
+							<h6 class="sub-title text-uppercase"><?php echo $about['sub_title']; ?></h6>
+							<?php endif; ?>
+
+								
+							<?php if ($about['title']): ?>
+							<h3 class="title text-uppercase"><?php echo $about['title']; ?></h3>
 							<span class="separator"><span></span></span>
+							<?php endif; ?>
 						</div>
 						<?php endif; ?>
 
-						<p>Beacon Intermodal Leasing, LLC (“Beacon”) is an industry leading lessor of intermodal cargo containers. We specialize in offering tailored leasing options for both dry and refrigerated containers to the world’s shipping companies.</p>
+						<?php if ($about['content']): ?>
+						<?php echo $about['content']; ?>
+						<?php endif; ?>
 
-						<a href="about.html" class="btn text-uppercase">Read More</a>
+						<?php if ($about['btn']['text']): ?>
+						<a href="<?php echo $about['btn']['url']; ?>" class="btn text-uppercase"><?php echo $about['btn']['text']; ?></a>
+						<?php endif ?>
 					</div>
 				</div>
 			</div>
 		</section><!-- /about -->
 		<?php endif; ?>
 
+		<?php $features = get_field('features'); if ($features): ?>
 		<section class="features">
 			<div class="container-fluid">
 				<div class="row">
-					<a href="about.html" class="feature text-center col-md-3 col-sm-6 col-xs-6 col">
+					<?php foreach ($features as $feature): ?>
+					<a href="<?php echo $feature['url']; ?>" class="feature text-center col-md-3 col-sm-6 col-xs-6 col">
+						<?php if ($feature['icon']): ?>
 						<div class="icon">
-							<i class="icon-strength"></i>
+							<i class="icon-<?php echo $feature['icon']; ?>"></i>
 						</div>
+						<?php endif; ?>
 
+							
+						<?php if ($feature['sub_title'] || $feature['title']): ?>
 						<div class="content">
-							<p>Financial</p>
-							<h3>Strength</h3>
+							<?php if ($feature['sub_title']): ?>
+							<p><?php echo $feature['sub_title']; ?></p>
+							<?php endif; ?>
+								
+							<?php if ($feature['title']): ?>
+							<h3><?php echo $feature['title']; ?></h3>
+							<?php endif; ?>
 						</div>
+						<?php endif; ?>
 
 						<div class="arrow">
 							<button><i class="icon-arrow-right"></i></button>
 						</div>
 					</a><!-- /feature -->
+					<?php endforeach; ?>
 					
-					<a href="about.html" class="feature text-center col-md-3 col-sm-6 col-xs-6 col">
-						<div class="icon">
-							<i class="icon-suppliers"></i>
-						</div>
-
-						<div class="content">
-							<p>Dependable</p>
-							<h3>Suppliers</h3>
-						</div>
-
-						<div class="arrow">
-							<button><i class="icon-arrow-right"></i></button>
-						</div>
-					</a><!-- /feature -->
-					
-					<a href="about.html" class="feature text-center col-md-3 col-sm-6 col-xs-6 col">
-						<div class="icon">
-							<i class="icon-network"></i>
-						</div>
-
-						<div class="content">
-							<p>A Global</p>
-							<h3>Network</h3>
-						</div>
-
-						<div class="arrow">
-							<button><i class="icon-arrow-right"></i></button>
-						</div>
-					</a><!-- /feature -->
-
-					<a href="about.html" class="feature text-center col-md-3 col-sm-6 col-xs-6 col">
-						<div class="icon">
-							<i class="icon-service"></i>
-						</div>
-
-						<div class="content">
-							<p>Commitment To</p>
-							<h3>Service</h3>
-						</div>
-
-						<div class="arrow">
-							<button><i class="icon-arrow-right"></i></button>
-						</div>
-					</a><!-- /feature -->
 				</div>
 			</div>
 		</section><!-- /features -->
+		<?php endif; ?>
 
+		<?php $strong_secure = get_field('strong_secure'); if ($strong_secure): ?>
 		<section class="strong-secure">
 			<div class="container-fluid">
 				<div class="row align-center-v justify-content-center">
+					<?php if ($strong_secure['image']): ?>
 					<div class="col-md-6 col-sm-12 col-xs-12">
 						<div class="media">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/strong-secure.jpg" alt="">
+							<img src="<?php echo $strong_secure['image']['url']; ?>" alt="<?php echo $strong_secure['image']['alt']; ?>">
 						</div>
 					</div>
+					<?php endif; ?>
+
+					<?php if ($strong_secure['title'] || $strong_secure['content']): ?>
 					<div class="col-md-6 col-sm-12 col-xs-12">
 						<div class="content">
+							<?php if ($strong_secure['title']): ?>
 							<div class="section-title">
-								<h3 class="title text-uppercase">Strong & Secure</h3>
+								<h3 class="title text-uppercase"><?php echo $strong_secure['title']; ?></h3>
 								<span class="separator left"><span></span></span>
 							</div>
-
-							<p>Beacon Intermodal Leasing, LLC is a group company of Mitsubishi UFJ Lease & Finance Company Limited (“MUL”). MUL was established in 1971 and is an industry leading comprehensive finance company headquartered in Japan. The company is actively involved with leasing and finance, global asset ownership and management, real estate, and other domestic and international businesses. MUL is one of the largest leasing companies in Japan and has more than 3,000 employees around the world.</p>
-
-							<p>MUL’s principal shareholders include Mitsubishi Corporation, Mitsubishi UFJ Financial Group, Inc., The Bank of Tokyo-Mitsubishi UFJ, Ltd., Meiji Yasuda Life Insurance Company, and Mitsubishi UFJ Trust and Banking Corporation.  MUL stock is publicly listed on the Tokyo Stock Exchange and Najoya Stock Exchange.</p>
+							<?php endif; ?>
+								
+							<?php if ($strong_secure['content']): ?>
+							<?php echo $strong_secure['content']; ?>
+							<?php endif; ?>
 						</div>
 					</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</section><!-- /Secure -->
+		<?php endif; ?>
 
-		<section class="contact coverbg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/contact.png);">
+		<?php $contact = get_field('home_contact'); if ($contact): ?>
+		<section class="contact coverbg" style="background-image: url(<?php echo $contact['bg']; ?>);">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12 text-center">
+						<?php if ($contact['sub_title'] || $contact['title']): ?>
 						<div class="section-title">
-							<h6 class="sub-title text-uppercase">Contact Us</h6>
-							<h3 class="title text-uppercase">Offices Around the World</h3>
+							<?php if ($contact['sub_title']): ?>
+							<h6 class="sub-title text-uppercase"><?php echo $contact['sub_title']; ?></h6>
+							<?php endif; ?>
+
+							<?php if ($contact['title']): ?>
+							<h3 class="title text-uppercase"><?php echo $contact['title']; ?></h3>
 							<span class="separator"><span></span></span>
+							<?php endif; ?>
 						</div>
-
+						<?php endif; ?>
+						
+						<?php if ($contact['country'] || $contact['locations'] || $contact['btn']): ?>
 						<div class="content">
+							<?php if ($contact['country']): ?>
 							<ul class="country list-inline">
-								<li><a href="#">Boston</a></li>
-								<li><a href="#">Hamburg</a></li>
-								<li><a href="#">Hong Kong</a></li>
-								<li><a href="#">Japan</a></li>
-								<li><a href="#">London</a></li>
-								<li><a href="#">New York</a></li>
-								<li><a href="#">San Francisco</a></li>
-								<li><a href="#">Seoul</a></li>
-								<li><a href="#">Shanghai</a></li>
-								<li><a href="#">Singapore</a></li>
-								<li><a href="#">Taipei</a></li>
-								<li><a href="#">Tokyo</a></li>
+								<?php foreach ($contact['country'] as $country): ?>
+								<li><?php echo $country['item']; ?></li>
+								<?php endforeach; ?>
 							</ul>
-
+							<?php endif; ?>
+						
+							<?php if ($contact['locations']): ?>
 							<ul class="serving list-inline">
 								<label>Serving</label>
-								<li><a href="#">Asia</a></li>
-								<li><a href="#">Europe</a></li>
-								<li><a href="#">Middle East</a></li>
-								<li><a href="#">North America</a></li>
-								<li><a href="#">South America</a></li>
+								<?php foreach ($contact['locations'] as $location): ?>
+								<li><a href="<?php echo $location['url']; ?>"><?php echo $location['location']; ?></a></li>
+								<?php endforeach; ?>
 							</ul>
+							<?php endif; ?>
 
-							<a href="contact.html" class="btn text-uppercase">Contact Hq</a>
-							<a href="contact.html" class="btn text-uppercase">All Contacts</a>
+							<?php if ($contact['btn']): foreach($contact['btn'] as $btn): ?>
+							<a href="<?php echo $btn['url']; ?>" class="btn text-uppercase"><?php echo $btn['text']; ?></a>
+							<?php endforeach; endif; ?>
 						</div>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
 		</section><!-- /contact -->
+		<?php endif; ?>
 
 	</div><!-- /primary -->
 
