@@ -1193,11 +1193,13 @@ SERVICES STYLES
 			position: relative;
 			@include letter-spacing(25, 16);
 
-			span {
-				display: block;
+			small, span {
 				font-size: 14px;
 				font-weight: 300;
 				line-height: 20px;
+			}
+			span {
+				display: block;
 			}
 
 			&:before {
@@ -1212,7 +1214,7 @@ SERVICES STYLES
 	}
 }
 
-.leasing {
+.postid-255 {
 
 	.service-details {
 
@@ -1269,7 +1271,7 @@ EQUIPMENTS STYLES
 		font-size: 14px;
 		font-weight: 500;
 		line-height: 18px;
-		margin: 15px 0 0;
+		margin: 25px 0 0;
 		@include letter-spacing(5, 14);
 	}
 }
@@ -1277,6 +1279,7 @@ EQUIPMENTS STYLES
 .table-specifications {
 
 	.table {
+		margin-bottom: 0;
 
 		thead {
 

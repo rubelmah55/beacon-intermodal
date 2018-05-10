@@ -1341,11 +1341,14 @@ SERVICES STYLES
   letter-spacing: 0.4px;
 }
 
-.service-details ul li span {
-  display: block;
+.service-details ul li small, .service-details ul li span {
   font-size: 14px;
   font-weight: 300;
   line-height: 20px;
+}
+
+.service-details ul li span {
+  display: block;
 }
 
 .service-details ul li:before {
@@ -1357,7 +1360,7 @@ SERVICES STYLES
   position: absolute;
 }
 
-.leasing .service-details ul li {
+.postid-255 .service-details ul li {
   width: 50%;
   float: left;
   margin: 0 0 10px;
@@ -1394,8 +1397,12 @@ EQUIPMENTS STYLES
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
-  margin: 15px 0 0;
+  margin: 25px 0 0;
   letter-spacing: 0.07px;
+}
+
+.table-specifications .table {
+  margin-bottom: 0;
 }
 
 .table-specifications .table thead tr {
@@ -3112,7 +3119,7 @@ MEDIA QUERIES
   .service-details ul li {
     margin: 0 0 10px;
   }
-  .leasing .service-details ul li {
+  .postid-255 .service-details ul li {
     width: 100%;
   }
   /***********************************

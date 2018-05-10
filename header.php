@@ -91,7 +91,7 @@
 			$header_bg = get_field('header_bg', getPageID());
 			$title = $page_header['title'] ? $page_header['title'] : get_the_title();
 			$header_bg = $header_bg ? $header_bg : get_template_directory_uri()."/images/banner-services.jpg";
-		if (!is_404() && !is_front_page() && !is_page_template('t_about.php')): ?>
+		if (!is_404() && !is_front_page() && !is_page_template('t_about.php') && !is_singular('our_equipment')): ?>
 		<section class="entry-header align-center-v coverbg <?php if($page_header['description']) echo 'paragraph'; ?>" style="background-image: url(<?php echo $header_bg; ?>);">
 			<div class="container">
 				<div class="row">

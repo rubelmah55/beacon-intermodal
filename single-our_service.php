@@ -1,48 +1,61 @@
-<?php
-/*
-Template Name: Our Services
-*/
-get_header(); ?>
+<?php get_header(); ?>
 
 	<div id="primary" class="content-area">
-
-		<?php $services = get_field('services'); if ($services): ?>
-		<section class="our-services">
+		<?php $service = get_field('service'); ?>
+		<section class="our-services service-details">
 			<div class="container">
 				<div class="row">
-					<?php if ($services['sub_title'] || $services['title'] || $services['content']): ?>
-					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="col-md-6 col-sm-12 col-xs-12">
 						<div class="section-title">
-							<?php if ($services['sub_title']): ?>
-							<h6 class="sub-title text-uppercase"><?php echo $services['sub_title']; ?></h6>
+							<?php if ($service['sub_title']): ?>
+							<h6 class="sub-title text-uppercase"><?php echo $service['sub_title']; ?></h6>
 							<?php endif; ?>
-
-							<?php if ($services['title']): ?>
-							<h3 class="title text-uppercase"><?php echo $services['title']; ?></h3>
+							<h3 class="title text-uppercase"><?php the_title(); ?></h3>
 							<span class="separator left"><span></span></span>
-							<?php endif; ?>
 						</div>
 
-							
-						<?php if ($services['content']): ?>
+						<?php if ($service['content']): ?>
 						<div class="content">
-							<?php echo $services['content']; ?>
+							<?php echo $service['content']; ?>
 						</div>
 						<?php endif; ?>
-					</div>
-					<?php endif; ?>
 
-					<?php if ($services['image']): ?>
-					<div class="col-md-5 col-sm-12 col-xs-12">
-						<div class="media">
-							<img src="<?php echo $services['image']['url']; ?>" class="img-responsive" alt="<?php echo $services['image']['alt']; ?>">
+						<?php if ($service['image']): ?>
+						<div class="media visible-sm visible-xs">
+							<img src="<?php echo $service['image']['url']; ?>" class="img-responsive" alt="<?php echo $service['image']['alt']; ?>">
 						</div>
+						<?php endif; ?>
+
+						<?php if ($service['lists']): ?>
+						<ul class="list-unstyled">
+							<?php foreach ($service['lists'] as $list): 
+								if(!$list['position']): ?>
+							<li><?php echo $list['item']; ?></li>
+							<?php endif; endforeach; ?>
+						</ul>
+						<?php endif; ?>
 					</div>
-					<?php endif; ?>
+
+					<div class="col-md-6 col-sm-12 col-xs-12">
+						<?php if ($service['image']): ?>
+						<div class="media hidden-sm hidden-xs">
+							<img src="<?php echo $service['image']['url']; ?>" class="img-responsive" alt="<?php echo $service['image']['alt']; ?>">
+						</div>
+						<?php endif; ?>
+
+						<?php if ($service['lists']): ?>
+						<ul class="list-unstyled">
+							<?php foreach ($service['lists'] as $list):
+								if($list['position']): 
+							 ?>
+							<li><?php echo $list['item']; ?></li>
+							<?php endif; endforeach; ?>
+						</ul>
+						<?php endif; ?>
+					</div>
 				</div>
 			</div>
 		</section><!-- /our-services -->
-		<?php endif; ?>
 
 		<section class="services">
 			<div class="container">
@@ -58,6 +71,7 @@ get_header(); ?>
 							'post_type' => 'our_service',
 							'orderby' => 'ASC',
 							'posts_per_page' => -1,
+							'post__not_in' => array(get_the_ID())
 						);
 
 						$loop = new WP_Query( $args );
@@ -66,7 +80,7 @@ get_header(); ?>
 						$featured_image = get_field('featured_image_service');
 						$serviceImg = $featured_image ? $featured_image['url'] : get_template_directory_uri().'/images/placeholder-service.jpg';
 					?>
-					<a href="<?php the_permalink(); ?>" class="col-md-4 col-sm-6 col-xs-6 col">
+					<a href="<?php the_permalink(); ?>" class="col-md-6 col-sm-6 col-xs-6 col">
 						<div class="box-item service-item text-center">
 							<div class="media">
 								<img src="<?php echo $serviceImg; ?>" class="img-responsive" alt="<?php echo $featured_image['alt']; ?>">

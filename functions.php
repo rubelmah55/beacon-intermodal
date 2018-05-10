@@ -75,8 +75,8 @@ function reorder_admin_menu( $__return_true ) {
          'edit.php',                  // Posts
          'separator2',                // --Space--
          'edit.php?post_type=team',   // Team
-         'edit.php?post_type=service',// Service
-         'edit.php?post_type=equipment',// Equipment
+         'edit.php?post_type=our_service',// Service
+         'edit.php?post_type=our_equipment',// Equipment
          'gf_edit_forms',             // Gravity Forms
          'upload.php',                // Media
          'wpseo_dashboard',           // Yoasta
@@ -178,6 +178,10 @@ function hide_editor_custom_js() {
                           jQuery("#postdivrich").hide();
                         break;
                         case "t_services.php":
+                          jQuery("#_home_page_options").show();
+                          jQuery("#postdivrich").hide();
+                        break;
+                        case "t_equipment.php":
                           jQuery("#_home_page_options").show();
                           jQuery("#postdivrich").hide();
                         break;
