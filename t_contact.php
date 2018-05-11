@@ -180,7 +180,7 @@ get_header(); ?>
 					<?php $counter++; endforeach; endif; ?>
 				</div><!-- /asia -->
 				<?php endwhile; else : ?>
-				<section class="not-found text-center"><h3><?php _e('No Service item found!', 'beacon'); ?></h3></section>
+				<section class="not-found text-center"><h3><?php _e('No Location found!', 'beacon'); ?></h3></section>
 				<?php endif; wp_reset_postdata(); ?>
 			</div>
 		</section><!-- /single-locations -->
