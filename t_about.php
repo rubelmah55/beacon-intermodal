@@ -135,8 +135,8 @@ get_header(); ?>
 		</section><!-- /financial-strength. -->
 		<?php endif; ?>
 
-		<section id="team">
-
+		<a id="team" class="blankSpace"></a>
+		<section class="team">
 			<div id="leadership">
 				<?php $leadership = get_field('leadership'); if ($leadership): ?>
 				<div class="leadership-head">
@@ -268,7 +268,8 @@ get_header(); ?>
 
 		</section><!-- /team -->
 
-		<section id="join-team">
+		<a id="career-opp" class="blankSpace"></a>
+		<section class="join-team">
 			<div class="container">
 				<div class="row">
 					<?php $career_opp = get_field('career_opportunities'); if ($career_opp['title']): ?>

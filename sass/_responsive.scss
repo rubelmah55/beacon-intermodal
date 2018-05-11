@@ -659,7 +659,7 @@ MEDIA QUERIES
 		}
 	}
 
-	#join-team {
+	.join-team {
 		padding: 50px 0;
 
 		.section-title {
@@ -709,6 +709,13 @@ MEDIA QUERIES
 
 		.separator {
 		    padding: 40px 0 0;
+		}
+
+		.country-location {
+
+			&:not(:first-child) {
+				margin: 60px 0 0;
+			}
 		}
 	}
 
@@ -889,7 +896,7 @@ MEDIA QUERIES
 				margin: 0 0 15px;
 			}
 
-			.scrollDown {
+			.banner-btn {
 				margin: 20px 0 0;
 			}
 		}
@@ -972,7 +979,7 @@ MEDIA QUERIES
 		margin: 30px 0 0;
 	}
 
-	#join-team {
+	.join-team {
 		padding: 40px 0;
 	}
 
@@ -1101,6 +1108,13 @@ MEDIA QUERIES
 
 			.location {
 			    margin: 20px 0 0;
+			}
+		}
+
+		.country-location {
+
+			&:not(:first-child) {
+				margin: 40px 0 0;
 			}
 		}
 	}
@@ -1256,11 +1270,20 @@ MEDIA QUERIES
 				@include letter-spacing(125, 16);
 			}
 
-			.scrollDown {
-				width: 50px;
-				height: 50px;
-				font-size: 18px;
+			.banner-btn {
 				margin: 15px 0 0;
+
+				.btn {
+					padding: 16px 15px;
+					max-width: 170px;
+					display: block !important;
+				}
+
+				.scrollDown {
+					width: 50px;
+					height: 50px;
+					font-size: 18px;
+				}
 			}
 		}
 	}
@@ -1394,6 +1417,16 @@ MEDIA QUERIES
 				margin: 0;
 			}
 		}
+
+		&:hover, &:focus {
+
+			.arrow {
+
+				button {
+					margin-right: -5px !important;
+				}
+			}
+		}
 	}
 
 	/***********************************
@@ -1488,6 +1521,16 @@ MEDIA QUERIES
 				}
 			}
 		}
+
+		&:hover, &:focus {
+
+			.arrow {
+				
+				button {
+					margin-right: 0 !important;
+				}
+			}
+		}
 	}
 
 	#locations {
@@ -1509,6 +1552,13 @@ MEDIA QUERIES
 
 			.location {
 			   
+			}
+		}
+
+		.country-location {
+
+			&:not(:first-child) {
+				margin: 30px 0 0;
 			}
 		}
 	}
@@ -1667,6 +1717,13 @@ MEDIA QUERIES
 		}
 	}
 
+	.resale-information {
+	
+		&.coverbg {
+			background-position: 40% 50% !important;
+		}
+	}
+
 }/* 480 */
 
 @media only screen and (max-width : 346px) {
@@ -1780,6 +1837,12 @@ MEDIA QUERIES
 					}
 				}
 			}
+		}
+	}
+	.resale-information {
+	
+		&.coverbg {
+			background-position: 30% 50% !important;
 		}
 	}
 }

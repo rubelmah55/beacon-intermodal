@@ -20,7 +20,9 @@ get_header(); ?>
 						<?php echo $banner['description']; ?>
 						<?php endif; ?>
 
-						<a class="scrollDown"><i class="icon-arrow-down"></i></a>
+						<div class="banner-btn align-center-v">
+							<a class="scrollDown"><i class="icon-arrow-down"></i></a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -67,7 +69,7 @@ get_header(); ?>
 			<div class="container-fluid">
 				<div class="row">
 					<?php foreach ($features as $feature): ?>
-					<a href="<?php echo $feature['url']; ?>" class="feature text-center col-md-3 col-sm-6 col-xs-6 col">
+					<a href="<?php echo $feature['url']; ?>" class="feature hover-arrow text-center col-md-3 col-sm-6 col-xs-6 col">
 						<?php if ($feature['icon']): ?>
 						<div class="icon">
 							<i class="icon-<?php echo $feature['icon']; ?>"></i>
@@ -163,7 +165,7 @@ get_header(); ?>
 							<ul class="serving list-inline">
 								<label>Serving</label>
 								<?php foreach ($contact['locations'] as $location): ?>
-								<li><a href="<?php echo $location['url']; ?>"><?php echo $location['location']; ?></a></li>
+								<li><a href="<?php echo perm_by_temp('t_contact.php'); ?>#<?php echo $location->post_name; ?>"><?php echo $location->post_title; ?></a></li>
 								<?php endforeach; ?>
 							</ul>
 							<?php endif; ?>

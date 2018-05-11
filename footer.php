@@ -39,7 +39,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-							<p><strong>Career Opportunities:</strong> Interested in joining the Beacon Intermodal Team? <a href="<?php echo perm_by_temp('t_about.php'); ?>/#join-team">Click Here</a> to view our current positions. <a href="#" class="icon-arrow-right"></a></p>
+							<p><strong>Career Opportunities:</strong> Interested in joining the Beacon Intermodal Team? <a href="<?php echo perm_by_temp('t_about.php'); ?>/#career-opp">Click Here</a> to view our current positions. <a href="<?php echo perm_by_temp('t_about.php'); ?>/#career-opp" class="icon-arrow-right"></a></p>
 						</div>
 					</div>
 				</div>

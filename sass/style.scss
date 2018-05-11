@@ -311,6 +311,13 @@ hr {
     flex-wrap: wrap;
 }
 
+.blankSpace {
+    display: block !important;
+    position: relative !important;
+    top: -115px !important;
+    visibility: hidden !important;
+}
+
 /***********************************
 HEADER STYLES
 ***********************************/
@@ -318,6 +325,12 @@ HEADER STYLES
 	margin: 0 0 12px;
 
 	ul {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: end;
+		-ms-flex-pack: end;
+		justify-content: flex-end;
 
 		li {
 
@@ -616,10 +629,23 @@ BANNER STYLES
 			@include letter-spacing(125, 18);
 		}
 
+		.banner-btn {
+			margin: 45px 0 0;
+
+			.btn {
+				padding: 26px 15px;
+				margin-right: 10px;
+				background: $base;
+
+				&:before {
+					background: $primary;
+				}
+			}
+		}
+
 		.scrollDown {
 			width: 70px;
 			height: 70px;
-			margin: 45px 0 0;
 			color: $primary;
 			font-size: 24px;
 			cursor: pointer;
@@ -829,7 +855,7 @@ TEAM STYLES
 	}
 }
 
-#team {
+.team {
 	padding: 0;
 }
 
@@ -929,7 +955,7 @@ TEAM STYLES
 	}
 }
 
-#join-team {
+.join-team {
 	padding: 60px 0;
 	overflow: hidden;
 	background: #FAFAFA;
@@ -1008,7 +1034,23 @@ FEATURES STYLES
 			border: 2px solid $base;
 			background-color: transparent;
 			@include align-center;
-			@include transition(all 0.3s ease);
+			@include transition(all 0.5s ease);
+		}
+	}
+
+	
+	&.hover-arrow {
+
+		&:hover, &:focus {
+
+			.arrow {
+
+				button {
+					color: $primary;
+					margin-right: 15px;
+					background-color: $base;
+				}
+			}
 		}
 	}
 }
@@ -1101,6 +1143,7 @@ SERVICES STYLES
 		&:before {
 			top: 0;
 			left: 0;
+			z-index: 1;
 			content: '';
 			width: 100%;
 			height: 100%;
@@ -1110,6 +1153,7 @@ SERVICES STYLES
 
 		img {
 			width: 100%;
+			@include transition(all 0.3s);
 		}
 	}
 
@@ -1145,12 +1189,23 @@ SERVICES STYLES
 				border: 2px solid $base;
 				background: transparent;
 				@include align-center;
-				@include transition(all 0.3s);
+				@include transition(all 0.5s);
 			}
 		}
 	}
 
 	&:hover, &:focus {
+
+		.media {
+
+			img {
+				-webkit-transform: scale(1.1);
+				-moz-transform: scale(1.1);
+				-ms-transform: scale(1.1);
+				-o-transform: scale(1.1);
+				transform: scale(1.1);
+			}
+		}
 
 		.content {
 
@@ -1159,6 +1214,7 @@ SERVICES STYLES
 				button {
 					color: $white;
 					background: $base;
+					margin-right: 20px;
 
 					&:hover, &:focus {
 						color: $white;
@@ -1530,6 +1586,13 @@ CONTACT STYLES
 		}
 	}
 
+	.country-location {
+
+		&:not(:first-child) {
+			margin: 80px 0 0;
+		}
+	}
+
 	.location-item {
 
 		.title {
@@ -1580,8 +1643,18 @@ CONTACT STYLES
 	}
 }
 
-.contact-information {
+.resale-information {
+	
+	.section-title {
 
+		.title {
+			max-width: 348px;
+		}
+	}
+
+	p {
+		max-width: 450px;
+	}
 }
 
 .back-top {

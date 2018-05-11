@@ -416,11 +416,27 @@ hr {
   flex-wrap: wrap;
 }
 
+.blankSpace {
+  display: block !important;
+  position: relative !important;
+  top: -115px !important;
+  visibility: hidden !important;
+}
+
 /***********************************
 HEADER STYLES
 ***********************************/
 .top-bar {
   margin: 0 0 12px;
+}
+
+.top-bar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .top-bar ul li a {
@@ -772,10 +788,23 @@ BANNER STYLES
   letter-spacing: 2.25px;
 }
 
+.banner .content .banner-btn {
+  margin: 45px 0 0;
+}
+
+.banner .content .banner-btn .btn {
+  padding: 26px 15px;
+  margin-right: 10px;
+  background: #F5E221;
+}
+
+.banner .content .banner-btn .btn:before {
+  background: #23275E;
+}
+
 .banner .content .scrollDown {
   width: 70px;
   height: 70px;
-  margin: 45px 0 0;
   color: #23275E;
   font-size: 24px;
   cursor: pointer;
@@ -990,7 +1019,7 @@ TEAM STYLES
   margin-left: 10px;
 }
 
-#team {
+.team {
   padding: 0;
 }
 
@@ -1074,26 +1103,26 @@ TEAM STYLES
   letter-spacing: 0.35px;
 }
 
-#join-team {
+.join-team {
   padding: 60px 0;
   overflow: hidden;
   background: #FAFAFA;
 }
 
-#join-team .section-title {
+.join-team .section-title {
   margin: 0 0 60px;
 }
 
-#join-team .content p {
+.join-team .content p {
   max-width: 420px;
 }
 
-#join-team .content p a, #join-team .content p span {
+.join-team .content p a, .join-team .content p span {
   color: #1F1F22;
   font-weight: 700;
 }
 
-#join-team .content p a:hover, #join-team .content p a:focus, #join-team .content p span:hover, #join-team .content p span:focus {
+.join-team .content p a:hover, .join-team .content p a:focus, .join-team .content p span:hover, .join-team .content p span:focus {
   color: #F5E221;
 }
 
@@ -1157,11 +1186,17 @@ FEATURES STYLES
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.feature.hover-arrow:hover .arrow button, .feature.hover-arrow:focus .arrow button {
+  color: #23275E;
+  margin-right: 15px;
+  background-color: #F5E221;
 }
 
 /***********************************
@@ -1241,6 +1276,7 @@ SERVICES STYLES
 .box-item .media:before {
   top: 0;
   left: 0;
+  z-index: 1;
   content: '';
   width: 100%;
   height: 100%;
@@ -1253,6 +1289,11 @@ SERVICES STYLES
 
 .box-item .media img {
   width: 100%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .box-item .content {
@@ -1301,16 +1342,25 @@ SERVICES STYLES
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.box-item:hover .media img, .box-item:focus .media img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .box-item:hover .content .arrow button, .box-item:focus .content .arrow button {
   color: #FFF;
   background: #F5E221;
+  margin-right: 20px;
 }
 
 .box-item:hover .content .arrow button:hover, .box-item:hover .content .arrow button:focus, .box-item:focus .content .arrow button:hover, .box-item:focus .content .arrow button:focus {
@@ -1616,6 +1666,10 @@ CONTACT STYLES
   padding: 20px 0 0;
 }
 
+#locations .country-location:not(:first-child) {
+  margin: 80px 0 0;
+}
+
 #locations .location-item .title {
   color: #23275E;
   font-weight: 700;
@@ -1650,6 +1704,14 @@ CONTACT STYLES
 
 #locations .location-item .location ul li a:hover, #locations .location-item .location ul li a:focus {
   color: #F5E221;
+}
+
+.resale-information .section-title .title {
+  max-width: 348px;
+}
+
+.resale-information p {
+  max-width: 450px;
 }
 
 .back-top {
@@ -2690,19 +2752,19 @@ MEDIA QUERIES
   #marketing-team .section-title {
     margin: 0 0 20px;
   }
-  #join-team {
+  .join-team {
     padding: 50px 0;
   }
-  #join-team .section-title {
+  .join-team .section-title {
     margin: 0 0 30px;
   }
-  #join-team .content {
+  .join-team .content {
     margin: 0 0 40px;
   }
-  #join-team .content p {
+  .join-team .content p {
     max-width: 100%;
   }
-  #join-team .content h6 {
+  .join-team .content h6 {
     font-size: 16px;
   }
   /***********************************
@@ -2725,6 +2787,9 @@ MEDIA QUERIES
   }
   #locations .separator {
     padding: 40px 0 0;
+  }
+  #locations .country-location:not(:first-child) {
+    margin: 60px 0 0;
   }
   .back-top .content {
     padding: 0 0 5px;
@@ -2847,7 +2912,7 @@ MEDIA QUERIES
     padding: 20px 0 0;
     margin: 0 0 15px;
   }
-  .banner .content .scrollDown {
+  .banner .content .banner-btn {
     margin: 20px 0 0;
   }
   /***********************************
@@ -2907,7 +2972,7 @@ MEDIA QUERIES
   .mk-team {
     margin: 30px 0 0;
   }
-  #join-team {
+  .join-team {
     padding: 40px 0;
   }
   /***********************************
@@ -2977,6 +3042,9 @@ MEDIA QUERIES
   }
   #locations .location-item .location {
     margin: 20px 0 0;
+  }
+  #locations .country-location:not(:first-child) {
+    margin: 40px 0 0;
   }
   .back-top .content {
     padding: 2px 0;
@@ -3066,11 +3134,18 @@ MEDIA QUERIES
     line-height: 26px;
     letter-spacing: 2px;
   }
-  .banner .content .scrollDown {
+  .banner .content .banner-btn {
+    margin: 15px 0 0;
+  }
+  .banner .content .banner-btn .btn {
+    padding: 16px 15px;
+    max-width: 170px;
+    display: block !important;
+  }
+  .banner .content .banner-btn .scrollDown {
     width: 50px;
     height: 50px;
     font-size: 18px;
-    margin: 15px 0 0;
   }
   /***********************************
 	ABOUT STYLES
@@ -3161,6 +3236,9 @@ MEDIA QUERIES
   .feature .arrow button {
     margin: 0;
   }
+  .feature:hover .arrow button, .feature:focus .arrow button {
+    margin-right: -5px !important;
+  }
   /***********************************
 	CONTACT STYLES
 	***********************************/
@@ -3204,6 +3282,9 @@ MEDIA QUERIES
     display: block;
     margin-top: -15px;
   }
+  .single-location:hover .arrow button, .single-location:focus .arrow button {
+    margin-right: 0 !important;
+  }
   #locations {
     padding: 30px 0;
   }
@@ -3213,6 +3294,9 @@ MEDIA QUERIES
   }
   #locations .separator {
     padding: 25px 0 0;
+  }
+  #locations .country-location:not(:first-child) {
+    margin: 30px 0 0;
   }
   /***********************************
 	FOOTER STYLES
@@ -3300,6 +3384,9 @@ MEDIA QUERIES
   .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload input[type="file"] {
     height: 65px;
   }
+  .resale-information.coverbg {
+    background-position: 40% 50% !important;
+  }
 }
 
 /* 480 */
@@ -3363,5 +3450,8 @@ MEDIA QUERIES
   }
   .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload:before {
     width: 120px;
+  }
+  .resale-information.coverbg {
+    background-position: 30% 50% !important;
   }
 }

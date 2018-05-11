@@ -80,287 +80,118 @@ get_header(); ?>
 			</div>
 		</section><!-- /contact-us -->
 
+		<?php $countries = get_field('countries'); if ($countries): ?>
+		<a id="countries" class="blankSpace"></a>
 		<section class="countries features">
 			<div class="container-fluid">
 				<div class="row eq-height justify-content-center">
-					<a href="#asia" class="single-location smoothScroll feature text-center col-md-2 col-sm-4 col-xs-6 col">
+					<?php foreach ($countries as $country): ?>
+					<a href="#<?php echo $country['location']->post_name; ?>" class="single-location smoothScroll feature text-center col-md-2 col-sm-4 col-xs-6 col">
 						<div class="icon">
-							<i class="icon-asia"></i>
+							<i class="icon-<?php echo $country['icon']; ?>"></i>
 						</div>
 
 						<div class="content">
-							<h5>Asia</h5>
+							<?php if ($country['title']): ?>
+							<h5><?php echo $country['title']; ?></h5>
+							<?php else: ?>
+							<h5><?php echo $country['location']->post_title; ?></h5>
+							<?php endif; ?>
 						</div>
 
 						<div class="arrow">
 							<button><i class="icon-arrow-down"></i></button>
 						</div>
 					</a><!-- /single-location -->
+					<?php endforeach ?>
 
-					<a href="#" class="single-location smoothScroll feature text-center col-md-2 col-sm-4 col-xs-6 col">
-						<div class="icon">
-							<i class="icon-africa"></i>
-						</div>
-
-						<div class="content">
-							<h5>Africa</h5>
-						</div>
-
-						<div class="arrow">
-							<button><i class="icon-arrow-down"></i></button>
-						</div>
-					</a><!-- /single-location -->
-
-					<a href="#" class="single-location smoothScroll feature text-center col-md-2 col-sm-4 col-xs-6 col">
-						<div class="icon">
-							<i class="icon-europe"></i>
-						</div>
-
-						<div class="content">
-							<h5>Europe</h5>
-						</div>
-
-						<div class="arrow">
-							<button><i class="icon-arrow-down"></i></button>
-						</div>
-					</a><!-- /single-location -->
-
-					<a href="#" class="single-location smoothScroll feature text-center col-md-2 col-sm-4 col-xs-6 col">
-						<div class="icon">
-							<i class="icon-meast"></i>
-						</div>
-
-						<div class="content">
-							<h5>Middle East</h5>
-						</div>
-
-						<div class="arrow">
-							<button><i class="icon-arrow-down"></i></button>
-						</div>
-					</a><!-- /single-location -->
-
-					<a href="#" class="single-location smoothScroll feature text-center col-md-2 col-sm-4 col-xs-6 col">
-						<div class="icon">
-							<i class="icon-namerica"></i>
-						</div>
-
-						<div class="content">
-							<h5>N. America</h5>
-						</div>
-
-						<div class="arrow">
-							<button><i class="icon-arrow-down"></i></button>
-						</div>
-					</a><!-- /single-location -->
-
-					<a href="#" class="single-location smoothScroll feature text-center col-md-2 col-sm-4 col-xs-6 col">
-						<div class="icon">
-							<i class="icon-samerica"></i>
-						</div>
-
-						<div class="content">
-							<h5>S. America</h5>
-						</div>
-
-						<div class="arrow">
-							<button><i class="icon-arrow-down"></i></button>
-						</div>
-					</a><!-- /single-location -->
 				</div>
 			</div>
 		</section><!-- /countrys -->
+		<?php endif; ?>
 
 		<section id="locations">
 			<div class="container">
-				<div id="asia">
+				<?php
+					$args = array(
+						'post_type' => 'location',
+						'orderby' => 'ASC',
+						'posts_per_page' => -1,
+					);
+
+					$loop = new WP_Query( $args );
+					if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post();
+					$location = get_field('location');
+				?>
+				<a id="<?php echo $post->post_name; ?>" class="blankSpace"></a>
+				<div class="country-location">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<div class="section-title">
-								<h3 class="title text-uppercase">Asia</h3>
+								<h3 class="title text-uppercase"><?php the_title(); ?></h3>
 								<span class="separator lg"></span>
 							</div>
 						</div>
 					</div>
 
+					<?php $counter = 1; if ($location): foreach($location as $loc): ?>
 					<div class="row location-item">
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<h6 class="title text-uppercase">Worldwide Sales & Marketing</h6>
-						</div>
-
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<div class="location">
-								<h5 class="name">Stella Liu</h5>
-								<span class="lc-name">Hong Kong</span>
-								<ul class="list-unstyled">
-									<li>Email: <a href="mailto:awong@beaconintermodal.com">awong@beaconintermodal.com</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<div class="location">
-								<h5 class="name">Dan Deblasio</h5>
-								<span class="lc-name">New York, Ny. Usa</span>
-								<ul class="list-unstyled">
-									<li>Email: <a href="mailto:awong@beaconintermodal.com">awong@beaconintermodal.com</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-								</ul>
-							</div>
-						</div>
-					</div><!-- /row -->
-
-					<div class="row location-item">
+						<?php if ($counter !== 1): ?>
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<span class="separator lg"></span>
 						</div>
+						<?php endif; ?>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<h6 class="title text-uppercase">Regional Operations</h6>
+							<?php if ($loc['title']): ?>
+							<h6 class="title text-uppercase"><?php echo $loc['title']; ?></h6>
+							<?php endif; ?>
 						</div>
 
+						<?php if ($loc['single_location']): foreach ($loc['single_location'] as $s_location): ?>
 						<div class="col-md-4 col-sm-4 col-xs-12">
 							<div class="location">
-								<h5 class="name">Stella Liu</h5>
-								<span class="lc-name">Hong Kong</span>
-								<ul class="list-unstyled">
-									<li>Email: <a href="mailto:awong@beaconintermodal.com">awong@beaconintermodal.com</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-								</ul>
-							</div>
-						</div>
+								<?php if ($s_location['title']): ?>
+								<h5 class="name"><?php echo $s_location['title']; ?></h5>
+								<?php endif; ?>
 
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<div class="location">
-								<h5 class="name">Dan Deblasio</h5>
-								<span class="lc-name">New York, Ny. Usa</span>
+								<?php if ($s_location['location']): ?>
+								<span class="lc-name"><?php echo $s_location['location']; ?></span>
+								<?php endif; ?>
+
+								<?php if ($s_location['email'] || $s_location['office_number'] || $s_location['mobile']): ?>
 								<ul class="list-unstyled">
-									<li>Email: <a href="mailto:awong@beaconintermodal.com">awong@beaconintermodal.com</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
+									<?php if ($s_location['email']): ?>
+									<li>Email: <a href="mailto:<?php echo $s_location['email']; ?>"><?php echo $s_location['email']; ?></a></li>
+									<?php endif; ?>
+									
+									<?php if ($s_location['office_number']): ?>
+									<li>Office: <a href="tel:<?php echo $s_location['office_number']; ?>"><?php echo $s_location['office_number']; ?></a></li>
+									<?php endif; ?>
+
+									<?php if ($s_location['mobile']): ?>
+									<li>Office: <a href="tel:<?php echo $s_location['mobile']; ?>"><?php echo $s_location['mobile']; ?></a></li>
+									<?php endif; ?>
 								</ul>
+								<?php endif; ?>
 							</div>
 						</div>
+						<?php endforeach; endif; ?>
 					</div><!-- /row -->
+					<?php $counter++; endforeach; endif; ?>
 				</div><!-- /asia -->
-
-				<div id="china">
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<div class="section-title">
-								<h3 class="title text-uppercase">China</h3>
-								<span class="separator lg"></span>
-							</div>
-						</div>
-					</div>
-
-					<div class="row location-item">
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<h6 class="title text-uppercase">Sales & Marketing</h6>
-						</div>
-
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<div class="location">
-								<h5 class="name">Stella Liu</h5>
-								<span class="lc-name">Hong Kong</span>
-								<ul class="list-unstyled">
-									<li>Email: <a href="mailto:awong@beaconintermodal.com">awong@beaconintermodal.com</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<div class="location">
-								<h5 class="name">Dan Deblasio</h5>
-								<span class="lc-name">New York, Ny. Usa</span>
-								<ul class="list-unstyled">
-									<li>Email: <a href="mailto:awong@beaconintermodal.com">awong@beaconintermodal.com</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-								</ul>
-							</div>
-						</div>
-					</div><!-- /row -->
-
-					<div class="row location-item">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<span class="separator lg"></span>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<h6 class="title text-uppercase">Operations</h6>
-						</div>
-
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<div class="location">
-								<h5 class="name">Stella Liu</h5>
-								<span class="lc-name">Hong Kong</span>
-								<ul class="list-unstyled">
-									<li>Email: <a href="mailto:awong@beaconintermodal.com">awong@beaconintermodal.com</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<div class="location">
-								<h5 class="name">Dan Deblasio</h5>
-								<span class="lc-name">New York, Ny. Usa</span>
-								<ul class="list-unstyled">
-									<li>Email: <a href="mailto:awong@beaconintermodal.com">awong@beaconintermodal.com</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-								</ul>
-							</div>
-						</div>
-					</div><!-- /row -->
-
-					<div class="row location-item">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<span class="separator lg"></span>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<h6 class="title text-uppercase">Technical Operations</h6>
-						</div>
-
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<div class="location">
-								<h5 class="name">Stella Liu</h5>
-								<span class="lc-name">Hong Kong</span>
-								<ul class="list-unstyled">
-									<li>Email: <a href="mailto:awong@beaconintermodal.com">awong@beaconintermodal.com</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<div class="location">
-								<h5 class="name">Dan Deblasio</h5>
-								<span class="lc-name">New York, Ny. Usa</span>
-								<ul class="list-unstyled">
-									<li>Email: <a href="mailto:awong@beaconintermodal.com">awong@beaconintermodal.com</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-									<li>Office: <a href="tel:+1-925-566-8361">+1-925-566-8361</a></li>
-								</ul>
-							</div>
-						</div>
-					</div><!-- /row -->
-				</div><!-- /asia -->
+				<?php endwhile; else : ?>
+				<section class="not-found text-center"><h3><?php _e('No Service item found!', 'beacon'); ?></h3></section>
+				<?php endif; wp_reset_postdata(); ?>
 			</div>
 		</section><!-- /single-locations -->
 
 		<?php $resale = get_field('resale_information'); if ($resale): ?>
-		<section id="resale-information" class="contact-information coverbg" <?php if($resale['bg']): ?>style="background-image: url(<?php echo $resale['bg']; ?>);"<?php endif; ?>>
+		<a id="resale-information" class="blankSpace"></a>
+		<section class="resale-information" class="contact-information coverbg" <?php if($resale['bg']): ?>style="background-image: url(<?php echo $resale['bg']; ?>);"<?php endif; ?>>
 			<div class="container">
 				<div class="row">
 					<?php if ($resale['sub_title'] || $resale['title'] || $resale['content']): ?>
-					<div class="col-md-5 col-sm-5 col-xs-12">
+					<div class="col-md-12 col-sm-12 col-xs-12">
 						<?php if ($resale['sub_title'] || $resale['title']): ?>
 						<div class="section-title">
 							<?php if ($resale['sub_title']): ?>

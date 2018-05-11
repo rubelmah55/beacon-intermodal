@@ -75,6 +75,7 @@ function reorder_admin_menu( $__return_true ) {
          'edit.php',                  // Posts
          'separator2',                // --Space--
          'edit.php?post_type=team',   // Team
+         'edit.php?post_type=location',   // Team
          'edit.php?post_type=our_service',// Service
          'edit.php?post_type=our_equipment',// Equipment
          'gf_edit_forms',             // Gravity Forms
@@ -102,7 +103,7 @@ function remove_admin_menus() {
   remove_menu_page( 'edit.php?post_type=acf-field-group' ); // Custom Field 
   remove_menu_page( 'pods' );                         // Pods Custom post type
 }
-//add_action( 'admin_menu', 'remove_admin_menus', 999);
+add_action( 'admin_menu', 'remove_admin_menus', 999);
 
 /*** GC Color Theme */
 function additional_admin_color_schemes() {
