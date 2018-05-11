@@ -417,6 +417,12 @@ MEDIA QUERIES
     .top-bar {
     	text-align: left;
     	margin: 5px 0 10px !important;
+
+    	ul {
+		    -webkit-box-pack: start;    
+		    -ms-flex-pack: start;    
+		    justify-content: flex-start;
+    	}
     }
 
 	.navbar {
@@ -1525,7 +1531,7 @@ MEDIA QUERIES
 		&:hover, &:focus {
 
 			.arrow {
-				
+
 				button {
 					margin-right: 0 !important;
 				}

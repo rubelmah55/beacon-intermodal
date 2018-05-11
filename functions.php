@@ -103,7 +103,7 @@ function remove_admin_menus() {
   remove_menu_page( 'edit.php?post_type=acf-field-group' ); // Custom Field 
   remove_menu_page( 'pods' );                         // Pods Custom post type
 }
-//add_action( 'admin_menu', 'remove_admin_menus', 999);
+add_action( 'admin_menu', 'remove_admin_menus', 999);
 
 /*** GC Color Theme */
 function additional_admin_color_schemes() {
