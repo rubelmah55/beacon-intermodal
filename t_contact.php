@@ -5,39 +5,38 @@ Template Name: Contact Us
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-
+		<?php $contact_head = get_field('contact_head'); if ($contact_head): ?>
 		<section class="section-nav">
 			<div class="container-fluid">
 				<div class="row">
-					<a href="#locations" class="nav-item smoothScroll align-center col-md-6 col-sm-6 col-xs-6">
-						<h5>View Leasing Information</h5>
+					<?php foreach ($contact_head as $item): ?>
+					<a href="<?php echo $item['url']; ?>" class="nav-item smoothScroll align-center col-md-6 col-sm-6 col-xs-6">
+						<?php if ($item['text']): ?>
+						<h5><?php echo $item['text']; ?></h5>
+						<?php endif; ?>
 
 						<div class="icon">
 							<i class="icon-arrow-down"></i>
 						</div>
 					</a><!-- /team-nav-item -->
-
-					<a href="#resale-information" class="nav-item smoothScroll align-center col-md-6 col-sm-6 col-xs-6">
-						<h5>View Resale Information</h5>
-
-						<div class="icon">
-							<i class="icon-arrow-down"></i>
-						</div>
-					</a><!-- /team-nav-item -->
+					<?php endforeach; ?>
 				</div>
 			</div>
 		</section><!-- /section-nav -->
+		<?php endif; ?>
 
 		<section class="contact-us">
 			<div class="container">
+				<?php $contact_us = get_field('contact_us'); if ($contact_us): ?>
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="section-title">
-							<h3 class="title text-uppercase">Contact Headquarters</h3>
+							<h3 class="title text-uppercase"><?php echo $contact_us['title']; ?></h3>
 							<span class="separator lg"><span></span></span>
 						</div>
 					</div>
 				</div>
+				<?php endif; ?>
 
 				<div class="row">
 					<?php $contacts = get_field('contacts', 'options'); if ($contacts): ?>
@@ -356,21 +355,34 @@ get_header(); ?>
 			</div>
 		</section><!-- /single-locations -->
 
-		<section id="resale-information" class="contact-information coverbg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/contact-information-bg.png);">
+		<?php $resale = get_field('resale_information'); if ($resale): ?>
+		<section id="resale-information" class="contact-information coverbg" <?php if($resale['bg']): ?>style="background-image: url(<?php echo $resale['bg']; ?>);"<?php endif; ?>>
 			<div class="container">
 				<div class="row">
+					<?php if ($resale['sub_title'] || $resale['title'] || $resale['content']): ?>
 					<div class="col-md-5 col-sm-5 col-xs-12">
+						<?php if ($resale['sub_title'] || $resale['title']): ?>
 						<div class="section-title">
-							<h6 class="sub-title text-uppercase">Contact Us</h6>
-							<h3 class="title text-uppercase">Resale Information</h3>
-							<span class="separator left"><span></span></span>
-						</div>
+							<?php if ($resale['sub_title']): ?>
+							<h6 class="sub-title text-uppercase"><?php echo $resale['sub_title']; ?></h6>
+							<?php endif; ?>
 
-						<p>We have a team of resale professionals across a network of offices in the United States, Europe and Asia.  For more information please send a detailed email to resales@beaconintermodal.com and someone from our resale team will be in touch to discuss your needs. </p>
+							<?php if ($resale['title']): ?>
+							<h3 class="title text-uppercase"><?php echo $resale['title']; ?></h3>
+							<span class="separator left"><span></span></span>
+							<?php endif; ?>
+						</div>
+						<?php endif; ?>
+
+						<?php if ($resale['content']): ?>
+						<?php echo $resale['content']; ?>
+						<?php endif; ?>
 					</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</section><!-- /contact-information -->
+		<?php endif; ?>
 
 		<section class="back-top">
 			<div class="container">

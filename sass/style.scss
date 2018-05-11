@@ -757,6 +757,13 @@ FINANCIAL-STRENGTH STYLES
 			}
 		}
 	}
+
+	a {
+
+		&:hover, &:focus {
+			color: $base !important;
+		}
+	}
 }
 
 /***********************************
@@ -765,6 +772,7 @@ TEAM STYLES
 .section-nav {
 	padding: 0;
 	overflow: hidden;
+	border-bottom: 2px solid $base;
 
 	.container-fluid {
 		padding: 0;
@@ -1647,6 +1655,13 @@ CONTACT STYLES
 				.gfield {
 					margin-top: 0;
 					margin-bottom: 23px;
+
+					&.gf_left_half {
+
+						.has_first_name {
+							margin-top: 0 !important;
+						}
+					}
 
 					&.google_recpatcha {
 						margin-top: 0;

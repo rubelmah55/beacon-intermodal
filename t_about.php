@@ -5,210 +5,158 @@ Template Name: About Us
 get_header(); ?>
 	
 	<div id="primary" class="content-area">
-			
-		<section class="about-us coverbg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/about-us-bg.jpg);">
+		<?php $about_us = get_field('about_us'); if ($about_us): ?>
+		<section class="about-us coverbg" <?php if($about_us['bg']): ?>style="background-image: url(<?php echo $about_us['bg']; ?>);"<?php endif; ?>>
 			<div class="container">
 				<div class="row align-center-v justify-content-center">
+					<?php if ($about_us['sub_title'] || $about_us['title'] || $about_us['content']): ?>
 					<div class="col-md-6 col-sm-12 col-xs-12">
 						<div class="content">
+							<?php if ($about_us['sub_title'] || $about_us['title']): ?>
 							<div class="section-title">
-								<h6 class="sub-title text-uppercase">About Us</h6>
-								<h3 class="title text-uppercase">A Global Leader</h3>
+								<?php if ($about_us['sub_title']): ?>
+								<h6 class="sub-title text-uppercase"><?php echo $about_us['sub_title']; ?></h6>
+								<?php endif; ?>
+								<?php if ($about_us['title']): ?>
+								<h3 class="title text-uppercase"><?php echo $about_us['title']; ?></h3>
 								<span class="separator left"><span></span></span>
+								<?php endif; ?>
 							</div>
+							<?php endif; ?>
 
-							<p>Beacon is headquartered in Boston, Massachusetts and was founded in 2008.  In under 10 years, Beacon has become an industry leading lessor of intermodal cargo containers with a fleet of nearly 1.3 million TEU. Beacon specializes in offering tailored leasing options for both dry and refrigerated containers to the world’s shipping companies.  We have the unique competitive advantage of being able to draw on the resources of one of the world’s largest financial institutions, as well as the creativity and experience of our people, to develop lease programs that meet the operational and financial needs of our valued customers.</p>
+							<?php if ($about_us['content']): ?>
+							<?php echo $about_us['content']; ?>
+							<?php endif; ?>
 						</div>
 					</div>
+					<?php endif; ?>
 
+					<?php if ($about_us['image']): ?>
 					<div class="col-md-6 col-sm-12 col-xs-12">
 						<div class="media">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/about-us.jpg" class="img-responsive" alt="">
+							<img src="<?php echo $about_us['image']['url']; ?>" class="img-responsive" alt="<?php echo $about_us['image']['alt']; ?>">
 						</div>
 					</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</section><!-- /about-us -->
+		<?php endif; ?>
 
+		<?php $team_head = get_field('team_head'); if ($team_head): ?>
 		<section class="section-nav">
 			<div class="container-fluid">
 				<div class="row">
-					<a href="#team" class="nav-item smoothScroll align-center col-md-6 col-sm-6 col-xs-6">
-						<h5>Meet the Team</h5>
+					<?php foreach ($team_head as $teamhead): ?>
+					<a href="<?php echo $teamhead['url']; ?>" class="nav-item smoothScroll align-center col-md-6 col-sm-6 col-xs-6">
+						<h5><?php echo $teamhead['text']; ?></h5>
 
 						<div class="icon">
 							<i class="icon-arrow-down"></i>
 						</div>
 					</a><!-- /team-nav-item -->
-
-					<a href="#join-team" class="nav-item smoothScroll align-center col-md-6 col-sm-6 col-xs-6">
-						<h5>Join the Team</h5>
-
-						<div class="icon">
-							<i class="icon-arrow-down"></i>
-						</div>
-					</a><!-- /team-nav-item -->
+					<?php endforeach; ?>
 				</div>
 			</div>
 		</section><!-- /section-nav -->
+		<?php endif; ?>
 
+		<?php $counters = get_field('counters'); if ($counters): ?>
 		<section class="counters">
 			<div class="container">
 				<div class="row">
+					<?php foreach ($counters as $counter): ?>
 					<div class="col-md-4 col-sm-6 col-xs-6 col-xs">
 						<div class="counter-item text-center">
+							<?php if ($counter['number'] || $counter['extension']): ?>
 							<div class="lrg-num">
-								<span class="counter">1.3</span>
-								<span>M</span>
+								<?php if ($counter['number']): ?>
+								<span class="counter"><?php echo $counter['number']; ?></span>
+								<?php endif; ?>
+								<?php if ($counter['extension']): ?>
+								<span><?php echo $counter['extension']; ?></span>
+								<?php endif; ?>
 							</div>
+							<?php endif; ?>
 
-							<h6 class="text-uppercase">Current</h6>
-							<h4 class="text-uppercase">Teu’s</h4>
+							<?php if ($counter['sub_title']): ?>
+							<h6 class="text-uppercase"><?php echo $counter['sub_title']; ?></h6>
+							<?php endif; ?>
+							<?php if ($counter['title']): ?>
+							<h4 class="text-uppercase"><?php echo $counter['title']; ?></h4>
 							<span class="separator"><span></span></span>
+							<?php endif; ?>
 						</div>
 					</div><!-- /counter-item -->
-
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xs">
-						<div class="counter-item text-center">
-							<div class="lrg-num">
-								<span class="counter">180</span>
-								<span>+</span>
-							</div>
-
-							<h6 class="text-uppercase">Port</h6>
-							<h4 class="text-uppercase">Locations</h4>
-							<span class="separator"><span></span></span>
-						</div>
-					</div><!-- /counter-item -->
-
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xs">
-						<div class="counter-item text-center">
-							<div class="lrg-num">
-								<span class="counter">60</span>
-								<span>+</span>
-							</div>
-
-							<h6 class="text-uppercase">Beacon</h6>
-							<h4 class="text-uppercase">Employees</h4>
-							<span class="separator"><span></span></span>
-						</div>
-					</div><!-- /counter-item -->
-
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xs">
-						<div class="counter-item text-center">
-							<div class="lrg-num">
-								<span class="counter">100</span>
-								<span>+</span>
-							</div>
-
-							<h6 class="text-uppercase">Current</h6>
-							<h4 class="text-uppercase">Customers</h4>
-							<span class="separator"><span></span></span>
-						</div>
-					</div><!-- /counter-item -->
-
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xs">
-						<div class="counter-item text-center">
-							<div class="lrg-num">
-								<span class="counter">300</span>
-								<span>+</span>
-							</div>
-
-							<h6 class="text-uppercase">Depot</h6>
-							<h4 class="text-uppercase">Partners</h4>
-							<span class="separator"><span></span></span>
-						</div>
-					</div><!-- /counter-item -->
-
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xs">
-						<div class="counter-item text-center">
-							<div class="lrg-num">
-								<span class="counter">12</span>
-							</div>
-
-							<h6 class="text-uppercase">Offices</h6>
-							<h4 class="text-uppercase">Worldwide</h4>
-							<span class="separator"><span></span></span>
-						</div>
-					</div><!-- /counter-item -->
+					<?php endforeach; ?>
 				</div>
 			</div>
 		</section><!-- /counters -->
+		<?php endif; ?>
 
+		<?php $f_strength = get_field('financial_strength'); if ($f_strength): ?>
 		<section class="financial-strength">
 			<div class="container">
-				<div class="row">
-
+				<div class="row">	
+					<?php if ($f_strength['title']): ?>
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="section-title">
-							<h3 class="title text-uppercase">Financial Strength.</h3>
+							<h3 class="title text-uppercase"><?php echo $f_strength['title']; ?></h3>
 						</div>
 					</div>
+					<?php endif; ?>
 
+					<?php if ($f_strength['content']): ?>
 					<div class="col-md-6 col-sm-12 col-xs-12">
 						<div class="content">
-							<p>With the backing of one of the world’s largest financial institutions, Beacon has access to competitive funding and the support of a parent who has a life-cycle view on asset ownership.</p>
-
-							<p>In November 2014, Beacon Intermodal Leasing, LLC (“Beacon”) became a wholly owned group company of <span>Mitsubishi UFJ Lease & Finance Company Limited (“MUL”).</span> Prior to 2014, Beacon was owned 100% by BTMU Capital Corporation, a subsidiary of the Bank of Tokyo Mitsubishi-UFJ Ltd. </p>
-
-							<p>The MUL Group has a diverse business portfolio, offering leases and financial products in auto, real estate, rail car, vessels, containers, aircraft engines, aircraft, and other capital equipment.  </p>
+							<?php echo $f_strength['content']; ?>
 						</div>
 					</div>
+					<?php endif; ?>
 
+					<?php if ($f_strength['lists']): ?>
 					<div class="col-md-offset-1 col-md-5 col-sm-12 col-xs-12">
 						<ul class="financial-list list-unstyled">
+							<?php foreach ($f_strength['lists'] as $list): ?>
 							<li>
 								<div class="separator pull-left">
 									<span></span>
 								</div>
-
 								<div class="content">
-									<p><span>Engine Lease Finance (“ELF”)</span>, the largest independent lessor of spare aircraft engines, was acquired by MUL in 2014. ELF is headquartered in Shannon Ireland and owns and manages a fleet of more than 280 engines valued at $2.5 billion.</p>	
+									<?php echo $list['item']; ?>	
 								</div>
 							</li>
-
-							<li>
-								<div class="separator pull-left">
-									<span></span>
-								</div>
-
-								<div class="content">
-									<p><span>Jackson Square Aviation (“JSA”)</span> was acquired by MUL in 2013. JSA is a San-Francisco based aircraft leasing company with a fleet of more than 170 commercial aircraft valued at $7 billion.</p>	
-								</div>
-							</li>
-
-							<li>
-								<div class="separator pull-left">
-									<span></span>
-								</div>
-
-								<div class="content">
-									<p>MUL Railcars was established in 2017 and is a $1 billion venture with the Greenbrier Companies to acquire 25,000 freight railcars in the United States.</p>	
-								</div>
-							</li>
+							<?php endforeach; ?>
 						</ul>
 					</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</section><!-- /financial-strength. -->
+		<?php endif; ?>
 
 		<section id="team">
 
 			<div id="leadership">
-
+				<?php $leadership = get_field('leadership'); if ($leadership): ?>
 				<div class="leadership-head">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 col-sm-12 col-xs-12">
 								<div class="section-title text-center">
-									<h6 class="sub-title text-uppercase">Meet the Team</h6>
-									<h3 class="title text-uppercase">The Leadership</h3>
+									<?php if ($leadership['sub_title']): ?>
+									<h6 class="sub-title text-uppercase"><?php echo $leadership['sub_title']; ?></h6>
+									<?php endif; ?>
+									<?php if ($leadership['title']): ?>
+									<h3 class="title text-uppercase"><?php echo $leadership['title']; ?></h3>
 									<span class="separator"><span></span></span>
+									<?php endif; ?>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div><!-- /leadership-head -->
+				<?php endif; ?>
 
 				<?php
 					$counter = 0;
@@ -265,14 +213,16 @@ get_header(); ?>
 
 			<div id="marketing-team">
 				<div class="container">
+					<?php $marketing = get_field('marketing'); if ($marketing): ?>
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<div class="section-title text-center">
-								<h3 class="title text-uppercase">The Marketing Team</h3>
+								<h3 class="title text-uppercase"><?php echo $marketing['title']; ?></h3>
 								<span class="separator"><span></span></span>
 							</div>
 						</div>
 					</div>
+					<?php endif; ?>
 
 					<div class="row eq-height">
 						<?php
@@ -321,22 +271,24 @@ get_header(); ?>
 		<section id="join-team">
 			<div class="container">
 				<div class="row">
+					<?php $career_opp = get_field('career_opportunities'); if ($career_opp['title']): ?>
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="section-title">
-							<h3 class="title text-uppercase">Career Opportunities</h3>
+							<h3 class="title text-uppercase"><?php echo $career_opp['title']; ?></h3>
 							<span class="separator lg"></span>
 						</div>
 					</div>
+					<?php endif; ?>
 				</div>
 
 				<div class="row">
+					<?php if ($career_opp['content']): ?>
 					<div class="col-md-5 col-sm-12 col-xs-12">
 						<div class="content">
-							<p>At Beacon our employees are our most valuable assets and are the foundation of our success.  As Beacon continues to grow we are continuously seeking talented industry professionals to join our team.  Beacon is an equal opportunity employer offering competitive compensation packages to our employees.  For current openings please see the career links below and for more information please email <a href="mailto:careers@beaconintermodal.com">careers@beaconintermodal.com</a></p>
-
-							<h6>No openings at this time</h6>
+							<?php echo $career_opp['content']; ?>
 						</div>
 					</div>
+					<?php endif; ?>
 
 					<div class="col-md-7 col-sm-12 col-xs-12">
 						<div class="contact-form">

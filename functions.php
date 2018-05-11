@@ -181,7 +181,15 @@ function hide_editor_custom_js() {
                           jQuery("#_home_page_options").show();
                           jQuery("#postdivrich").hide();
                         break;
+                        case "t_about.php":
+                          jQuery("#_home_page_options").show();
+                          jQuery("#postdivrich").hide();
+                        break;
                         case "t_equipment.php":
+                          jQuery("#_home_page_options").show();
+                          jQuery("#postdivrich").hide();
+                        break;
+                        case "t_contact.php":
                           jQuery("#_home_page_options").show();
                           jQuery("#postdivrich").hide();
                         break;

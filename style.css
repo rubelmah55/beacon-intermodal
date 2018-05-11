@@ -910,12 +910,17 @@ FINANCIAL-STRENGTH STYLES
   text-decoration: underline;
 }
 
+.financial-strength a:hover, .financial-strength a:focus {
+  color: #F5E221 !important;
+}
+
 /***********************************
 TEAM STYLES
 ***********************************/
 .section-nav {
   padding: 0;
   overflow: hidden;
+  border-bottom: 2px solid #F5E221;
 }
 
 .section-nav .container-fluid {
@@ -1722,6 +1727,10 @@ CONTACT STYLES
 .gform_wrapper form .gform_body .gform_fields .gfield {
   margin-top: 0;
   margin-bottom: 23px;
+}
+
+.gform_wrapper form .gform_body .gform_fields .gfield.gf_left_half .has_first_name {
+  margin-top: 0 !important;
 }
 
 .gform_wrapper form .gform_body .gform_fields .gfield.google_recpatcha {
