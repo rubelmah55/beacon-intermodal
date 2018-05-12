@@ -797,13 +797,11 @@ BANNER STYLES
 }
 
 .banner .content .banner-btn .btn {
-  padding: 26px 15px;
+  padding: 24px 15px;
   margin-right: 10px;
-  background: #F5E221;
-}
-
-.banner .content .banner-btn .btn:before {
-  background: #23275E;
+  border: 2px solid #F5E221;
+  border-radius: 50px;
+  background: transparent;
 }
 
 .banner .content .scrollDown {
@@ -3147,7 +3145,7 @@ MEDIA QUERIES
     margin: 15px 0 0;
   }
   .banner .content .banner-btn .btn {
-    padding: 16px 15px;
+    padding: 14px 15px;
     max-width: 170px;
     display: block !important;
   }

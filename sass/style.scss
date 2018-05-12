@@ -634,13 +634,11 @@ BANNER STYLES
 			margin: 45px 0 0;
 
 			.btn {
-				padding: 26px 15px;
+				padding: 24px 15px;
 				margin-right: 10px;
-				background: $base;
-
-				&:before {
-					background: $primary;
-				}
+				border: 2px solid $base;
+				border-radius: 50px;
+				background: transparent;
 			}
 		}
 
