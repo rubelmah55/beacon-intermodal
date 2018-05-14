@@ -41,13 +41,12 @@
     });
 
     $(".playVideo").colorbox({
-		iframe:true,
 		fixed: true,
-		iframe:true,
+		inline:true,
 		reposition: true,
 		scrolling: false,
 		innerWidth: 500, 
-		innerHeight: 409
+		
     });
 
     /*** Custom File Upload */

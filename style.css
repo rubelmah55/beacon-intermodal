@@ -828,6 +828,11 @@ BANNER STYLES
   background: #23275E;
 }
 
+.popup_video {
+  width: 100%;
+  height: auto;
+}
+
 /***********************************
 ABOUT STYLES
 ***********************************/

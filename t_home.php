@@ -21,8 +21,14 @@ get_header(); ?>
 						<?php endif; ?>
 
 						<div class="banner-btn align-center-v">
-							<a class="btn text-uppercase hidden playVideo" href="<?php echo $banner['video']; ?>">Play Video</a>
+							<a class="btn text-uppercase hidden playVideo" href="#inline_content">Play Video</a>
 							<a class="scrollDown"><i class="icon-arrow-down"></i></a>
+						</div>
+
+						<div style="display: none">
+							<div id="inline_content">
+								<video autoplay controls class="popup_video"><source src="<?php echo $banner['video']; ?>" type="video/mp4"></video>
+							</div>
 						</div>
 					</div>
 				</div>
