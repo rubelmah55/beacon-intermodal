@@ -45,8 +45,7 @@
 		inline:true,
 		reposition: true,
 		scrolling: false,
-		innerWidth: 500, 
-		
+		innerWidth: '95%',
     });
 
     /*** Custom File Upload */
