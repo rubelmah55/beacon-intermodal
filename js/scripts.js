@@ -43,6 +43,7 @@
     $(".playVideo").colorbox({
 		iframe:true,
 		fixed: true,
+		iframe:true,
 		reposition: true,
 		scrolling: false,
 		innerWidth: 500, 
