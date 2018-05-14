@@ -40,6 +40,15 @@
         time: 1000
     });
 
+    $(".playVideo").colorbox({
+		iframe:true,
+		fixed: true,
+		reposition: true,
+		scrolling: false,
+		innerWidth: 500, 
+		innerHeight: 409
+    });
+
     /*** Custom File Upload */
 	$('.custom_file_upload .screen-reader-text').html('No File Attached');
 	$('.custom_file_upload input[type="file"]').change(function(){

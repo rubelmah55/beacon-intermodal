@@ -46,15 +46,6 @@
 			</div><!-- /careers-bar -->
 			<?php endif; ?>
 		</footer><!-- /footer -->
-		<script type="text/javascript">
-			var myVideo = document.getElementById("myVideo"); 
-			function playPause() { 
-			    if (myVideo.paused) 
-			        myVideo.play(); 
-			    else 
-			        myVideo.pause(); 
-			} 
-		</script>
 		<?php wp_footer(); ?>
 	</body>
 </html>

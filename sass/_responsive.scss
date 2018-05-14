@@ -1263,6 +1263,10 @@ MEDIA QUERIES
 	.banner {
 		height: 400px;
 
+		.myVideo {
+			display: none;
+		}
+
 		.content {
 
 			h1 {

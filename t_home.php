@@ -5,7 +5,7 @@ Template Name: Home
 get_header(); ?>
 
 	<?php $banner = get_field('home_banner'); if ($banner): $bannerImg = $banner['image'] ? $banner['image'] : get_template_directory_uri().'/images/banner.jpg'; ?>
-	<section class="banner align-center-v videoBg">
+	<section class="banner align-center-v videoBg coverbg" style="background-image: url(<?php echo $bannerImg; ?>)">
 		<video autoplay muted loop id="myVideo" class="myVideo coverbg" poster="<?php echo $bannerImg; ?>"><source src="<?php echo $banner['video']; ?>" type="video/mp4">Your browser does not support HTML5 video.</video>
 		<div class="container">
 			<div class="row">
@@ -21,7 +21,7 @@ get_header(); ?>
 						<?php endif; ?>
 
 						<div class="banner-btn align-center-v">
-							<button class="btn text-uppercase hidden" onclick="playPause()">Play Video</button>
+							<a class="btn text-uppercase hidden playVideo" href="<?php echo $banner['video']; ?>">Play Video</a>
 							<a class="scrollDown"><i class="icon-arrow-down"></i></a>
 						</div>
 					</div>
