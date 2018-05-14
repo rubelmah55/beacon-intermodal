@@ -452,6 +452,9 @@ HEADER STYLES
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -544,7 +547,7 @@ HEADER STYLES
 }
 
 .navbar .navbar-collapse .navbar-nav > li {
-  padding: 0 12px;
+  padding: 0 15px;
 }
 
 .navbar .navbar-collapse .navbar-nav > li > a {
@@ -628,7 +631,7 @@ BREADCRUMB STYLES
   background: transparent;
   color: #23275E;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   -webkit-transition: all 0.3s ease;
@@ -641,7 +644,7 @@ BREADCRUMB STYLES
 .breadcrumb-wrapper .breadcrumb a, .breadcrumb-wrapper .breadcrumb span {
   color: #23275E;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   -webkit-transition: all 0.3s ease;
@@ -733,7 +736,7 @@ ENTRY-HEADER STYLES
 .entry-header .content p {
   margin: 0;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   max-width: 747px;
   letter-spacing: 0.45px;
 }
@@ -778,6 +781,7 @@ BANNER STYLES
 }
 
 .banner .content h1 {
+  margin: 0 0 5px;
   max-width: 780px;
   font-style: italic;
   letter-spacing: 1.8px;
@@ -802,6 +806,10 @@ BANNER STYLES
   border: 2px solid #F5E221;
   border-radius: 50px;
   background: transparent;
+}
+
+.banner .content .banner-btn .btn:hover, .banner .content .banner-btn .btn:focus {
+  color: #23275E;
 }
 
 .banner .content .scrollDown {
@@ -874,7 +882,7 @@ COUNTERS STYLES
   color: #FFF;
   margin: 0 0 5px;
   font-size: 72px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 88px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1107,6 +1115,7 @@ TEAM STYLES
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
+  font-family: "tinos", serif;
   letter-spacing: 0.35px;
 }
 
@@ -1157,7 +1166,7 @@ FEATURES STYLES
 
 .feature .icon {
   color: #FFF;
-  font-size: 80px;
+  font-size: 90px;
   margin: 0 0 30px;
 }
 
@@ -1463,7 +1472,7 @@ EQUIPMENTS STYLES
 
 .specifications .note {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 18px;
   margin: 25px 0 0;
   letter-spacing: 0.07px;
@@ -1495,10 +1504,14 @@ EQUIPMENTS STYLES
   border: 0;
   color: #23275E;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 18px;
   padding: 16px 20px;
   letter-spacing: 0.07px;
+}
+
+.table-specifications .table tbody tr td:first-child {
+  width: 30%;
 }
 
 /***********************************
@@ -1517,7 +1530,7 @@ CONTACT STYLES
 .contact .content label {
   color: #000;
   display: block;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .contact .content .btn {
@@ -1562,8 +1575,8 @@ CONTACT STYLES
 .contact-us .content ul li h6 {
   color: #7B848E;
   margin: 0 0 5px;
-  font-weight: 400;
-  line-height: 30px;
+  font-weight: 700;
+  line-height: 22px;
   font-family: "montserrat", sans-serif;
   text-transform: uppercase;
 }
@@ -1784,7 +1797,7 @@ CONTACT STYLES
 
 .gform_confirmation_message {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 15px;
 }
 
@@ -1893,6 +1906,8 @@ CONTACT STYLES
   content: 'Attach';
   position: absolute;
   border-radius: 4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   background: #23275E;
   text-transform: uppercase;
   display: -webkit-box;
@@ -3116,6 +3131,12 @@ MEDIA QUERIES
 }
 
 /* 680 */
+@media only screen and (max-width: 640px) {
+  .gform_wrapper form .gform_footer {
+    padding-right: 0 !important;
+  }
+}
+
 @media only screen and (max-width: 575px) {
   section {
     padding: 30px 0;
@@ -3471,9 +3492,6 @@ MEDIA QUERIES
   }
   .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload:before {
     width: 120px;
-  }
-  .resale-information.coverbg {
-    background-position: 30% 50% !important;
   }
 }
 

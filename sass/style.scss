@@ -341,7 +341,7 @@ HEADER STYLES
 				font-size: 12px;
 				background: $base;
 				padding: 15px 15px;
-				@include align-center('vertical');
+				@include align-center;
 				@include letter-spacing(50, 12);
 
 				i {
@@ -424,7 +424,7 @@ HEADER STYLES
 		.navbar-nav {
 
 			> li {
-				padding: 0 12px;
+				padding: 0 15px;
 
 				>	a {
 					color: $white;
@@ -520,7 +520,7 @@ BREADCRUMB STYLES
 
 		color: $primary;
 		font-size: 12px;
-		font-weight: 500;
+		font-weight: 600;
 		text-transform: uppercase;
 		@include letter-spacing(125, 12);
 		@include transition(all 0.3s ease);
@@ -528,7 +528,7 @@ BREADCRUMB STYLES
 		a, span {
 			color: $primary;
 			font-size: 12px;
-			font-weight: 500;
+			font-weight: 600;
 			text-transform: uppercase;
 			@include letter-spacing(125, 12);
 			@include transition(all 0.3s ease);
@@ -587,7 +587,7 @@ ENTRY-HEADER STYLES
 		p {
 			margin: 0;
 			font-size: 18px;
-			font-weight: 500;
+			font-weight: 600;
 			max-width: 747px;
 			@include letter-spacing(25, 18);
 		}
@@ -616,6 +616,7 @@ BANNER STYLES
 		}
 
 		h1 {
+			margin: 0 0 5px;
 			max-width: 780px;
 			font-style: italic;
 			@include letter-spacing(25, 72);
@@ -639,6 +640,10 @@ BANNER STYLES
 				border: 2px solid $base;
 				border-radius: 50px;
 				background: transparent;
+
+				&:hover, &:focus {
+					color: $primary;
+				}
 			}
 		}
 
@@ -712,7 +717,7 @@ COUNTERS STYLES
 		color: $white;
 		margin: 0 0 5px;
 		font-size: 72px;
-		font-weight: 500;
+		font-weight: 600;
 		line-height: 88px;
 		@include align-center;
 	}
@@ -954,6 +959,7 @@ TEAM STYLES
 			font-size: 14px;
 			font-weight: 400;
 			line-height: 18px;
+			font-family: $tinos;
 			@include letter-spacing(25, 14);
 		}
 	}
@@ -1008,7 +1014,7 @@ FEATURES STYLES
 
 	.icon {
 		color: $white;
-		font-size: 80px;
+		font-size: 90px;
 		margin: 0 0 30px;
 	}
 
@@ -1350,7 +1356,7 @@ EQUIPMENTS STYLES
 
 	.note {
 		font-size: 14px;
-		font-weight: 500;
+		font-weight: 600;
 		line-height: 18px;
 		margin: 25px 0 0;
 		@include letter-spacing(5, 14);
@@ -1391,10 +1397,14 @@ EQUIPMENTS STYLES
 					border: 0;
 					color: $primary;
 					font-size: 14px;
-					font-weight: 500;
+					font-weight: 600;
 					line-height: 18px;
 					padding: 16px 20px;
 					@include letter-spacing(5, 14);
+
+					&:first-child {
+					    width: 30%;
+					}
 				}
 			}
 		}
@@ -1415,7 +1425,7 @@ CONTACT STYLES
 		label {
 			color: $black;
 			display: block;
-			font-weight: 500;
+			font-weight: 600;
 		}
 
 		.btn {
@@ -1476,8 +1486,8 @@ CONTACT STYLES
 				h6 {
 					color: #7B848E;
 					margin: 0 0 5px;
-					font-weight: 400;
-					line-height: 30px;
+					font-weight: 700;
+					line-height: 22px;
 					font-family: $mont;
 					text-transform: uppercase;
 				}
@@ -1722,7 +1732,7 @@ CONTACT STYLES
 
 .gform_confirmation_message {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 15px;
 
     &:before {
@@ -1834,6 +1844,8 @@ CONTACT STYLES
 								content: 'Attach';
 								position: absolute;
 								border-radius: 4px;
+								border-top-left-radius: 0;
+								border-bottom-left-radius: 0;
 								background: $primary;
 								text-transform: uppercase;
 								@include align-center;
@@ -2011,9 +2023,6 @@ FOOTER STYLES
 				&:hover, &:focus {
 					color: $black;
 				}
-			}
-
-			i {
 			}
 		}
 	}

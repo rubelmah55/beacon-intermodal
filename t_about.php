@@ -276,7 +276,7 @@ get_header(); ?>
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="section-title">
 							<h3 class="title text-uppercase"><?php echo $career_opp['title']; ?></h3>
-							<span class="separator lg"></span>
+							<span class="separator lg"><span></span></span>
 						</div>
 					</div>
 					<?php endif; ?>

@@ -186,7 +186,7 @@ get_header(); ?>
 		</section><!-- /single-locations -->
 
 		<?php $resale = get_field('resale_information'); if ($resale): ?>
-		<a id="resale-information" class="blankSpace"></a>
+		<a id="resale-information coverbg" class="blankSpace"></a>
 		<section class="resale-information" class="contact-information coverbg" <?php if($resale['bg']): ?>style="background-image: url(<?php echo $resale['bg']; ?>);"<?php endif; ?>>
 			<div class="container">
 				<div class="row">

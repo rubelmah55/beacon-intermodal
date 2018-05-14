@@ -1227,6 +1227,19 @@ MEDIA QUERIES
 
 }/* 680 */
 
+@media only screen and (max-width : 640px) {
+	
+	.gform_wrapper {
+
+		form {
+
+			.gform_footer {
+				padding-right: 0 !important;
+			}
+		}
+	}
+}
+
 @media only screen and (max-width : 575px) {
 
 	section {
@@ -1847,12 +1860,6 @@ MEDIA QUERIES
 					}
 				}
 			}
-		}
-	}
-	.resale-information {
-	
-		&.coverbg {
-			background-position: 30% 50% !important;
 		}
 	}
 }
