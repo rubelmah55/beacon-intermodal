@@ -3461,9 +3461,13 @@ MEDIA QUERIES
     line-height: 20px;
   }
   .gform_wrapper form .gform_body .gform_fields .gfield.google_recpatcha {
-    float: none;
-    padding-right: 0;
+    padding-right: 0 !important;
     margin-bottom: 3px;
+    -webkit-transform-origin: 100% 0 !important;
+    -moz-transform-origin: 100% 0 !important;
+    -ms-transform-origin: 100% 0 !important;
+    -o-transform-origin: 100% 0 !important;
+    transform-origin: 100% 0 !important;
   }
   .gform_wrapper form .gform_body .gform_fields .gfield.google_recpatcha .ginput_recaptcha {
     -webkit-transform: scale(0.77);
@@ -3471,21 +3475,17 @@ MEDIA QUERIES
     -ms-transform: scale(0.77);
     -o-transform: scale(0.77);
     transform: scale(0.77);
-    -webkit-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    -ms-transform-origin: 0 0;
-    -o-transform-origin: 0 0;
-    transform-origin: 0 0;
-  }
-  .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload {
-    float: none;
+    -webkit-transform-origin: 100% 0;
+    -moz-transform-origin: 100% 0;
+    -ms-transform-origin: 100% 0;
+    -o-transform-origin: 100% 0;
+    transform-origin: 100% 0;
   }
   .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload {
     height: 60px;
   }
   .gform_wrapper form .gform_footer {
     float: none;
-    text-align: left;
     margin-top: 0 !important;
   }
   .contact-us-form .gform_wrapper form .gform_footer {
