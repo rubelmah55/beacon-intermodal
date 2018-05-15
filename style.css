@@ -280,31 +280,10 @@ hr {
   transition: all 0.3s;
 }
 
-.btn:before {
-  top: 0;
-  right: 0;
-  width: 0;
-  z-index: -1;
-  content: "";
-  height: 100%;
-  background: #F5E221;
-  position: absolute;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
 .btn:hover, .btn:focus, .btn:active {
-  color: #FFF;
+  color: #23275E;
+  background: #F5E221;
   outline: 0 !important;
-}
-
-.btn:hover:before, .btn:focus:before, .btn:active:before {
-  left: 0;
-  right: auto;
-  width: 100%;
 }
 
 .section-title .sub-title {
@@ -445,10 +424,10 @@ HEADER STYLES
 
 .top-bar ul li a {
   width: 180px;
-  color: #1C1F48;
   font-size: 12px;
   background: #F5E221;
   padding: 15px 15px;
+  color: #1C1F48 !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -472,8 +451,8 @@ HEADER STYLES
   display: inline-block;
 }
 
-.top-bar ul li a:hover:before, .top-bar ul li a:focus:before {
-  background: #000;
+.top-bar ul li a:hover, .top-bar ul li a:focus {
+  background: #FFF;
 }
 
 .navbar {
@@ -527,9 +506,12 @@ HEADER STYLES
   transition: all 0.3s ease;
 }
 
-.navbar .navbar-header .logo .navbar-brand span {
+.navbar .navbar-header .logo .navbar-brand .tagline {
+  color: #C8C8C8;
   font-size: 10px;
-  font-family: "Proxima Nova";
+  line-height: 11px;
+  font-family: "proxima-nova-condensed", sans-serif;
+  letter-spacing: -0.1px;
 }
 
 .navbar .navbar-header .logo .navbar-brand img {
@@ -597,16 +579,20 @@ HEADER STYLES
   box-shadow: 0 0px 12px rgba(0, 0, 0, 0.4);
 }
 
-.navbar.stop .navbar-header .logo .navbar-brand {
-  padding: 9px 0;
-}
-
 .navbar.stop .navbar-header .logo .navbar-brand img {
   max-width: 170px;
 }
 
+.navbar.stop .navbar-header .logo .navbar-brand .tagline {
+  font-size: 8.5px;
+}
+
 .navbar.stop .navbar-collapse .top-bar {
   margin: 0 0 4px;
+}
+
+.navbar.stop .navbar-collapse .nav li a {
+  line-height: 28px;
 }
 
 .header_gutter {
@@ -768,6 +754,7 @@ BANNER STYLES
 }
 
 .banner .myVideo {
+  width: 100%;
   position: absolute;
 }
 
@@ -809,7 +796,9 @@ BANNER STYLES
 }
 
 .banner .content .banner-btn .btn:hover, .banner .content .banner-btn .btn:focus {
-  color: #23275E;
+  color: #FFF;
+  border-color: #23275E;
+  background: #23275E;
 }
 
 .banner .content .scrollDown {
@@ -832,7 +821,7 @@ BANNER STYLES
 }
 
 .banner .content .scrollDown:hover, .banner .content .scrollDown:focus {
-  color: #F5E221;
+  color: #FFF;
   background: #23275E;
 }
 
@@ -1010,11 +999,20 @@ TEAM STYLES
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-property: transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 
 .section-nav .nav-item .icon i:before {
@@ -1031,7 +1029,9 @@ TEAM STYLES
 }
 
 .section-nav .nav-item:hover .icon, .section-nav .nav-item:focus .icon {
-  margin-left: 10px;
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
 }
 
 .team {
@@ -1040,7 +1040,6 @@ TEAM STYLES
 
 .leadership-head {
   padding: 66px 0 20px;
-  background: #BFBFBF;
 }
 
 .leadership-member {
@@ -1111,6 +1110,7 @@ TEAM STYLES
 }
 
 .mk-team .content .position {
+  margin: 10px 8px 0;
   color: #7B848E;
   font-size: 14px;
   font-weight: 400;
@@ -1127,6 +1127,16 @@ TEAM STYLES
 
 .join-team .section-title {
   margin: 0 0 60px;
+}
+
+.join-team .content h1, .join-team .content h2, .join-team .content h3, .join-team .content h4, .join-team .content h5, .join-team .content h6 {
+  font-weight: 700;
+  font-family: "montserrat", sans-serif;
+  letter-spacing: 0;
+}
+
+.join-team .content a {
+  text-decoration: underline;
 }
 
 .join-team .content p {
@@ -1167,7 +1177,13 @@ FEATURES STYLES
 .feature .icon {
   color: #FFF;
   font-size: 90px;
-  margin: 0 0 30px;
+  margin: 0 auto 30px;
+  width: 90px;
+  height: 110px;
+}
+
+.feature .icon .icon-service {
+  font-size: 110px;
 }
 
 .feature p {
@@ -1202,20 +1218,28 @@ FEATURES STYLES
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-name: fadeInRight;
-  animation-name: fadeInRight;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-property: transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 
 .feature.hover-arrow:hover .arrow button, .feature.hover-arrow:focus .arrow button {
   color: #23275E;
-  margin-right: 15px;
   background-color: #F5E221;
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft;
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
 }
 
 /***********************************
@@ -1224,6 +1248,7 @@ STRONG-SECURE STYLES
 .strong-secure {
   padding: 0;
   overflow: hidden;
+  max-height: 620px;
 }
 
 .strong-secure .container-fluid {
@@ -1361,12 +1386,20 @@ SERVICES STYLES
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-name: fadeInRight;
-  animation-name: fadeInRight;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-property: transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 
 .box-item:hover .media img, .box-item:focus .media img {
@@ -1379,16 +1412,11 @@ SERVICES STYLES
 
 .box-item:hover .content .arrow button, .box-item:focus .content .arrow button {
   color: #FFF;
-  background: #F5E221;
-  margin-right: 15px;
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft;
-}
-
-.box-item:hover .content .arrow button:hover, .box-item:hover .content .arrow button:focus, .box-item:focus .content .arrow button:hover, .box-item:focus .content .arrow button:focus {
-  color: #FFF;
   background: #23275E;
   border-color: #23275E;
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
 }
 
 .service-details .section-title .title {
@@ -1662,12 +1690,59 @@ CONTACT STYLES
   margin-right: 1px;
 }
 
+.single-location:hover, .single-location:focus {
+  background: #1C204D;
+}
+
 .single-location:hover .arrow button, .single-location:focus .arrow button {
   -webkit-transform: translatey(5px);
   -moz-transform: translatey(5px);
   -ms-transform: translatey(5px);
   -o-transform: translatey(5px);
   transform: translatey(5px);
+}
+
+.countries .ginput_container_select {
+  position: relative;
+}
+
+.countries .ginput_container_select:before {
+  right: 20px;
+  width: 15px;
+  height: 25px;
+  position: absolute;
+  pointer-events: none;
+  top: calc(50% - 12px);
+  content: url(images/angle-down.svg);
+}
+
+.countries .ginput_container_select .countries-select {
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: italic;
+  background: #23275E !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 15px 15px !important;
+}
+
+.countries .ginput_container_select .countries-select::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  cursor: pointer;
+  display: block;
+  width: 8px;
+  color: #333;
+  text-align: center;
+  position: relative;
+}
+
+.countries .ginput_container_select .countries-select option {
+  font-size: 18px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.6px;
 }
 
 #locations {
@@ -1692,13 +1767,13 @@ CONTACT STYLES
   padding: 20px 0 0;
 }
 
-#locations .country-location:not(:first-child) {
+#locations .country-location:not(.country-1) {
   margin: 80px 0 0;
 }
 
 #locations .location-item .title {
   color: #23275E;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 22px;
   font-family: "montserrat", sans-serif;
   letter-spacing: 0.45px;
@@ -1780,7 +1855,7 @@ CONTACT STYLES
   transition: all 0.3s;
 }
 
-.back-top .content h6 {
+.back-top .content h5 {
   display: block;
   color: #23275E;
   font-weight: 700;
@@ -2375,8 +2450,12 @@ MEDIA QUERIES
     padding-bottom: 40px;
   }
   .feature .icon {
+    height: 85px;
     font-size: 70px;
-    margin: 0 0 20px;
+    margin: 0 auto 20px;
+  }
+  .feature .icon .icon-service {
+    font-size: 90px;
   }
   .feature .arrow button {
     width: 55px;
@@ -2459,7 +2538,22 @@ MEDIA QUERIES
 /* iPad Portrait and Landscape */
 /* iPad Portrait */
 /* iPad Landscape */
-@media (min-width: 991px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1199px) {
+  .our-services.services-pg .media {
+    margin-top: 165px;
+  }
+  .our-services.service-details .media {
+    margin-top: 115px;
+  }
+  .our-services.equipments-main .media {
+    margin-top: 90px;
+  }
+  .postid-261 .our-services.service-details .media {
+    margin-top: 100px;
+  }
+  /***********************************
+	CONTACT FORM STYLES
+	***********************************/
   .contact-us-form .gform_wrapper form .gform_body .gform_fields .gfield.google_recpatcha {
     padding-right: 0;
   }
@@ -2474,7 +2568,7 @@ MEDIA QUERIES
 	STRONG-SECURE STYLES
 	***********************************/
   .strong-secure .media img {
-    width: 60vw;
+    width: 65vw;
   }
 }
 
@@ -2706,7 +2800,7 @@ MEDIA QUERIES
 	BANNER STYLES
 	***********************************/
   .banner {
-    height: 500px;
+    height: 430px;
   }
   /***********************************
 	ABOUT STYLES
@@ -2735,6 +2829,9 @@ MEDIA QUERIES
   /***********************************
 	STRONG-SECURE STYLES
 	***********************************/
+  .strong-secure {
+    max-height: initial;
+  }
   .strong-secure .media img {
     float: none;
     width: 100%;
@@ -2830,6 +2927,9 @@ MEDIA QUERIES
   /***********************************
 	SERVICES STYLES
 	***********************************/
+  .our-services .media img.mx-auto {
+    width: 50%;
+  }
   .our-services .content p {
     max-width: 100%;
   }
@@ -2850,6 +2950,9 @@ MEDIA QUERIES
 	***********************************/
   .equipments-main {
     padding-bottom: 0;
+  }
+  .equipments-main .media img {
+    max-width: 50%;
   }
   .specifications .section-title {
     margin: 20px 0 30px;
@@ -2939,7 +3042,10 @@ MEDIA QUERIES
 	BANNER STYLES
 	***********************************/
   .banner {
-    height: 430px;
+    height: 400px;
+  }
+  .banner .myVideo {
+    display: none;
   }
   .banner .content .separator {
     padding: 20px 0 0;
@@ -2947,6 +3053,16 @@ MEDIA QUERIES
   }
   .banner .content .banner-btn {
     margin: 20px 0 0;
+  }
+  .banner .content .banner-btn .btn {
+    padding: 14px 15px;
+    max-width: 170px;
+    display: block !important;
+  }
+  .banner .content .banner-btn .scrollDown {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
   }
   /***********************************
 	ABOUT STYLES
@@ -3040,6 +3156,12 @@ MEDIA QUERIES
     margin: 10px 0 20px;
   }
   /***********************************
+	TEAM NAV STYLES
+	***********************************/
+  .section-nav .nav-item h5 {
+    margin-right: 40px;
+  }
+  /***********************************
 	CONTACT STYLES
 	***********************************/
   .contact {
@@ -3076,13 +3198,16 @@ MEDIA QUERIES
   #locations .location-item .location {
     margin: 20px 0 0;
   }
+  #locations .country-location {
+    text-align: center;
+  }
   #locations .country-location:not(:first-child) {
     margin: 40px 0 0;
   }
   .back-top .content {
     padding: 2px 0;
   }
-  .back-top .content h6 {
+  .back-top .content h5 {
     margin: 15px 0 0;
   }
   /***********************************
@@ -3107,6 +3232,12 @@ MEDIA QUERIES
   /***********************************
 	FOOTER STYLES
 	***********************************/
+  .footer .footer-top .footer-logo {
+    margin: 0 0 20px;
+  }
+  .footer .footer-top .footer-menu {
+    display: none;
+  }
   .footer .footer-top .footer-menu li {
     padding: 0 5px;
   }
@@ -3222,6 +3353,21 @@ MEDIA QUERIES
     padding-right: 15px;
   }
   /***********************************
+	TEAM NAV STYLES
+	***********************************/
+  .section-nav .nav-item {
+    padding: 25px 15px;
+  }
+  .section-nav .nav-item:not(:last-child) {
+    border-bottom: 1px solid #000;
+  }
+  .section-nav .nav-item .icon i:before {
+    margin-right: 0;
+  }
+  .section-nav .nav-item h5 {
+    margin-right: 30px;
+  }
+  /***********************************
 	FINANCIAL-STRENGTH STYLES
 	***********************************/
   .financial-strength {
@@ -3264,8 +3410,13 @@ MEDIA QUERIES
     border-bottom: 1px solid #000;
   }
   .feature .icon {
+    width: auto;
+    height: auto;
     font-size: 60px;
     margin: 0 20px 0 0;
+  }
+  .feature .icon .icon-service {
+    font-size: 80px;
   }
   .feature .content {
     text-align: left;
@@ -3279,7 +3430,7 @@ MEDIA QUERIES
     margin: 0;
   }
   .feature:hover .arrow button, .feature:focus .arrow button {
-    margin-right: -5px !important;
+    margin-right: 0px !important;
   }
   /***********************************
 	CONTACT STYLES
@@ -3309,12 +3460,39 @@ MEDIA QUERIES
     margin: 0;
     line-height: 20px;
   }
-  .contact-us-form .gform_wrapper form .gform_body .gform_fields .gfield.google_recpatcha {
+  .gform_wrapper form .gform_body .gform_fields .gfield.google_recpatcha {
+    float: none;
     padding-right: 0;
+    margin-bottom: 3px;
+  }
+  .gform_wrapper form .gform_body .gform_fields .gfield.google_recpatcha .ginput_recaptcha {
+    -webkit-transform: scale(0.77);
+    -moz-transform: scale(0.77);
+    -ms-transform: scale(0.77);
+    -o-transform: scale(0.77);
+    transform: scale(0.77);
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+  .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload {
+    float: none;
+  }
+  .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload {
+    height: 60px;
+  }
+  .gform_wrapper form .gform_footer {
+    float: none;
+    text-align: left;
+    margin-top: 0 !important;
   }
   .contact-us-form .gform_wrapper form .gform_footer {
-    float: none;
     margin-top: 0 !important;
+  }
+  .contact-us-form .gform_wrapper form .gform_footer .btn {
+    padding: 21px 15px;
   }
   .single-location .icon i {
     width: 60px;
@@ -3367,19 +3545,6 @@ MEDIA QUERIES
 /* 555 */
 @media only screen and (max-width: 521px) {
   /***********************************
-	TEAM NAV STYLES
-	***********************************/
-  .section-nav .nav-item {
-    width: 100%;
-    padding: 25px 15px;
-  }
-  .section-nav .nav-item:not(:last-child) {
-    border-bottom: 1px solid #000;
-  }
-  .section-nav .nav-item .icon i:before {
-    margin-right: 0;
-  }
-  /***********************************
 	FOOTER STYLES
 	***********************************/
   .footer .footer-top .footer-menu li {
@@ -3425,9 +3590,6 @@ MEDIA QUERIES
   }
   .gform_wrapper form .gform_body .gform_fields .gfield.custom_file_upload .ginput_container_fileupload input[type="file"] {
     height: 65px;
-  }
-  .resale-information.coverbg {
-    background-position: 40% 50% !important;
   }
 }
 

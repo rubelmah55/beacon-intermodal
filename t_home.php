@@ -108,7 +108,7 @@ get_header(); ?>
 		<?php endif; ?>
 
 		<?php $strong_secure = get_field('strong_secure'); if ($strong_secure): ?>
-		<section class="strong-secure">
+		<section class="strong-secure align-center-v">
 			<div class="container-fluid">
 				<div class="row align-center-v justify-content-center">
 					<?php if ($strong_secure['image']): ?>

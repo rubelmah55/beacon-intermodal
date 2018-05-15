@@ -183,27 +183,10 @@ hr {
 	@include letter-spacing(125, 14);
 	@include transition(all 0.3s);
 
-	&:before {
-		top: 0;
-    	right: 0;
-		width: 0;
-		z-index: -1;
-		content: "";
-		height: 100%;
-		background: $base;
-		position: absolute;
-		@include transition(all 0.3s);
-	}
-
 	&:hover, &:focus, &:active {
-		color: $white;
+		color: $primary;
+		background: $base;
 		outline: 0 !important;
-
-		&:before {
-			left: 0;
-			right: auto;
-			width: 100%;
-		}
 	}
 }
 
@@ -337,10 +320,10 @@ HEADER STYLES
 
 			a {
 				width: 180px;
-				color: #1C1F48;
 				font-size: 12px;
 				background: $base;
 				padding: 15px 15px;
+				color: #1C1F48 !important;
 				@include align-center;
 				@include letter-spacing(50, 12);
 
@@ -356,10 +339,7 @@ HEADER STYLES
 				}
 
 				&:hover, &:focus {
-					
-					&:before {
-						background: $black;
-					}
+					background: $white;
 				}
 			}
 		}
@@ -404,9 +384,12 @@ HEADER STYLES
 				height: initial;
 				@include transition(all 0.3s ease);
 
-				span {
+				.tagline {
+					color: #C8C8C8;
 					font-size: 10px;
-					font-family: "Proxima Nova";
+					line-height: 11px;
+					font-family: $proxima;
+					@include letter-spacing(-10, 10);
 				}
 
 				img {
@@ -479,10 +462,13 @@ HEADER STYLES
 			.logo {
 
 				.navbar-brand {
-					padding: 9px 0;
 
 					img {
 						max-width: 170px;
+					}
+
+					.tagline {
+						font-size: 8.5px;
 					}
 				}
 			}
@@ -492,6 +478,16 @@ HEADER STYLES
 
 			.top-bar {
 			    margin: 0 0 4px;
+			}
+
+			.nav {
+
+				li {
+
+					a {
+						line-height: 28px;
+					}
+				}
 			}
 		}
 	}
@@ -604,6 +600,7 @@ BANNER STYLES
 	@include overlay($black, 0.3);
 
 	.myVideo {
+		width: 100%;
 		position: absolute;
 	}
 
@@ -642,7 +639,9 @@ BANNER STYLES
 				background: transparent;
 
 				&:hover, &:focus {
-					color: $primary;
+					color: $white;
+					border-color: $primary;
+					background: $primary;
 				}
 			}
 		}
@@ -658,7 +657,7 @@ BANNER STYLES
 			@include align-center;
 
 			&:hover, &:focus {
-				color: $base;
+				color: $white;
 				background: $primary;
 			}
 		}
@@ -839,7 +838,15 @@ TEAM STYLES
 			background: $base;
 			border-radius: 500px;
 			@include align-center;
-			@include transition(all 0.3s ease);
+			-webkit-transform: translateZ(0);
+			transform: translateZ(0);
+			-webkit-transition-duration: 0.1s;
+			transition-duration: 0.1s;
+			-webkit-transition-property: transform;
+			transition-property: transform;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+			
 
 			i {
 
@@ -858,7 +865,8 @@ TEAM STYLES
 			}
 
 			.icon {
-				margin-left: 10px;
+				-webkit-transform: translateX(10px);
+				transform: translateX(10px);
 			}
 		}
 	}
@@ -870,7 +878,7 @@ TEAM STYLES
 
 .leadership-head {
 	padding: 66px 0 20px;
-	background: #BFBFBF;
+	//background: #BFBFBF;
 }
 
 .leadership-member {
@@ -955,6 +963,7 @@ TEAM STYLES
 		}
 
 		.position {
+			margin: 10px 8px 0;
 			color: #7B848E;
 			font-size: 14px;
 			font-weight: 400;
@@ -975,6 +984,16 @@ TEAM STYLES
 	}
 
 	.content {
+
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: 700;
+			font-family: $mont;
+			letter-spacing: 0;
+		}
+
+		a {
+			text-decoration: underline;
+		}
 
 		p {
 			max-width: 420px;
@@ -1015,7 +1034,14 @@ FEATURES STYLES
 	.icon {
 		color: $white;
 		font-size: 90px;
-		margin: 0 0 30px;
+		margin: 0 auto 30px;
+
+		width: 90px;
+		height: 110px;
+
+		.icon-service {
+			font-size: 110px;
+		}
 	}
 
 	p {
@@ -1044,12 +1070,14 @@ FEATURES STYLES
 			border: 2px solid $base;
 			background-color: transparent;
 			@include align-center;
-			-webkit-animation-duration: 0.5s;
-			animation-duration: 0.5s;
-			-webkit-animation-fill-mode: both;
-			animation-fill-mode: both;
-			-webkit-animation-name: fadeInRight;
-			animation-name: fadeInRight;
+			-webkit-transform: translateZ(0);
+		    transform: translateZ(0);
+		    -webkit-transition-duration: 0.1s;
+		    transition-duration: 0.1s;
+		    -webkit-transition-property: transform;
+		    transition-property: transform;
+		    -webkit-transition-timing-function: ease-out;
+		    transition-timing-function: ease-out;
 		}
 	}
 
@@ -1062,9 +1090,9 @@ FEATURES STYLES
 
 				button {
 					color: $primary;
-					margin-right: 15px;
 					background-color: $base;
-    				animation-name: fadeInLeft;
+					-webkit-transform: translateX(10px);
+					transform: translateX(10px);
 				}
 			}
 		}
@@ -1077,6 +1105,7 @@ STRONG-SECURE STYLES
 .strong-secure {
 	padding: 0;
 	overflow: hidden;
+	max-height: 620px;
 
 	.container-fluid {
 		padding: 0;
@@ -1205,12 +1234,14 @@ SERVICES STYLES
 				border: 2px solid $base;
 				background: transparent;
 				@include align-center;
-				-webkit-animation-duration: 0.5s;
-				animation-duration: 0.5s;
-				-webkit-animation-fill-mode: both;
-				animation-fill-mode: both;
-				-webkit-animation-name: fadeInRight;
-				animation-name: fadeInRight;
+				-webkit-transform: translateZ(0);
+			    transform: translateZ(0);
+			    -webkit-transition-duration: 0.1s;
+			    transition-duration: 0.1s;
+			    -webkit-transition-property: transform;
+			    transition-property: transform;
+			    -webkit-transition-timing-function: ease-out;
+			    transition-timing-function: ease-out;
 				
 			}
 		}
@@ -1235,15 +1266,10 @@ SERVICES STYLES
 
 				button {
 					color: $white;
-					background: $base;
-					margin-right: 15px;
-					animation-name: fadeInLeft;
-
-					&:hover, &:focus {
-						color: $white;
-						background: $primary;
-						border-color: $primary;
-					}
+					background: $primary;
+					border-color: $primary;
+					-webkit-transform: translateX(10px);
+					transform: translateX(10px);
 				}
 			}
 		}
@@ -1576,6 +1602,7 @@ CONTACT STYLES
 	}
 
 	&:hover, &:focus {
+		background: #1C204D;
 
 		.arrow {
 
@@ -1585,6 +1612,40 @@ CONTACT STYLES
 				-ms-transform: translatey(5px);
 				-o-transform: translatey(5px);
 				transform: translatey(5px);
+			}
+		}
+	}
+}
+
+.countries {
+
+	.ginput_container_select {
+		position: relative;
+
+		&:before {
+			right: 20px;
+		    width: 15px;
+		    height: 25px;
+		    position: absolute;
+		    pointer-events: none;
+		    top: calc(50% - 12px);
+		    content: url(images/angle-down.svg);
+		}
+
+		.countries-select {
+			color: $white;
+			font-size: 18px;
+			font-weight: 700;
+			font-style: italic;
+			background: $primary !important;
+			@include appearance();
+			padding: 15px 15px !important;
+
+			option {
+				font-size: 18px;
+				font-weight: 700;
+				font-style: italic;
+				letter-spacing: 0.6px;
 			}
 		}
 	}
@@ -1615,7 +1676,7 @@ CONTACT STYLES
 
 	.country-location {
 
-		&:not(:first-child) {
+		&:not(.country-1) {
 			margin: 80px 0 0;
 		}
 	}
@@ -1624,7 +1685,7 @@ CONTACT STYLES
 
 		.title {
 			color: $primary;
-			font-weight: 700;
+			font-weight: 800;
 			line-height: 22px;
 			font-family: $mont;
 			@include letter-spacing(25, 18);
@@ -1710,7 +1771,7 @@ CONTACT STYLES
 			@include transition(all 0.3s);
 		}
 
-		h6 {
+		h5 {
 			display: block;
 			color: $primary;
 			font-weight: 700;

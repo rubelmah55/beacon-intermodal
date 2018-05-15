@@ -69,5 +69,14 @@
 			}
 		}
 	});
-	
+
+	$('select[name=country-select]').change(function(){
+		var scrollId = $(this).val();
+		if(scrollId){
+			$('html, body').animate({
+				scrollTop: $(scrollId).offset().top
+			}, 1000);
+		}
+	});
+
 }(jQuery));

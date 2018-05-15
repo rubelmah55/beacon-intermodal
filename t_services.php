@@ -7,7 +7,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 
 		<?php $services = get_field('services'); if ($services): ?>
-		<section class="our-services">
+		<section class="our-services services-pg">
 			<div class="container">
 				<div class="row">
 					<?php if ($services['sub_title'] || $services['title'] || $services['content']): ?>
@@ -35,7 +35,7 @@ get_header(); ?>
 					<?php if ($services['image']): ?>
 					<div class="col-md-5 col-sm-12 col-xs-12">
 						<div class="media">
-							<img src="<?php echo $services['image']['url']; ?>" class="img-responsive" alt="<?php echo $services['image']['alt']; ?>">
+							<img src="<?php echo $services['image']['url']; ?>" class="img-responsive mx-auto" alt="<?php echo $services['image']['alt']; ?>">
 						</div>
 					</div>
 					<?php endif; ?>

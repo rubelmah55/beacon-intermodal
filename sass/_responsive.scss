@@ -106,8 +106,13 @@ MEDIA QUERIES
 		padding-bottom: 40px;
 		
 		.icon {
+			height: 85px;
 			font-size: 70px;
-			margin: 0 0 20px;
+			margin: 0 auto 20px;
+
+			.icon-service {
+				font-size: 90px;
+			}
 		}
 
 		.arrow {
@@ -241,9 +246,48 @@ MEDIA QUERIES
 
 }/* iPad Landscape */
 
-@media (min-width: 991px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1199px) {
 	
+	.our-services {
 
+		&.services-pg {
+
+			.media {
+				margin-top: 165px;
+			}
+		}
+
+		&.service-details {
+
+			.media {
+				margin-top: 115px;
+			}
+		}
+
+		&.equipments-main {
+
+			.media {
+				margin-top: 90px;
+			}
+		}
+	}
+
+	.postid-261 {
+
+		.our-services {
+
+			&.service-details {
+
+				.media {
+					margin-top: 100px;
+				}
+			}
+		}
+	}
+
+	/***********************************
+	CONTACT FORM STYLES
+	***********************************/
 	.contact-us-form {
 
 		.gform_wrapper {
@@ -282,7 +326,7 @@ MEDIA QUERIES
 		.media {
 
 			img {
-				width: 60vw;
+				width: 65vw;
 			}
 		}
 	}
@@ -543,7 +587,7 @@ MEDIA QUERIES
 	BANNER STYLES
 	***********************************/
 	.banner {
-		height: 500px;
+		height: 430px;
 	}
 
 	/***********************************
@@ -588,6 +632,7 @@ MEDIA QUERIES
 	STRONG-SECURE STYLES
 	***********************************/
 	.strong-secure {
+		max-height: initial;
 
 		.media {
 
@@ -737,6 +782,16 @@ MEDIA QUERIES
 	***********************************/
 	.our-services {
 
+		.media {
+
+			img {
+
+				&.mx-auto {
+					width: 50%;
+				}
+			}
+		}
+
 		.content {
 
 			p {
@@ -775,6 +830,13 @@ MEDIA QUERIES
 	***********************************/
 	.equipments-main {
 		padding-bottom: 0;
+
+		.media {
+
+			img {
+				max-width: 50%;
+			}
+		}
 	}
 
 	.specifications {
@@ -893,7 +955,11 @@ MEDIA QUERIES
 	BANNER STYLES
 	***********************************/
 	.banner {
-		height: 430px;
+		height: 400px;
+
+		.myVideo {
+			display: none;
+		}
 
 		.content {
 
@@ -904,6 +970,18 @@ MEDIA QUERIES
 
 			.banner-btn {
 				margin: 20px 0 0;
+
+				.btn {
+					padding: 14px 15px;
+					max-width: 170px;
+					display: block !important;
+				}
+
+				.scrollDown {
+					width: 50px;
+					height: 50px;
+					font-size: 18px;
+				}
 			}
 		}
 	}
@@ -1040,6 +1118,19 @@ MEDIA QUERIES
 	}
 
 	/***********************************
+	TEAM NAV STYLES
+	***********************************/
+	.section-nav {
+
+		.nav-item {
+
+			h5 {
+				margin-right: 40px;
+			}
+		}
+	}
+
+	/***********************************
 	CONTACT STYLES
 	***********************************/
 	.contact {
@@ -1118,6 +1209,7 @@ MEDIA QUERIES
 		}
 
 		.country-location {
+			text-align: center;
 
 			&:not(:first-child) {
 				margin: 40px 0 0;
@@ -1130,7 +1222,7 @@ MEDIA QUERIES
 		.content {
 			padding: 2px 0;
 
-			h6 {
+			h5 {
 				margin: 15px 0 0;
 			}
 		}
@@ -1181,7 +1273,12 @@ MEDIA QUERIES
 
 		.footer-top {
 
+			.footer-logo {
+				margin: 0 0 20px;
+			}
+
 			.footer-menu {
+				display: none;
 
 				li {
 					padding: 0 5px;
@@ -1357,6 +1454,28 @@ MEDIA QUERIES
 	}
 
 	/***********************************
+	TEAM NAV STYLES
+	***********************************/
+	.section-nav {
+
+		.nav-item {
+			padding: 25px 15px;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid $black;
+			}
+
+			.icon i:before {
+			    margin-right: 0;
+			}
+
+			h5 {
+				margin-right: 30px;
+			}
+		}
+	}
+
+	/***********************************
 	FINANCIAL-STRENGTH STYLES
 	***********************************/
 	.financial-strength {
@@ -1421,8 +1540,14 @@ MEDIA QUERIES
 		}
 		
 		.icon {
+			width: auto;
+			height: auto;
 			font-size: 60px;
 			margin: 0 20px 0 0;
+
+			.icon-service {
+				font-size: 80px;
+			}
 		}
 
 		.content {
@@ -1446,7 +1571,7 @@ MEDIA QUERIES
 			.arrow {
 
 				button {
-					margin-right: -5px !important;
+					margin-right: 0px !important;
 				}
 			}
 		}
@@ -1500,28 +1625,68 @@ MEDIA QUERIES
 		}
 	}
 
-	.contact-us-form {
-		
-		.gform_wrapper {
 
-			form {
+	
+	.gform_wrapper {
 
-				.gform_body {
+		form {
 
-					.gform_fields {
+			.gform_body {
 
-						.gfield {
+				.gform_fields {
 
-							&.google_recpatcha {
-								padding-right: 0;
+					.gfield {
+
+						&.google_recpatcha {
+							float: none;
+							padding-right: 0;
+							margin-bottom: 3px;
+
+							.ginput_recaptcha {
+								-webkit-transform: scale(0.77);
+								-moz-transform: scale(0.77);
+								-ms-transform: scale(0.77);
+								-o-transform: scale(0.77);
+								transform: scale(0.77);
+								-webkit-transform-origin: 0 0;
+								-moz-transform-origin: 0 0;
+								-ms-transform-origin: 0 0;
+								-o-transform-origin: 0 0;
+								transform-origin: 0 0;
+							}
+						}
+
+						&.custom_file_upload {
+							float: none;
+
+							.ginput_container_fileupload {
+								height: 60px;
 							}
 						}
 					}
 				}
+			}
+
+			.gform_footer {
+				float: none;
+				text-align: left;
+    			margin-top: 0 !important;
+			}
+		}
+	}
+
+	.contact-us-form {
+
+		.gform_wrapper {
+
+			form {
 
 				.gform_footer {
-					float: none;
-	    			margin-top: 0 !important;
+					margin-top: 0 !important;
+
+					.btn {
+						padding: 21px 15px;
+					}
 				}
 			}
 		}
@@ -1631,24 +1796,6 @@ MEDIA QUERIES
 
 @media only screen and (max-width : 521px) {
 
-	/***********************************
-	TEAM NAV STYLES
-	***********************************/
-	.section-nav {
-
-		.nav-item {
-			width: 100%;
-			padding: 25px 15px;
-
-			&:not(:last-child) {
-				border-bottom: 1px solid $black;
-			}
-
-			.icon i:before {
-			    margin-right: 0;
-			}
-		}
-	}
 
 	/***********************************
 	FOOTER STYLES
@@ -1740,13 +1887,6 @@ MEDIA QUERIES
 		}
 	}
 
-	.resale-information {
-	
-		&.coverbg {
-			background-position: 40% 50% !important;
-		}
-	}
-
 }/* 480 */
 
 @media only screen and (max-width : 346px) {
@@ -1776,6 +1916,25 @@ MEDIA QUERIES
 				width: 50px;
 			    height: 50px;
 			    font-size: 18px;
+			}
+		}
+	}
+
+	.gform_wrapper {
+
+		form {
+
+			.gform_body {
+
+				.gform_fields {
+
+					.gfield {
+
+						.ginput_recaptcha {
+							
+						}
+					}
+				}
 			}
 		}
 	}

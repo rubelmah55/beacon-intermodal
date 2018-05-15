@@ -8,9 +8,9 @@ get_header(); ?>
 		<?php $contact_head = get_field('contact_head'); if ($contact_head): ?>
 		<section class="section-nav">
 			<div class="container-fluid">
-				<div class="row">
+				<div class="row eq-height justify-content-center">
 					<?php foreach ($contact_head as $item): ?>
-					<a href="<?php echo $item['url']; ?>" class="nav-item smoothScroll align-center col-md-6 col-sm-6 col-xs-6">
+					<a href="<?php echo $item['url']; ?>" class="nav-item smoothScroll align-center col-md-6 col-sm-6 col-xs-6 col">
 						<?php if ($item['text']): ?>
 						<h5><?php echo $item['text']; ?></h5>
 						<?php endif; ?>
@@ -83,7 +83,7 @@ get_header(); ?>
 		<?php $countries = get_field('countries'); if ($countries): ?>
 		<a id="countries" class="blankSpace"></a>
 		<section class="countries features">
-			<div class="container-fluid">
+			<div class="container-fluid hidden-xs">
 				<div class="row eq-height justify-content-center">
 					<?php foreach ($countries as $country): ?>
 					<a href="#<?php echo $country['location']->post_name; ?>" class="single-location smoothScroll feature text-center col-md-2 col-sm-4 col-xs-6 col">
@@ -104,7 +104,19 @@ get_header(); ?>
 						</div>
 					</a><!-- /single-location -->
 					<?php endforeach ?>
+				</div>
+			</div>
 
+			<div class="container visible-xs-block">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="ginput_container_select">
+							<select name="country-select" id="country-select" class="countries-select">
+								<option value="">Select Country</option>
+								<?php foreach ($countries as $country): ?><option value="#<?php echo $country['location']->post_name; ?>"><?php if ($country['title']): ?><?php echo $country['title']; ?><?php else: ?><?php echo $country['location']->post_title; ?><?php endif; ?></a></option><?php endforeach; ?>
+							</select>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section><!-- /countrys -->
@@ -113,6 +125,7 @@ get_header(); ?>
 		<section id="locations">
 			<div class="container">
 				<?php
+					$count = 1;
 					$args = array(
 						'post_type' => 'location',
 						'orderby' => 'ASC',
@@ -124,7 +137,7 @@ get_header(); ?>
 					$location = get_field('location');
 				?>
 				<a id="<?php echo $post->post_name; ?>" class="blankSpace"></a>
-				<div class="country-location">
+				<div class="country-location country-<?php echo $count; ?>">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<div class="section-title">
@@ -179,15 +192,15 @@ get_header(); ?>
 					</div><!-- /row -->
 					<?php $counter++; endforeach; endif; ?>
 				</div><!-- /asia -->
-				<?php endwhile; else : ?>
+				<?php $count++; endwhile; else : ?>
 				<section class="not-found text-center"><h3><?php _e('No Location found!', 'beacon'); ?></h3></section>
 				<?php endif; wp_reset_postdata(); ?>
 			</div>
 		</section><!-- /single-locations -->
 
 		<?php $resale = get_field('resale_information'); if ($resale): ?>
-		<a id="resale-information coverbg" class="blankSpace"></a>
-		<section class="resale-information" class="contact-information coverbg" <?php if($resale['bg']): ?>style="background-image: url(<?php echo $resale['bg']; ?>);"<?php endif; ?>>
+		<a id="resale-information" class="blankSpace"></a>
+		<section class="resale-information coverbg" class="contact-information coverbg" <?php if($resale['bg']): ?>style="background-image: url(<?php echo $resale['bg']; ?>);"<?php endif; ?>>
 			<div class="container">
 				<div class="row">
 					<?php if ($resale['sub_title'] || $resale['title'] || $resale['content']): ?>
@@ -223,7 +236,7 @@ get_header(); ?>
 							<div class="icon">
 								<i class="icon-arrow-up"></i>
 							</div>
-							<h6>Back to Top</h6>
+							<h5>Back to Top</h5>
 						</div>
 					</div>
 				</div>

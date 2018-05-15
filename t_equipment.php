@@ -37,7 +37,7 @@ get_header(); ?>
 					<?php if ($equipments['image']): ?>
 					<div class="col-md-5 col-sm-12 col-xs-12">
 						<div class="media">
-							<img src="<?php echo $equipments['image']['url']; ?>" class="img-responsive" alt="<?php echo $equipments['image']['url']; ?>">
+							<img src="<?php echo $equipments['image']['url']; ?>" class="img-responsive mx-auto" alt="<?php echo $equipments['image']['url']; ?>">
 						</div>
 					</div>
 					<?php endif; ?>

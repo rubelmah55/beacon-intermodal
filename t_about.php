@@ -46,9 +46,9 @@ get_header(); ?>
 		<?php $team_head = get_field('team_head'); if ($team_head): ?>
 		<section class="section-nav">
 			<div class="container-fluid">
-				<div class="row">
+				<div class="row eq-height justify-content-center">
 					<?php foreach ($team_head as $teamhead): ?>
-					<a href="<?php echo $teamhead['url']; ?>" class="nav-item smoothScroll align-center col-md-6 col-sm-6 col-xs-6">
+					<a href="<?php echo $teamhead['url']; ?>" class="nav-item smoothScroll align-center col-md-6 col-sm-6 col-xs-6 col">
 						<h5><?php echo $teamhead['text']; ?></h5>
 
 						<div class="icon">
@@ -123,7 +123,7 @@ get_header(); ?>
 									<span></span>
 								</div>
 								<div class="content">
-									<?php echo $list['item']; ?>	
+									<p><?php if($list['link']['text']): ?><a href="<?php echo $list['link']['url']; ?>"><?php echo $list['link']['text']; ?></a><?php endif;?> <?php echo $list['item']; ?></p>
 								</div>
 							</li>
 							<?php endforeach; ?>
@@ -252,10 +252,9 @@ get_header(); ?>
 
 							<div class="content">
 								<h6 class="name"><?php the_title(); ?></h6>
-								
 
 								<?php if ($team_position): ?>
-								<span class="position"><?php echo $team_position; ?></span>
+								<p class="position"><?php echo $team_position; ?></p>
 								<?php endif; ?>
 							</div>
 						</div><!-- /mk-team -->
