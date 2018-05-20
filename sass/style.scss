@@ -1459,31 +1459,20 @@ CONTACT STYLES
 		}
 
 		ul {
-
-			&.country {
-
-				li {
-
-					+ li {
-
-						&:nth-child(8) {
-
-							&:before {
-								content: none;
-							}
-						}
-					}
-				}
-			}
+			padding: 0; 
+			text-align: center;
+			display: inline-block; 
 
 			li {
+				display:inline;
+				white-space: nowrap;
 
-				+ li {
+				&:after {
+					content: " ";
+					letter-spacing: 1em;
+					background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMkMEa+wAAAAnSURBVBhXY/Dz89MA4sNA/B9Ka4AEYQIwfBgkiCwAxjhVopnppwEApxQqhnyQ+VkAAAAASUVORK5CYII=) center center no-repeat;
+					background-size: 3px;
 
-					&:before {
-						content: '•';
-						padding-right: 10px;
-					}
 				}
 
 				a {
