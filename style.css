@@ -1158,6 +1158,7 @@ FEATURES STYLES
 .features {
   padding: 0;
   overflow: hidden;
+  background: #23275E;
 }
 
 .features .container-fluid {
