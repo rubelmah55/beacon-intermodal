@@ -193,8 +193,8 @@ get_header(); ?>
 								<div class="content">
 									<h4 class="title"><?php the_title(); ?></h4>
 
-									<?php if ($team_position): ?>
-									<h5 class="position"><?php echo $team_position; ?></h5>
+									<?php if ($team_position['leadership']): ?>
+									<h5 class="position"><?php echo $team_position['leadership']; ?></h5>
 									<?php endif; ?>
 
 									<?php if ($team_description): ?>
@@ -245,7 +245,7 @@ get_header(); ?>
 							$team_position = get_field('team_position');
 							$teamImg = $team_image ? $team_image['url'] : get_template_directory_uri().'/images/placeholder-team.jpg';
 						?>
-						<div class="mk-team col-md-2 col-sm-3 col-xs-6 col">
+						<div <?php post_class("mk-team col-md-2 col-sm-3 col-xs-6 col"); ?>>
 							<div class="media">
 								<img src="<?php echo $teamImg; ?>" class="img-responsive" alt="<?php echo $team_image['alt']; ?>">
 							</div>
@@ -253,8 +253,8 @@ get_header(); ?>
 							<div class="content">
 								<h6 class="name"><?php the_title(); ?></h6>
 
-								<?php if ($team_position): ?>
-								<p class="position"><?php echo $team_position; ?></p>
+								<?php if ($team_position['marketing']): ?>
+								<p class="position"><?php echo $team_position['marketing']; ?></p>
 								<?php endif; ?>
 							</div>
 						</div><!-- /mk-team -->

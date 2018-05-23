@@ -1110,13 +1110,21 @@ TEAM STYLES
 }
 
 .mk-team .content .position {
-  margin: 10px 8px 0;
+  margin: 10px 9px 0;
   color: #7B848E;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
   font-family: "tinos", serif;
   letter-spacing: 0.35px;
+}
+
+.mk-team.post-132 .content .position {
+  margin: 10px 16px 0;
+}
+
+.mk-team.post-148 .content .position {
+  margin: 10px 8px 0;
 }
 
 .join-team {
