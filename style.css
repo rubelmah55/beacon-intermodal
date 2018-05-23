@@ -1548,6 +1548,7 @@ CONTACT STYLES
 ***********************************/
 .contact {
   padding: 95px 0;
+  background: #F9F9F9;
 }
 
 .contact .content {
@@ -1557,9 +1558,8 @@ CONTACT STYLES
 }
 
 .contact .content label {
-  color: #000;
   display: block;
-  font-weight: 600;
+  font: 600 16px/26px "montserrat", sans-serif;
 }
 
 .contact .content .btn {
@@ -1567,21 +1567,21 @@ CONTACT STYLES
 }
 
 .contact .content ul {
-  padding: 0;
-  text-align: center;
-  display: inline-block;
+  font-size: 0px;
 }
 
 .contact .content ul li {
-  display: inline;
-  white-space: nowrap;
+  font: 300 16px/26px "montserrat", sans-serif;
+  letter-spacing: 0.24px;
 }
 
 .contact .content ul li:after {
-  content: " ";
-  letter-spacing: 1em;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMkMEa+wAAAAnSURBVBhXY/Dz89MA4sNA/B9Ka4AEYQIwfBgkiCwAxjhVopnppwEApxQqhnyQ+VkAAAAASUVORK5CYII=) center center no-repeat;
-  background-size: 3px;
+  content: '•';
+  padding-left: 10px;
+}
+
+.contact .content ul li.nobullet:after {
+  content: none;
 }
 
 .contact .content ul li a {
@@ -1593,12 +1593,12 @@ CONTACT STYLES
 }
 
 .contact .content ul.serving {
-  margin: 30px 0 20px;
+  margin: 25px 0 10px;
 }
 
 .contact .content ul.serving li a {
   color: #23275E;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .contact-us {
@@ -2547,10 +2547,175 @@ MEDIA QUERIES
   .open .dropdown-menu > li > a:hover {
     display: inline-block !important;
   }
+  .table-specifications table, .table-specifications thead, .table-specifications tbody, .table-specifications th, .table-specifications td, .table-specifications tr {
+    display: block;
+  }
+  .table-specifications thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .table-specifications tr {
+    border: 1px solid #ccc;
+    border-top: 0;
+  }
+  .table-specifications td {
+    border: none;
+    position: relative;
+    padding: 14px 20px;
+    padding-left: 50% !important;
+  }
+  .table-specifications td:first-child {
+    width: 100% !important;
+  }
+  .table-specifications td:before {
+    top: 16px;
+    left: 15px;
+    width: 45%;
+    padding-right: 10px;
+    position: absolute;
+    white-space: nowrap;
+  }
+  .table-specifications .table:first-child tr:first-child {
+    border-top: 1px solid #ccc;
+  }
+  .table-specifications .table:nth-child(1) td:nth-of-type(1):before {
+    content: "RATINGS";
+  }
+  .table-specifications .table:nth-child(2) td:nth-of-type(1):before {
+    content: "DIMENSIONS";
+  }
+  .table-specifications .table:nth-child(3) td:nth-of-type(1):before {
+    content: "CAPACITY";
+  }
+  .table-specifications .table:nth-child(4) td:nth-of-type(1):before {
+    content: "TEST LOADS";
+  }
+  .table-specifications td:nth-of-type(2):before {
+    content: "40’ High Cube";
+  }
+  .table-specifications td:nth-of-type(3):before {
+    content: "40’ Standard";
+  }
+  .table-specifications td:nth-of-type(4):before {
+    content: "20’ Standard";
+  }
 }
 
 /* iPad Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .table-specifications table, .table-specifications thead, .table-specifications tbody, .table-specifications th, .table-specifications td, .table-specifications tr {
+    display: block;
+  }
+  .table-specifications thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .table-specifications tr {
+    border: 1px solid #ccc;
+    border-top: 0;
+  }
+  .table-specifications td {
+    border: none;
+    position: relative;
+    padding: 14px 20px;
+    padding-left: 50% !important;
+  }
+  .table-specifications td:first-child {
+    width: 100% !important;
+  }
+  .table-specifications td:before {
+    top: 16px;
+    left: 15px;
+    width: 45%;
+    padding-right: 10px;
+    position: absolute;
+    white-space: nowrap;
+  }
+  .table-specifications .table:first-child tr:first-child {
+    border-top: 1px solid #ccc;
+  }
+  .table-specifications .table:nth-child(1) td:nth-of-type(1):before {
+    content: "RATINGS";
+  }
+  .table-specifications .table:nth-child(2) td:nth-of-type(1):before {
+    content: "DIMENSIONS";
+  }
+  .table-specifications .table:nth-child(3) td:nth-of-type(1):before {
+    content: "CAPACITY";
+  }
+  .table-specifications .table:nth-child(4) td:nth-of-type(1):before {
+    content: "TEST LOADS";
+  }
+  .table-specifications td:nth-of-type(2):before {
+    content: "40’ High Cube";
+  }
+  .table-specifications td:nth-of-type(3):before {
+    content: "40’ Standard";
+  }
+  .table-specifications td:nth-of-type(4):before {
+    content: "20’ Standard";
+  }
+}
+
 /* iPad Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .table-specifications table, .table-specifications thead, .table-specifications tbody, .table-specifications th, .table-specifications td, .table-specifications tr {
+    display: block;
+  }
+  .table-specifications thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .table-specifications tr {
+    border: 1px solid #ccc;
+    border-top: 0;
+  }
+  .table-specifications td {
+    border: none;
+    position: relative;
+    padding: 14px 20px;
+    padding-left: 50% !important;
+  }
+  .table-specifications td:first-child {
+    width: 100% !important;
+  }
+  .table-specifications td:before {
+    top: 16px;
+    left: 15px;
+    width: 45%;
+    padding-right: 10px;
+    position: absolute;
+    white-space: nowrap;
+  }
+  .table-specifications .table:first-child tr:first-child {
+    border-top: 1px solid #ccc;
+  }
+  .table-specifications .table:nth-child(1) td:nth-of-type(1):before {
+    content: "RATINGS";
+  }
+  .table-specifications .table:nth-child(2) td:nth-of-type(1):before {
+    content: "DIMENSIONS";
+  }
+  .table-specifications .table:nth-child(3) td:nth-of-type(1):before {
+    content: "CAPACITY";
+  }
+  .table-specifications .table:nth-child(4) td:nth-of-type(1):before {
+    content: "TEST LOADS";
+  }
+  .table-specifications td:nth-of-type(2):before {
+    content: "40’ High Cube";
+  }
+  .table-specifications td:nth-of-type(3):before {
+    content: "40’ Standard";
+  }
+  .table-specifications td:nth-of-type(4):before {
+    content: "20’ Standard";
+  }
+}
+
 /* iPad Landscape */
 @media (min-width: 992px) and (max-width: 1199px) {
   .our-services.services-pg .media {
@@ -3168,6 +3333,60 @@ MEDIA QUERIES
 	***********************************/
   .specifications .section-title {
     margin: 10px 0 20px;
+  }
+  .table-specifications table, .table-specifications thead, .table-specifications tbody, .table-specifications th, .table-specifications td, .table-specifications tr {
+    display: block;
+  }
+  .table-specifications thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .table-specifications tr {
+    border: 1px solid #ccc;
+    border-top: 0;
+  }
+  .table-specifications td {
+    border: none;
+    position: relative;
+    padding: 14px 20px;
+    padding-left: 50% !important;
+  }
+  .table-specifications td:first-child {
+    width: 100% !important;
+  }
+  .table-specifications td:before {
+    top: 16px;
+    left: 15px;
+    width: 45%;
+    color: #23275E;
+    padding-right: 10px;
+    position: absolute;
+    white-space: nowrap;
+  }
+  .table-specifications .table:first-child tr:first-child {
+    border-top: 1px solid #ccc;
+  }
+  .table-specifications .table:nth-child(1) td:nth-of-type(1):before {
+    content: "RATINGS";
+  }
+  .table-specifications .table:nth-child(2) td:nth-of-type(1):before {
+    content: "DIMENSIONS";
+  }
+  .table-specifications .table:nth-child(3) td:nth-of-type(1):before {
+    content: "CAPACITY";
+  }
+  .table-specifications .table:nth-child(4) td:nth-of-type(1):before {
+    content: "TEST LOADS";
+  }
+  .table-specifications td:nth-of-type(2):before {
+    content: "40’ High Cube";
+  }
+  .table-specifications td:nth-of-type(3):before {
+    content: "40’ Standard";
+  }
+  .table-specifications td:nth-of-type(4):before {
+    content: "20’ Standard";
   }
   /***********************************
 	TEAM NAV STYLES

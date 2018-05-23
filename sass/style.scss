@@ -1443,6 +1443,7 @@ CONTACT STYLES
 ***********************************/
 .contact {
 	padding: 95px 0;
+	background: #F9F9F9;
 
 	.content {
 		margin-left: auto;
@@ -1450,9 +1451,8 @@ CONTACT STYLES
 		max-width: 755px;
 
 		label {
-			color: $black;
 			display: block;
-			font-weight: 600;
+			font: 600 16px/26px $mont;
 		}
 
 		.btn {
@@ -1460,20 +1460,22 @@ CONTACT STYLES
 		}
 
 		ul {
-			padding: 0; 
-			text-align: center;
-			display: inline-block; 
+			font-size: 0px;
 
 			li {
-				display:inline;
-				white-space: nowrap;
+				font: 300 16px/26px $mont;
+				@include letter-spacing(15, 16); 
 
 				&:after {
-					content: " ";
-					letter-spacing: 1em;
-					background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMkMEa+wAAAAnSURBVBhXY/Dz89MA4sNA/B9Ka4AEYQIwfBgkiCwAxjhVopnppwEApxQqhnyQ+VkAAAAASUVORK5CYII=) center center no-repeat;
-					background-size: 3px;
+					content: '•';
+					padding-left: 10px;
+				}
 
+				&.nobullet {
+
+					&:after {
+						content: none;
+					}
 				}
 
 				a {
@@ -1486,13 +1488,13 @@ CONTACT STYLES
 			}
 
 			&.serving {
-				margin: 30px 0 20px;
+				margin: 25px 0 10px;
 
 				li  {
 
 					a {
 						color: $primary;
-						text-decoration: none;
+						text-decoration: underline;
 					}
 				}
 			}

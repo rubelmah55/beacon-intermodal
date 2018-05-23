@@ -161,7 +161,7 @@ get_header(); ?>
 						<?php if ($contact['country'] || $contact['locations'] || $contact['btn']): ?>
 						<div class="content">
 							<?php if ($contact['country']): ?>
-							<ul class="country">
+							<ul class="country list-inline">
 								<?php foreach ($contact['country'] as $country): ?>
 								<li><?php echo $country['item']; ?></li>
 								<?php endforeach; ?>
@@ -169,7 +169,7 @@ get_header(); ?>
 							<?php endif; ?>
 						
 							<?php if ($contact['locations']): ?>
-							<ul class="serving">
+							<ul class="serving list-inline">
 								<label>Serving</label>
 								<?php foreach ($contact['locations'] as $location): ?>
 								<li><a href="<?php echo perm_by_temp('t_contact.php'); ?>#<?php echo $location->post_name; ?>"><?php echo $location->post_title; ?></a></li>

@@ -57,7 +57,7 @@
 						</div>
 						<?php endif; ?>
 
-						<div class="table-specifications table-responsive">
+						<div class="table-specifications">
 							<?php 
 								$specifications = get_field('specifications');
 								if ($specifications) : 

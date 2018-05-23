@@ -224,6 +224,80 @@ MEDIA QUERIES
 	.open .dropdown-menu>li>a:hover {
 		display:inline-block!important;
 	}
+
+	.table-specifications {
+
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+
+		thead {
+
+			tr { 
+				position: absolute;
+				top: -9999px;
+				left: -9999px;
+			}
+		}
+
+		tr {
+			border: 1px solid #ccc;
+			border-top: 0;
+		}
+	
+		td { 
+			border: none;
+			position: relative;
+			padding: 14px 20px;
+			padding-left: 50% !important;
+
+			&:first-child {
+				width: 100% !important;
+			}
+		}
+		
+		td:before { 
+			top: 16px;
+			left: 15px;
+			width: 45%;
+			padding-right: 10px; 
+			position: absolute;
+			white-space: nowrap;
+		}
+
+		.table {
+
+			&:first-child {
+
+				tr {
+					&:first-child {
+						border-top: 1px solid #ccc;
+					}
+				}
+			}
+
+			&:nth-child(1) {
+				td:nth-of-type(1):before { content: "RATINGS"; }
+			}
+
+			&:nth-child(2) {
+				td:nth-of-type(1):before { content: "DIMENSIONS"; }
+			}
+
+			&:nth-child(3) {
+				td:nth-of-type(1):before { content: "CAPACITY"; }
+			}
+
+			&:nth-child(4) {
+				td:nth-of-type(1):before { content: "TEST LOADS"; }
+			}
+		}
+
+		td:nth-of-type(2):before { content: "40’ High Cube"; }
+		td:nth-of-type(3):before { content: "40’ Standard"; }
+		td:nth-of-type(4):before { content: "20’ Standard"; }
+	}
+	
 }/* iPad Portrait and Landscape */
 
 @media only screen 
@@ -232,7 +306,78 @@ MEDIA QUERIES
   and (orientation: portrait) 
   and (-webkit-min-device-pixel-ratio: 1) {
 
+.table-specifications {
 
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+
+		thead {
+
+			tr { 
+				position: absolute;
+				top: -9999px;
+				left: -9999px;
+			}
+		}
+
+		tr {
+			border: 1px solid #ccc;
+			border-top: 0;
+		}
+	
+		td { 
+			border: none;
+			position: relative;
+			padding: 14px 20px;
+			padding-left: 50% !important;
+
+			&:first-child {
+				width: 100% !important;
+			}
+		}
+		
+		td:before { 
+			top: 16px;
+			left: 15px;
+			width: 45%;
+			padding-right: 10px; 
+			position: absolute;
+			white-space: nowrap;
+		}
+
+		.table {
+
+			&:first-child {
+
+				tr {
+					&:first-child {
+						border-top: 1px solid #ccc;
+					}
+				}
+			}
+
+			&:nth-child(1) {
+				td:nth-of-type(1):before { content: "RATINGS"; }
+			}
+
+			&:nth-child(2) {
+				td:nth-of-type(1):before { content: "DIMENSIONS"; }
+			}
+
+			&:nth-child(3) {
+				td:nth-of-type(1):before { content: "CAPACITY"; }
+			}
+
+			&:nth-child(4) {
+				td:nth-of-type(1):before { content: "TEST LOADS"; }
+			}
+		}
+
+		td:nth-of-type(2):before { content: "40’ High Cube"; }
+		td:nth-of-type(3):before { content: "40’ Standard"; }
+		td:nth-of-type(4):before { content: "20’ Standard"; }
+	}
 
 }/* iPad Portrait */
 
@@ -242,7 +387,78 @@ MEDIA QUERIES
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 1) {
 
+	.table-specifications {
 
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+
+		thead {
+
+			tr { 
+				position: absolute;
+				top: -9999px;
+				left: -9999px;
+			}
+		}
+
+		tr {
+			border: 1px solid #ccc;
+			border-top: 0;
+		}
+	
+		td { 
+			border: none;
+			position: relative;
+			padding: 14px 20px;
+			padding-left: 50% !important;
+
+			&:first-child {
+				width: 100% !important;
+			}
+		}
+		
+		td:before { 
+			top: 16px;
+			left: 15px;
+			width: 45%;
+			padding-right: 10px; 
+			position: absolute;
+			white-space: nowrap;
+		}
+
+		.table {
+
+			&:first-child {
+
+				tr {
+					&:first-child {
+						border-top: 1px solid #ccc;
+					}
+				}
+			}
+
+			&:nth-child(1) {
+				td:nth-of-type(1):before { content: "RATINGS"; }
+			}
+
+			&:nth-child(2) {
+				td:nth-of-type(1):before { content: "DIMENSIONS"; }
+			}
+
+			&:nth-child(3) {
+				td:nth-of-type(1):before { content: "CAPACITY"; }
+			}
+
+			&:nth-child(4) {
+				td:nth-of-type(1):before { content: "TEST LOADS"; }
+			}
+		}
+
+		td:nth-of-type(2):before { content: "40’ High Cube"; }
+		td:nth-of-type(3):before { content: "40’ Standard"; }
+		td:nth-of-type(4):before { content: "20’ Standard"; }
+	}
 
 }/* iPad Landscape */
 
@@ -1115,6 +1331,80 @@ MEDIA QUERIES
 		.section-title {
 			margin: 10px 0 20px;
 		}
+	}
+
+	.table-specifications {
+
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+
+		thead {
+
+			tr { 
+				position: absolute;
+				top: -9999px;
+				left: -9999px;
+			}
+		}
+
+		tr {
+			border: 1px solid #ccc;
+			border-top: 0;
+		}
+	
+		td { 
+			border: none;
+			position: relative;
+			padding: 14px 20px;
+			padding-left: 50% !important;
+
+			&:first-child {
+				width: 100% !important;
+			}
+		}
+		
+		td:before { 
+			top: 16px;
+			left: 15px;
+			width: 45%;
+			color: $primary;
+			padding-right: 10px; 
+			position: absolute;
+			white-space: nowrap;
+		}
+
+		.table {
+
+			&:first-child {
+
+				tr {
+					&:first-child {
+						border-top: 1px solid #ccc;
+					}
+				}
+			}
+
+			&:nth-child(1) {
+				td:nth-of-type(1):before { content: "RATINGS"; }
+			}
+
+			&:nth-child(2) {
+				td:nth-of-type(1):before { content: "DIMENSIONS"; }
+			}
+
+			&:nth-child(3) {
+				td:nth-of-type(1):before { content: "CAPACITY"; }
+			}
+
+			&:nth-child(4) {
+				td:nth-of-type(1):before { content: "TEST LOADS"; }
+			}
+		}
+
+		td:nth-of-type(2):before { content: "40’ High Cube"; }
+		td:nth-of-type(3):before { content: "40’ Standard"; }
+		td:nth-of-type(4):before { content: "20’ Standard"; }
 	}
 
 	/***********************************

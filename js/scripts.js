@@ -79,4 +79,21 @@
 		}
 	});
 
+	function lastNobullet() {
+	    var lastElement = false;
+	    $(".contact ul li").each(function() {
+	        if (lastElement && lastElement.offset().top != $(this).offset().top) {
+	            $(lastElement).addClass("nobullet");
+	        } else {
+	            $(lastElement).removeClass("nobullet");
+	        }
+	        lastElement = $(this);
+	    }).last().addClass("nobullet");
+	};
+	lastNobullet();
+
+	$(window).resize(function(){
+		lastNobullet();
+	});
+
 }(jQuery));
