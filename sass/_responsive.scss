@@ -265,6 +265,16 @@ MEDIA QUERIES
 			white-space: nowrap;
 		}
 
+		.table:nth-child(2) tbody tr:nth-of-type(even),
+		.table:nth-child(4) tbody tr:nth-of-type(even) {
+		    background-color: #FFF;
+		}
+
+		.table:nth-child(2) tbody tr:nth-of-type(odd),
+		.table:nth-child(4) tbody tr:nth-of-type(odd) {
+		    background-color: #F5F5F5;
+		}
+
 		.table {
 
 			&:first-child {
@@ -346,6 +356,16 @@ MEDIA QUERIES
 			white-space: nowrap;
 		}
 
+		.table:nth-child(2) tbody tr:nth-of-type(even),
+		.table:nth-child(4) tbody tr:nth-of-type(even) {
+		    background-color: #FFF;
+		}
+
+		.table:nth-child(2) tbody tr:nth-of-type(odd),
+		.table:nth-child(4) tbody tr:nth-of-type(odd) {
+		    background-color: #F5F5F5;
+		}
+
 		.table {
 
 			&:first-child {
@@ -425,6 +445,16 @@ MEDIA QUERIES
 			padding-right: 10px; 
 			position: absolute;
 			white-space: nowrap;
+		}
+
+		.table:nth-child(2) tbody tr:nth-of-type(even),
+		.table:nth-child(4) tbody tr:nth-of-type(even) {
+		    background-color: #FFF;
+		}
+
+		.table:nth-child(2) tbody tr:nth-of-type(odd),
+		.table:nth-child(4) tbody tr:nth-of-type(odd) {
+		    background-color: #F5F5F5;
 		}
 
 		.table {
@@ -1372,6 +1402,16 @@ MEDIA QUERIES
 			padding-right: 10px; 
 			position: absolute;
 			white-space: nowrap;
+		}
+
+		.table:nth-child(2) tbody tr:nth-of-type(even),
+		.table:nth-child(4) tbody tr:nth-of-type(even) {
+		    background-color: #FFF;
+		}
+
+		.table:nth-child(2) tbody tr:nth-of-type(odd),
+		.table:nth-child(4) tbody tr:nth-of-type(odd) {
+		    background-color: #F5F5F5;
 		}
 
 		.table {

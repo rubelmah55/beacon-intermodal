@@ -2576,6 +2576,14 @@ MEDIA QUERIES
     position: absolute;
     white-space: nowrap;
   }
+  .table-specifications .table:nth-child(2) tbody tr:nth-of-type(even),
+  .table-specifications .table:nth-child(4) tbody tr:nth-of-type(even) {
+    background-color: #FFF;
+  }
+  .table-specifications .table:nth-child(2) tbody tr:nth-of-type(odd),
+  .table-specifications .table:nth-child(4) tbody tr:nth-of-type(odd) {
+    background-color: #F5F5F5;
+  }
   .table-specifications .table:first-child tr:first-child {
     border-top: 1px solid #ccc;
   }
@@ -2633,6 +2641,14 @@ MEDIA QUERIES
     position: absolute;
     white-space: nowrap;
   }
+  .table-specifications .table:nth-child(2) tbody tr:nth-of-type(even),
+  .table-specifications .table:nth-child(4) tbody tr:nth-of-type(even) {
+    background-color: #FFF;
+  }
+  .table-specifications .table:nth-child(2) tbody tr:nth-of-type(odd),
+  .table-specifications .table:nth-child(4) tbody tr:nth-of-type(odd) {
+    background-color: #F5F5F5;
+  }
   .table-specifications .table:first-child tr:first-child {
     border-top: 1px solid #ccc;
   }
@@ -2689,6 +2705,14 @@ MEDIA QUERIES
     padding-right: 10px;
     position: absolute;
     white-space: nowrap;
+  }
+  .table-specifications .table:nth-child(2) tbody tr:nth-of-type(even),
+  .table-specifications .table:nth-child(4) tbody tr:nth-of-type(even) {
+    background-color: #FFF;
+  }
+  .table-specifications .table:nth-child(2) tbody tr:nth-of-type(odd),
+  .table-specifications .table:nth-child(4) tbody tr:nth-of-type(odd) {
+    background-color: #F5F5F5;
   }
   .table-specifications .table:first-child tr:first-child {
     border-top: 1px solid #ccc;
@@ -3363,6 +3387,14 @@ MEDIA QUERIES
     padding-right: 10px;
     position: absolute;
     white-space: nowrap;
+  }
+  .table-specifications .table:nth-child(2) tbody tr:nth-of-type(even),
+  .table-specifications .table:nth-child(4) tbody tr:nth-of-type(even) {
+    background-color: #FFF;
+  }
+  .table-specifications .table:nth-child(2) tbody tr:nth-of-type(odd),
+  .table-specifications .table:nth-child(4) tbody tr:nth-of-type(odd) {
+    background-color: #F5F5F5;
   }
   .table-specifications .table:first-child tr:first-child {
     border-top: 1px solid #ccc;
